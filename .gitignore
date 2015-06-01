@@ -1,0 +1,11 @@
+.project
+.pydevproject
+.settings
+cache
+__pycache__
+*.pyc
+output
+*.pid
+bower_components
+node_modules
+.ropeproject

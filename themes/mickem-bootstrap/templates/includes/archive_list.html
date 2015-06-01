@@ -1,0 +1,20 @@
+{% for year, year_dates in dates|groupby( 'date.year' )|reverse %}
+	<a name="{{ year }}"/>
+	<h1><a href="/archive/{{ year }}">{{ year }}</a></h1>
+	<div class="list-group">
+	{% for article in year_dates %}
+			<a href="{{ SITEURL }}/{{ article.url }}" class="list-group-item">
+				<div class="pull-right">
+					<span class="label label-primary">{{ article.category }}</span>
+					{% for tag in article.tags %}
+						<span class="label label-default">{{ tag }}</span>
+					{% endfor %}
+				</div>
+				<h4 class="list-group-item-heading">{{ article.locale_date }}</h4>
+				<p class="list-group-item-text">
+					{{ article.title }}
+				</p>
+			</a>
+	{% endfor %}
+	</div>
+{% endfor %}

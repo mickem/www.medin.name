@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title|striptags|e }} - {{ SITENAME }}{% endblock %}
+{% block metadesc %}{{ article.description|e }}{% endblock %}
+{% block open_graph %}
+{% if OPEN_GRAPH %}
+	<meta property="og:type" content="article"/>
+	<meta property="og:title" content="{{ article.title|striptags|e }}"/>
+	<meta property="og:url" content="{{ SITEURL }}/{{ article.url }}"/>
+	{% if article.description %}
+		<meta property="og:description" content="{{ article.description|striptags|e }}"/>
+	{% endif %}
+	{% if article.category %}
+		<meta property="article:section" content="{{ article.category }}"/>
+	{% endif %}
+	{% if article.tags %}
+		{% for tag in article.tags %}
+			<meta property="article:tag" content="{{ tag }}"/>
+		{% endfor %}
+	{% endif %}
+	{% if OPEN_GRAPH_ARTICLE_AUTHOR %}
+		<meta property="article:author" content="{{ OPEN_GRAPH_ARTICLE_AUTHOR }}"/>
+	{% endif %}
+	{% if article.social_image %}
+		<meta property="og:image" content="{{ article.social_image }}"/>
+	{% else %}
+		{% if DEFAULT_SOCIAL_IMAGE %}
+			<meta property="og:image" content="{{ DEFAULT_SOCIAL_IMAGE }}"/>
+	  {% endif %}
+	{% endif %}
+{% endif %}
+{% if TWITTER_CARD and TWITTER_USERNAME %}
+	<meta name="twitter:card" content="summary"> 
+	<meta name="twitter:title" content="{{ article.title|striptags|e }}">
+	<meta name="twitter:description" content="{{ article.description|striptags|e }}">
+	<meta name="twitter:site" content="@{{ TWITTER_USERNAME }}">
+	<meta name="twitter:creator" content="@{{ TWITTER_USERNAME }}">
+	<meta name="twitter:domain" content="{{ SITEURL }}">
+	{% if article.social_image %}
+		<meta property="twitter:image" content="{{ article.social_image }}"/>
+	{% else %}
+		{% if DEFAULT_SOCIAL_IMAGE %}
+			<meta property="twitter:image" content="{{ DEFAULT_SOCIAL_IMAGE }}"/>
+		{% endif %}
+	{% endif %}
+{% endif %}
+{% endblock %}
+{% block custom_header %}
+{% if CUSTOM_HEADER_ARTICLE %}
+{% include "includes/" + CUSTOM_HEADER_ARTICLE %}
+{% endif %}
+{% endblock %}
+{% block container_header %}
+{% if CUSTOM_CONTAINER_TOP_ARTICLE %}
+{% include "includes/" + CUSTOM_CONTAINER_TOP_ARTICLE %}
+{% endif %}
+{% endblock container_header %}
+{% block content_header %}
+{% include "includes/" + CUSTOM_CONTENT_TOP_ARTICLE|default("article_top.html") ignore missing %}
+{% endblock content_header%}
+
+{% block    content_body %}
+<article itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+	<div class="row">
+		<header class="article-header col-md-offset-1 col-md-10">
+			{% if CUSTOM_ARTICLE_HEADERS %}
+				{% for file in CUSTOM_ARTICLE_HEADERS %}
+					{% include "includes/" + file %}
+				{% endfor %}
+			{% else %}
+				{% include "includes/index_article_header.html" %}
+			{% endif %}
+		</header>
+	</div>
+	<div class="row">
+		<div class="content-body col-md-offset-1 col-md-10" itemprop="text articleBody">
+			{% if article.standfirst %}
+				<p class="standfirst" itemprop="description">{{ article.standfirst|e }}</p>
+			{% endif %}
+			{% if article.image %}
+				<img class="article-image img-responsive" alt="article header image" itemprop="image"
+					src="{{ article.image }}" />
+			{% endif %}
+			{% include "includes/" + CUSTOM_ARTICLE_PRECONTENT|default('article_precontent.html') ignore missing %}
+			{{ article.content }}
+		</div>
+	</div>
+	
+	{% if article.prev_article or article.next_article%}
+		<div class="row">
+			<div class="col-md-offset-1 col-md-5">
+				{% if article.prev_article %}
+					<a href="{{ SITEURL }}/{{ article.prev_article.url}}" class="btn btn-primary pull-left" role="button">
+						<span class="fa fa-arrow-left"></span> {{ article.prev_article.title }}
+					</a>
+				 {% endif %}
+			</div>
+			<div class="col-md-5">
+				 {% if article.next_article %}
+					<a href="{{ SITEURL }}/{{ article.next_article.url}}" class="btn btn-primary pull-right" role="button">
+						{{ article.next_article.title }} <span class="fa fa-arrow-right"></span>
+					</a>
+				 {% endif %}
+			</div>
+		</div>
+	{% endif %}
+	{% if article.related_posts %}
+		<div class="row related-posts">
+			<h2>Related articles</h2>
+			{% for related_post in article.related_posts %}
+				{% if loop.index < 4 %}
+					<div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+							{% if related_post.image %}
+								<img src="{{ related_post.image }}" alt="{{ related_post.title }}">
+							{% endif %}
+							<div class="caption">
+								<h3>{{ related_post.title }}</h3>
+								<p>{{ related_post.summary|truncate(100) }}</p>
+								<p><a href="{{ SITEURL }}/{{ related_post.url }}" class="btn btn-primary" role="button">Read more...</a></p>
+							</div>
+						</div>
+					</div>
+				{% endif %}	
+			{% endfor %}
+		</div>
+	{% endif %}	
+
+	{% for file in CUSTOM_ARTICLE_FOOTERS %}
+		{% include "includes/" + file %}
+	{% endfor %}
+
+	{% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+		<h2>Comments</h2>
+		<div class="comments">
+			<h2>Comments</h2>
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+				(function() {
+					var dsq = document.createElement('script');
+					dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = '//{{ DISQUS_SITENAME }}.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] ||
+					document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
+			</script>
+		</div>
+	{% endif %}
+</article>
+{% endblock content_body %}
+
+{%block slider_js %}
+{% include "includes/no_slider_js.html" %}
+{%endblock %}
+
+{% block    content_footer %}
+{% if CUSTOM_CONTENT_BOTTOM_ARTICLE %}
+{% include "includes/" + CUSTOM_CONTENT_BOTTOM_ARTICLE %}
+{% endif %}
+{% endblock content_footer %}
+
+{% block    container_footer %}
+{% if CUSTOM_CONTAINER_BOTTOM_ARTICLE %}
+{% include "includes/" + CUSTOM_CONTAINER_BOTTOM_ARTICLE %}
+{% endif %}
+{% endblock container_footer %}
+
+{% block scripts %}
+{% if CUSTOM_SCRIPTS_ARTICLE %}
+{% include "includes/" + CUSTOM_SCRIPTS_ARTICLE %}
+{% endif %}
+{% endblock %}

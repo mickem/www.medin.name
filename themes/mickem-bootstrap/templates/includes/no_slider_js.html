@@ -1,0 +1,11 @@
+<script>
+	$(window).bind('scroll', function () {
+    if ($(window).scrollTop() > 120) {
+        $('#nav').addClass('affix');
+		$('#brand').removeClass('not-showed');
+    } else {
+        $('#nav').removeClass('affix');
+		$('#brand').addClass('not-showed');
+    }
+});		
+</script>

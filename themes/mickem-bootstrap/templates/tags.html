@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Tags - {{ SITENAME }}{% endblock %}
+{% block content_body %}
+
+	<h1><i class="fa fa-folder fa-fw fa-lg"></i> Categories</h1>
+
+	{% for tag, articles in tags %}
+		<a href="#{{tag}}" class="label label-default"><b>{{tag}}</b> ({{articles|length}})</a>
+	{% endfor %}
+
+	{% for tag, articles in tags %}
+		<a name="{{ tag }}"/>
+		<h1><a href="/tag/{{ tag }}">{{ tag }}</a></h1>
+		<div class="list-group">
+		{% for article in articles %}
+				<a href="{{ SITEURL }}/{{ article.url }}" class="list-group-item">
+					<div class="pull-right">
+						<span class="label label-primary">{{ article.tag }}</span>
+						{% for tag in article.tags %}
+							<span class="label label-default">{{ tag }}</span>
+						{% endfor %}
+					</div>
+					{{ article.title }}
+				</a>
+		{% endfor %}
+		</div>
+	{% endfor %}
+{% endblock %}

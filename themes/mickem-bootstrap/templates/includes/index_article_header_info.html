@@ -1,0 +1,16 @@
+<div class="article-header-info">
+	<p>
+		Posted
+		{% if article.author %}
+			by <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
+		{% endif %}
+		at
+		{{ article.locale_date }}
+		{% if PDF_PROCESSOR %}
+			<span class="label">
+				<a href="{{ SITEURL }}/pdf/{{ article.slug }}.pdf">PDF</a>
+			</span>
+		{% endif %}
+		{% include "includes/translations.html" %}
+	</p>
+</div>

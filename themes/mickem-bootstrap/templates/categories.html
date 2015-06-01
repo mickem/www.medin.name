@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Categories - {{ SITENAME }}{% endblock %}
+{% block content_body %}
+	<h1><i class="fa fa-folder fa-fw fa-lg"></i> Categories</h1>
+
+	<div class="btn-group" role="group" aria-label="Years">
+		{% for category, articles in categories %}
+			<a href="#{{category}}" class="btn btn-default"><b>{{category}}</b> ({{articles|length}})</a>
+		{% endfor %}
+	</div>
+
+	{% for category, articles in categories %}
+		<a name="{{ category }}"/>
+		<h1><a href="/category/{{ category }}">{{ category }}</a></h1>
+		<div class="list-group">
+		{% for article in articles %}
+				<a href="{{ SITEURL }}/{{ article.url }}" class="list-group-item">
+					<div class="pull-right">
+						<span class="label label-primary">{{ article.category }}</span>
+						{% for tag in article.tags %}
+							<span class="label label-default">{{ tag }}</span>
+						{% endfor %}
+					</div>
+					{{ article.title }}
+				</a>
+		{% endfor %}
+		</div>
+	{% endfor %}
+{% endblock %}
