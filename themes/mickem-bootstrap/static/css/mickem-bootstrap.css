@@ -221,7 +221,31 @@ p.standfirst {
  */
  
 .related-posts img {
-  width: 200px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.related-posts .image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.related-posts .caption h3 {
+  line-height:1.2em;
+  height: 1.2em;
+  overflow: hidden;
+}
+.related-posts .caption .summary {
+  height: 70px;
+  overflow: hidden;
+  line-height:1.2em;
+  height: 3.6em;
 }
 
 /* 

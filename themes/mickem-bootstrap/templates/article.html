@@ -110,13 +110,13 @@
 				{% if loop.index < 4 %}
 					<div class="col-sm-6 col-md-4">
 						<div class="thumbnail">
-							{% if related_post.image %}
-								<img src="{{ related_post.image }}" alt="{{ related_post.title }}">
-							{% endif %}
+							<div class="image" style="background-image: url({{ related_post.image }});">
+							</div>
 							<div class="caption">
-								<h3>{{ related_post.title }}</h3>
-								<p>{{ related_post.summary|truncate(100) }}</p>
-								<p><a href="{{ SITEURL }}/{{ related_post.url }}" class="btn btn-primary" role="button">Read more...</a></p>
+								<h3><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></h3>
+								<div class="summary">
+									{{ related_post.summary }}
+								</div>
 							</div>
 						</div>
 					</div>
