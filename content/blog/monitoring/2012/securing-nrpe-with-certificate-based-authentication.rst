@@ -1,7 +1,7 @@
 Securing NRPE with certificate based authentication
 ###################################################
 :date: 2012-12-02 23:13
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: icinga, nagios, nsclient++, security, ssl
 :slug: securing-nrpe-with-certificate-based-authentication

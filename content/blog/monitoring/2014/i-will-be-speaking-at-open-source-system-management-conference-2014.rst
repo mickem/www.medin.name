@@ -1,7 +1,7 @@
 I will be speaking at: Open Source System Management Conference 2014
 ####################################################################
 :date: 2014-03-20 08:16
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: conference, monitoring, naemon, nagios
 :slug: i-will-be-speaking-at-open-source-system-management-conference-2014

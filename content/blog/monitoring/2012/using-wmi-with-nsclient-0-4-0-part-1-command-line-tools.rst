@@ -1,7 +1,7 @@
 Using WMI with NSClient++ 0.4.0 Part 1: Command line tools
 ##########################################################
 :date: 2012-03-09 00:52
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: monitoring, NSCP, windows, WMI
 :slug: using-wmi-with-nsclient-0-4-0-part-1-command-line-tools

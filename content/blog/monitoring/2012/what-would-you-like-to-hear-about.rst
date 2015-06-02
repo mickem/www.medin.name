@@ -1,7 +1,7 @@
 What would you like to hear about?
 ##################################
 :date: 2012-06-14 12:20
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: conference, monitoring, OSMC
 :slug: what-would-you-like-to-hear-about

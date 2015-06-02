@@ -1,7 +1,7 @@
 Unit test your monitoring: Introducing unit tests in Python for NSClient++
 ##########################################################################
 :date: 2011-10-23 21:28
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: monitoring, NSCP, python, unit test
 :slug: creating-nsclient-unit-tests-in-python

@@ -1,7 +1,7 @@
 A walk down memory lane…
 ########################
 :date: 2013-12-12 01:22
-:author: mickem
+:author: Michael Medin
 :category: Development
 :tags: addembler, asm, code, history
 :slug: a-walk-down-memory-lane

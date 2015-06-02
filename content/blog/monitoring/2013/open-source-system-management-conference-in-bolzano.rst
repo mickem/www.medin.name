@@ -1,7 +1,7 @@
 Open Source System Management Conference in Bolzano
 ###################################################
 :date: 2013-04-29 22:15
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: conference, monitoring, nsclient++, ossmc, travel
 :slug: open-source-system-management-conference-in-bolzano

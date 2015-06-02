@@ -1,7 +1,7 @@
 Summer projects
 ###############
 :date: 2012-07-25 23:47
-:author: mickem
+:author: Michael Medin
 :category: Personal
 :tags: construction, vacation
 :slug: summer-projects

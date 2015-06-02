@@ -1,7 +1,7 @@
 Is poetry like programming: language Agnostic?
 ##############################################
 :date: 2013-05-29 22:19
-:author: mickem
+:author: Michael Medin
 :category: Development
 :tags: c++, family, Java, poetry, programming, python
 :slug: is-poetry-like-programming-language-agnostic

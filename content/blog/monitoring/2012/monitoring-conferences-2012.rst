@@ -1,7 +1,7 @@
 Monitoring Conferences 2012!
 ############################
 :date: 2012-04-14 09:29
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: conference, icinga, nagios, nagios world, OSMC
 :slug: monitoring-conferences-2012

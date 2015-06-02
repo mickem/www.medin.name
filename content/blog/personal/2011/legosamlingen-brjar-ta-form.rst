@@ -1,7 +1,7 @@
 Legosamlingen börjar ta form
 ############################
 :date: 2011-10-27 07:31
-:author: mickem
+:author: Michael Medin
 :category: Personal
 :tags: evelina, lego
 :slug: legosamlingen-brjar-ta-form

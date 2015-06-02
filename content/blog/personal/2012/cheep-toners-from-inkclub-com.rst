@@ -1,7 +1,7 @@
 “Cheep toners” from InkClub.com?
 ################################
 :date: 2012-04-14 22:28
-:author: mickem
+:author: Michael Medin
 :category: Personal
 :tags: inkclub, tech
 :slug: cheep-toners-from-inkclub-com

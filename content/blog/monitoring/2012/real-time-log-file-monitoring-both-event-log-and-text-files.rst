@@ -1,7 +1,7 @@
 Real-time log file monitoring (both event log and text files)
 #############################################################
 :date: 2012-11-26 23:50
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: eventlog, icinga, nagios, nsclient++, realtime
 :slug: real-time-log-file-monitoring-both-event-log-and-text-files

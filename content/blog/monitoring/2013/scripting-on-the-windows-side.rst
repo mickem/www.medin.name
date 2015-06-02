@@ -1,7 +1,7 @@
 Scripting on the Windows side
 #############################
 :date: 2013-01-28 21:43
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: monitoring, nrpe, nsclient++, NSCP, scripting, windows
 :slug: scripting-on-the-windows-side

@@ -1,7 +1,7 @@
 The Cake is not a lie!
 ######################
 :date: 2014-05-25 15:51
-:author: mickem
+:author: Michael Medin
 :category: Personal
 :tags: birthday, cake, family, photo
 :slug: the-cake-is-not-a-lie

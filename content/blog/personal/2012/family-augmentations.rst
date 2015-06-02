@@ -1,7 +1,7 @@
 Family augmentations
 ####################
 :date: 2012-06-10 23:21
-:author: mickem
+:author: Michael Medin
 :category: Personal
 :tags: evelina, family, health-care, sophia
 :slug: family-augmentations

@@ -1,7 +1,7 @@
 Seriously sad adobe…
 ####################
 :date: 2013-12-14 08:42
-:author: mickem
+:author: Michael Medin
 :category: Development
 :tags: adobe, fail
 :slug: seriously-sad-adobe

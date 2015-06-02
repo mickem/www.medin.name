@@ -1,7 +1,7 @@
 Efficient Work: Context switching via the Keyboard
 ##################################################
 :date: 2012-02-12 10:30
-:author: mickem
+:author: Michael Medin
 :category: Development
 :tags: console, far manager, keyboard, multiple monitors, unix, windows, windows 7
 :slug: efficient-work-context-switching-via-the-keyboard

@@ -1,7 +1,7 @@
 Trip to China: Dong Xing, Part 1 [1/4]
 ######################################
 :date: 2013-03-14 01:49
-:author: mickem
+:author: Michael Medin
 :category: Personal
 :tags: china, photo, travel, vacation
 :slug: trip-to-china-dong-xing-part-1

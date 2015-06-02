@@ -1,7 +1,7 @@
 Thumbnail 1000:s of photos on a Synology NAS (in hours not months)
 ##################################################################
 :date: 2012-04-22 08:00
-:author: mickem
+:author: Michael Medin
 :category: Personal
 :tags: gallery, photo, synology
 :slug: thumbnail-1000s-of-photos-on-a-synology-nas-in-hours-not-months

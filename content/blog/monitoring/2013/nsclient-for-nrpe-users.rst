@@ -1,7 +1,7 @@
 NSClient++ for NRPE users
 #########################
 :date: 2013-06-05 07:42
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: icinga, nagios, nrpe, nsclient++, NSCP
 :slug: nsclient-for-nrpe-users

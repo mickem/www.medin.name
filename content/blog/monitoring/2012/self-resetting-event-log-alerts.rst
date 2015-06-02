@@ -1,7 +1,7 @@
 Self-resetting event log alerts
 ###############################
 :date: 2012-09-09 22:26
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: eventlog, icinga, nagios, nsclient++, windows
 :slug: self-resetting-event-log-alerts

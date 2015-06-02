@@ -1,7 +1,7 @@
 Open Source Monitoring Conference 2013
 ######################################
 :date: 2013-11-04 09:11
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: conference, icinga, nagios, netways, nsclient++, NSCP, OSMC, travel
 :slug: open-source-monitoring-conference-2013

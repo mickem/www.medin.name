@@ -1,7 +1,7 @@
 Vissa saker ändras aldrig…
 ##########################
 :date: 2012-02-23 21:51
-:author: mickem
+:author: Michael Medin
 :category: Personal
 :tags: books, childhood, skrot-nisse
 :slug: vissa-saker-ndras-aldrig

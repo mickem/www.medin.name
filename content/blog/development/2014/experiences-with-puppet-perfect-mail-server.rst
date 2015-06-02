@@ -1,7 +1,7 @@
 Experiences with puppet: "Perfect mail server"
 ##############################################
 :date: 2014-10-02 21:22
-:author: mickem
+:author: Michael Medin
 :category: Development
 :tags: automation, mail, puppet, review
 :slug: experiences-with-puppet-perfect-mail-server

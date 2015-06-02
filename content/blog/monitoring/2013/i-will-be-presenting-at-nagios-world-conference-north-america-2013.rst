@@ -1,7 +1,7 @@
 I will be presenting at Nagios World Conference North America 2013!
 ###################################################################
 :date: 2013-06-04 08:58
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: conference, monitoring, nagios, nsclient++, NSCP
 :slug: i-will-be-presenting-at-nagios-world-conference-north-america-2013

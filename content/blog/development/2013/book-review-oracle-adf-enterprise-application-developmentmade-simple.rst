@@ -1,7 +1,7 @@
 Book review: Oracle ADF Enterprise Application Development—Made Simple
 ######################################################################
 :date: 2013-01-24 21:43
-:author: mickem
+:author: Michael Medin
 :category: Development
 :tags: forms, oracle, review
 :slug: book-review-oracle-adf-enterprise-application-developmentmade-simple

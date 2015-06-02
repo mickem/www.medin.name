@@ -1,7 +1,7 @@
 Putting some client into NSClient
 #################################
 :date: 2012-12-16 09:33
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: icinga, nagios, nrpe, nsca, nsclient++
 :slug: putting-some-client-into-nsclient

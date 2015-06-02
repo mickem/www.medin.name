@@ -1,7 +1,7 @@
 Embedding Python inside a multithreaded C++ program
 ###################################################
 :date: 2012-02-12 15:44
-:author: mickem
+:author: Michael Medin
 :category: Development
 :tags: boost, c++, python
 :slug: embedding-python-inside-a-multithreaded-c-program

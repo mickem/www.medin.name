@@ -1,7 +1,7 @@
 The end of an era: Apoteket!
 ############################
 :date: 2012-01-31 00:13
-:author: mickem
+:author: Michael Medin
 :category: Personal
 :tags: music, oracle, work
 :slug: the-end-of-an-era-apoteket

@@ -1,7 +1,7 @@
 Book review: Developing Web Applications with Oracle ADF Essentials
 ###################################################################
 :date: 2013-11-18 23:47
-:author: mickem
+:author: Michael Medin
 :category: Development
 :tags: Adf, Java, oracle, Packt, review
 :slug: book-review-developing-web-applications-with-oracle-adf-essentials

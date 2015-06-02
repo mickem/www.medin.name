@@ -1,7 +1,7 @@
 Gallery 3: A modern web gallery?
 ################################
 :date: 2011-10-30 19:58
-:author: mickem
+:author: Michael Medin
 :category: Development
 :tags: code style, css, gallery, js, photo, php, web
 :slug: gallery-3-a-modern-web-gallery

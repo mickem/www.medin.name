@@ -1,7 +1,7 @@
 Radar group Integrate 2 Innovate
 ################################
 :date: 2014-05-26 06:46
-:author: mickem
+:author: Michael Medin
 :category: Development
 :tags: conference, connecta, continuous delivery, oracle, OSMC, SOA
 :slug: radar-group-integrate-2-innovate

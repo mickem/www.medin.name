@@ -1,7 +1,7 @@
 A conference to remember…
 #########################
 :date: 2013-10-28 21:15
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: conference, family, famousInGermany, nsclient++, NSCP, OSMC, travel
 :slug: a-conference-to-remember

@@ -1,7 +1,7 @@
 Real time event-log monitoring with NSClient++
 ##############################################
 :date: 2012-03-20 08:41
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: eventlog, monitoring, nagios, NSCP
 :slug: real-time-event-log-monitoring-with-nsclient

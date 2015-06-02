@@ -1,7 +1,7 @@
 Slides from my OSMC 2012 presentation
 #####################################
 :date: 2012-10-26 08:05
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: book, conference, demo, nsclient++, OSMC, slides
 :slug: slides-from-my-osmc-2012-presentation

@@ -1,7 +1,7 @@
 Nagios World Conference vs. Open Source Monitoring Conference?
 ##############################################################
 :date: 2011-12-05 21:35
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: conference, monitoring, nagios, NWC, OSMC
 :slug: nagios-world-conference-vs-open-source-monitoring-conference

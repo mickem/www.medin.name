@@ -1,7 +1,7 @@
 Trip to China: Vietnam [2/4]
 ############################
 :date: 2013-03-18 00:55
-:author: mickem
+:author: Michael Medin
 :category: Personal
 :tags: china, travel, vacation, vietnam
 :slug: trip-to-china-vietnam-24

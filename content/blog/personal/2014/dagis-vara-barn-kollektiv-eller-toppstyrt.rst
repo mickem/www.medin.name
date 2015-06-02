@@ -1,7 +1,7 @@
 Dagis Våra Barn: Kollektiv eller toppstyrt?
 ###########################################
 :date: 2014-09-27 08:45
-:author: mickem
+:author: Michael Medin
 :category: Personal
 :tags: daycare, family, swedish, våra barn
 :slug: dagis-vara-barn-kollektiv-eller-toppstyrt

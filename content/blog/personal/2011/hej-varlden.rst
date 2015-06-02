@@ -1,7 +1,7 @@
 What’s this blog about?
 #######################
 :date: 2011-10-16 13:11
-:author: mickem
+:author: Michael Medin
 :category: Personal
 :slug: hej-varlden
 :image: /images/image.png

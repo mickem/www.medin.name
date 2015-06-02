@@ -1,7 +1,7 @@
 Review: Open Source Monitoring Conference 2011
 ##############################################
 :date: 2011-12-06 21:21
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: conference, icinga, nagios, netways, OSMC
 :slug: review-open-source-monitoring-conference-2011

@@ -1,7 +1,7 @@
 En helt sjuk jul…
 #################
 :date: 2011-12-31 17:37
-:author: mickem
+:author: Michael Medin
 :category: Personal
 :tags: family, swedish, xmas
 :slug: en-helt-sjuk-jul

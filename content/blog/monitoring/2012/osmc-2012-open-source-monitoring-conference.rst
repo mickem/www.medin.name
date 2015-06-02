@@ -1,7 +1,7 @@
 OSMC 2012 - Open Source Monitoring Conference
 #############################################
 :date: 2012-10-22 23:14
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: cern, conference, icinga, nagios, nsclient++, OSMC, review, twitter, zabbix
 :slug: osmc-2012-open-source-monitoring-conference

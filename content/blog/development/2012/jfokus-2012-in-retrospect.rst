@@ -1,7 +1,7 @@
 JFokus 2012 in retrospect
 #########################
 :date: 2012-02-19 09:04
-:author: mickem
+:author: Michael Medin
 :category: Development
 :tags: conference, Java, JFokus, review
 :slug: jfokus-2012-in-retrospect

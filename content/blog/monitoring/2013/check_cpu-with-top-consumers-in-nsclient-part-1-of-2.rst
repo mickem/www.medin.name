@@ -1,7 +1,7 @@
 check_cpu with top consumers in NSClient++ (part 1 of 2)
 ########################################################
 :date: 2013-12-04 22:11
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: lua, monitoring, nagios, nsclient++, NSCP, script, windows
 :slug: check_cpu-with-top-consumers-in-nsclient-part-1-of-2

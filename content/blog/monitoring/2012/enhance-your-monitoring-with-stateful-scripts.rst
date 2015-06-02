@@ -1,7 +1,7 @@
 Enhance your monitoring with stateful scripts
 #############################################
 :date: 2012-11-26 00:25
-:author: mickem
+:author: Michael Medin
 :category: Monitoring
 :tags: icinga, lua, nagios, nsclient++, scripting, windows
 :slug: enhance-your-monitoring-with-stateful-scripts
