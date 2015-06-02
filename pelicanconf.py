@@ -9,7 +9,7 @@ AUTHOR = 'Michael Medin'
 SITENAME = 'Michael Medin'
 SITESUBTITLE = 'Random thoughts on development, monitoring and family life…'
 STARTING_YEAR = 2011
-SITEURL = '"http://www.medin.name'
+SITEURL = ''
 DEBUG = True
 
 THEME = "themes/mickem-bootstrap"
@@ -51,8 +51,18 @@ ARCHIVES_URL = 'archive'
 ARCHIVES_SAVE_AS = 'archive/index.html'
 CATEGORIES_URL = 'category'
 CATEGORIES_SAVE_AS = 'category/index.html'
-TAGS_URL = 'tags'
-TAGS_SAVE_AS = 'tags/index.html'
+AUTHORS_URL = 'authors'
+AUTHORS_SAVE_AS = 'authors/{slug}/index.html'
+TAGS_URL = 'tag'
+TAGS_SAVE_AS = 'tag/index.html'
+TAG_URL = 'tag/{slug}/'
+TAG_SAVE_AS = 'tag/{slug}/index.html'
+
+#PAGINATION_PATTERNS = (
+#    (1, '{base_name}/', '{base_name}/index.html'),
+#    (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
+#)
+
 
 # Social widget
 SOCIAL = (("Github", "https://github.com/mickem"),
@@ -93,7 +103,6 @@ TAG_SAVE_AS = 'tag/{slug}/index.html'
 
 STYLESHEET_FILES = ("pygment.css", "mickem-bootstrap.css",)
 
-DISQUS_SITENAME = "michaelmedin"
 #######################################################################
 #                             Extensions                              #
 #######################################################################
