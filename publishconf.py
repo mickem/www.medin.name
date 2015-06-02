@@ -12,7 +12,7 @@ from pelicanconf import *
 
 PLUGINS += ["minify"]
 
-SITEURL = ''
+SITEURL = 'http://www.medin.name'
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'

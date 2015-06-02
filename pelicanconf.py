@@ -9,7 +9,7 @@ AUTHOR = 'Michael Medin'
 SITENAME = 'Michael Medin'
 SITESUBTITLE = 'Random thoughts on development, monitoring and family life…'
 STARTING_YEAR = 2011
-SITEURL = ""
+SITEURL = '"http://www.medin.name'
 DEBUG = True
 
 THEME = "themes/mickem-bootstrap"
@@ -76,7 +76,7 @@ FAVICON = '/images/michael-medin.jpg'
 ARTICLE_PATHS = ['blog']
 PAGE_PATHS = ['pages']
 
-GOOGLE_SEARCH = True
+GOOGLE_SEARCH = "009388823403057951110:jwq9vehc3_q"
 
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
@@ -93,6 +93,7 @@ TAG_SAVE_AS = 'tag/{slug}/index.html'
 
 STYLESHEET_FILES = ("pygment.css", "mickem-bootstrap.css",)
 
+DISQUS_SITENAME = "michaelmedin"
 #######################################################################
 #                             Extensions                              #
 #######################################################################
