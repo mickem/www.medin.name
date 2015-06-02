@@ -124,6 +124,19 @@ a:hover {
   font-size: 72px;
   margin-bottom: -10px;
 }
+@media (max-width: 750px) {
+	.index-banner {
+		top: 10px;
+		left: 20px;
+	}
+	.banner {
+		font-size: 8px;
+	}
+	.banner h1 {
+	  font-size: 32px;
+	}
+}
+
 .navbar-brand {
   font-family: Lobster, cursive;
   font-size: 32px;
