@@ -5,8 +5,8 @@ I will be speaking at: Open Source System Management Conference 2014
 :category: Monitoring
 :tags: conference, monitoring, naemon, nagios
 :slug: i-will-be-speaking-at-open-source-system-management-conference-2014
-:image: /images/bolzano-overview.png
-:social_image: /images/bolzano-overview.png
+:image: /images/thumbnails/300x-/bolzano-overview.png
+:social_image: /images/thumbnails/300x-/bolzano-overview.png
 
 I will be speaking at the Open Source System Management Conference  in
 Bolzano this year which is held at Sheraton on April 10.

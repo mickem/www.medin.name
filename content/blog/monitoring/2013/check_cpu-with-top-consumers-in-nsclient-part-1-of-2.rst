@@ -5,8 +5,8 @@ check_cpu with top consumers in NSClient++ (part 1 of 2)
 :category: Monitoring
 :tags: lua, monitoring, nagios, nsclient++, NSCP, script, windows
 :slug: check_cpu-with-top-consumers-in-nsclient-part-1-of-2
-:image: /images/check_cpu_ex_thumb.png
-:social_image: /images/check_cpu_ex_thumb.png
+:image: /images/check_cpu-with-top-consumers-in-nsclient-part-2-of-2.png
+:social_image: /images/check_cpu-with-top-consumers-in-nsclient-part-2-of-2.png
 
 An often requested feature is to include the top-5 consumers of high CPU
 load in the result from check_cpu (or checkCpu). I have often discarded

@@ -5,7 +5,7 @@ Scripting on the Windows side
 :category: Monitoring
 :tags: monitoring, nrpe, nsclient++, NSCP, scripting, windows
 :slug: scripting-on-the-windows-side
-:image: /images/image.png
+:image: /images/scripting-on-the-windows-side-image.png
 :social_image: /images/image.png
 
 The biggest reason for Nagios success is the ability to
@@ -64,16 +64,14 @@ scripts in Perl, `Python <http://www.python.org/>`__,
 with just make sure the scripting environment is installed and working.
 Best way to do this is to run the script from a windows command line:
 
-|image|
-
 Here you can see the command to test script in red and the resulting
 message in blue.
 
-To see the return status I use ***echo %ERRORLEVEL%*** which displays 0
+To see the return status I use **echo %ERRORLEVEL%** which displays 0
 (marked in green).
 
-Now you might have noticed that when I run the batch script I add ***cmd
-/c “…”*** this is due to a windows oddity with closing the calling
+Now you might have noticed that when I run the batch script I add **cmd
+/c “…”** this is due to a windows oddity with closing the calling
 window when a batch script exits you can discard it but if your batch
 file exits with a status code it will terminate your calling shell if
 you do.
@@ -87,7 +85,7 @@ many node it might be a good idea to place them in a “local” subfolder
 to prevent accidental overwrite if I were to include more scripts in the
 future.
 
-|image|
+.. image:: /images/scripting-on-the-windows-side-image1.png
 
 So now that we (presumably) have our scripts placed somewhere it is time
 to use them from NSClient++.
@@ -99,16 +97,16 @@ The first thing we need is the CheckExternalScritps module which
 provides us with the ability to run scripts. To bring in that module we
 use the following command:
 
-[sourcecode language="bash" padlinenumbers="true"]
- nscp settings --activate-module CheckExternalScripts --add-defaults
- [/sourcecode]
+.. code-block:: bash
+
+   nscp settings --activate-module CheckExternalScripts --add-defaults
 
 This brings in 5 new section and about 50 or so or so new lines in our
 configuration file.
 
-All sections are under ***/settings/external scripts*** so if your
+All sections are under **/settings/external scripts** so if your
 configuration file is bigger you need only care about sections starting
-with ***/settings/external scripts***.
+with **/settings/external scripts**.
 
 Lets run through the sections briefly:
 
@@ -118,7 +116,7 @@ Lets run through the sections briefly:
    Section for aliases (see below), aliases are in short just another
    name for another command.
 -  /settings/external scripts/scripts
-   ***This is where we place the actual scripts!***
+   **This is where we place the actual scripts!**
 -  /settings/external scripts/wrapped scripts
    Another macro based place to place scripts (see below).
 -  /settings/external scripts/wrappings
@@ -133,10 +131,10 @@ same as it is for Nagios but also a rather long and complicated topic
 
 A quick check_ok.bat script looks like this:
 
-[sourcecode language="bash"]
- @echo OK: Everything is going to be fine a
- @exit 0
- [/sourcecode]
+.. code-block:: bash
+
+   @echo OK: Everything is going to be fine a
+   @exit 0
 
 The @ signs prevents the line from being echoed (you can put @echo off
 to disable echoing as well). Anything after echo will be displayed on
@@ -151,10 +149,10 @@ same as in Nagios i.e:
 So if instead we want to return a critical state we would rewrite the
 script like so:
 
-[sourcecode language="bash"]
- @echo OK: Everything is not going to be fine a
- @exit 2
- [/sourcecode]
+.. code-block:: bash
+
+   @echo OK: Everything is not going to be fine a
+   @exit 2
 
 Adding a script
 ---------------
@@ -164,14 +162,12 @@ So lets start by adding a script to the configuration.
 The simplest way to add a script is to create a new key value pair under
 the scripts section like so:
 
-.. code-block:: text
+.. code-block:: ini
 
-     [/settings/external scripts/scripts]
-     custom\_ok = "scripts\\\\custom\\\\check\_ok.bat"
-     custom\_crit = "scripts\\\\custom\\\\check\_crit.bat" "Hello World"
-     custom\_check\_perl = "C:\\strawberry\\\\perl\\\\bin\\\\perl.exe"
-    scripts\\\\custom\\\\check\_perl.pl "Argument 1" "Argument " "$ARG1$"
-    >THE END<
+   [/settings/external scripts/scripts]
+   custom\_ok = "scripts\\\\custom\\\\check\_ok.bat"
+   custom\_crit = "scripts\\\\custom\\\\check\_crit.bat" "Hello World"
+   custom\_check\_perl = "C:\\strawberry\\\\perl\\\\bin\\\\perl.exe" scripts\\\\custom\\\\check\_perl.pl "Argument 1" "Argument " "$ARG1$"
 
 The first keyword "custom\_ok" is the name of the command we just create
 and the latter part is the command to execute. I prefixed my scripts
@@ -224,15 +220,13 @@ So if your script has command line arguments you have three options:
 
 The other issue is how to configure them.
 
-.. code-block:: text
+.. code-block:: ini
 
-     [/settings/external scripts/scripts]
-     custom\_1 = "scripts\\\\custom\\\\check.bat"
-     custom\_2 = "scripts\\\\custom\\\\check.bat" --help
-     custom\_3 = "scripts\\\\custom\\\\check.bat" $ARG1$
-     custom\_4 = "scripts\\\\custom\\\\check.bat" --date $ARG1$ --foo $ARG2$
-    --bar $ARG3$
-    >THE END<
+   [/settings/external scripts/scripts]
+   custom\_1 = "scripts\\\\custom\\\\check.bat"
+   custom\_2 = "scripts\\\\custom\\\\check.bat" --help
+   custom\_3 = "scripts\\\\custom\\\\check.bat" $ARG1$
+   custom\_4 = "scripts\\\\custom\\\\check.bat" --date $ARG1$ --foo $ARG2$ --bar $ARG3$
 
 In this examples we have a few different ways to define arguments. We
 start off running the script with out them and then we have a hard coded
@@ -254,26 +248,21 @@ the Nagios console. This saves you a lot of time and makes life easier.
 But before we get ahead or ourselves lets start with the configuration I
 will use here:
 
-.. code-block:: text
+.. code-block:: ini
 
-     [/modules]
-     CheckExternalScripts = enabled
-     NRPEServer = enabled
-    
-    .. raw:: html
-    
-       </p>
-    
-    [/settings/NRPE/server]
-     allow arguments = true
-    
-    [/settings/external scripts]
-     allow arguments = true
-    
-    [/settings/external scripts/scripts]
-     test1 = scripts\\\\check\_test.bat
-     test2 = scripts\\\\check\_test.bat Hello $ARG1$ "$ARG2$"
-    >THE END<
+   [/modules]
+   CheckExternalScripts = enabled
+   NRPEServer = enabled
+   
+   [/settings/NRPE/server]
+   allow arguments = true
+   
+   [/settings/external scripts]
+   allow arguments = true
+   
+   [/settings/external scripts/scripts]
+   test1 = scripts\\\\check\_test.bat
+   test2 = scripts\\\\check\_test.bat Hello $ARG1$ "$ARG2$"
 
 Here we have enabled NRPE server and CheckExternalScripts we also allow
 arguments and define two scripts test1 and test2.
@@ -283,22 +272,20 @@ NSClient++ in test mode (make sure you have stopped the service):
 
 .. code-block:: text
 
-     d:\\source\\build\\x64\\dist> nscp test
-     ...
-     debug core NSClient++ - 0,4,2,1 2012-08-08 Started!
-     message client Enter command to inject or exit to terminate...
-    >THE END<
+   d:\\source\\build\\x64\\dist> nscp test
+   ...
+   debug core NSClient++ - 0,4,2,1 2012-08-08 Started!
+   message client Enter command to inject or exit to terminate...
 
 Next up we run the first script:
 
 .. code-block:: text
 
-     test1
-     debug core Injecting: test1...
-     debug ext-script Arguments:
-     debug core Result test1: CRITICAL
-     message client CRITICAL:CRITICAL: Everything is not going to be ok! ( )
-    >THE END<
+   test1
+   debug core Injecting: test1...
+   debug ext-script Arguments:
+   debug core Result test1: CRITICAL
+   message client CRITICAL:CRITICAL: Everything is not going to be ok! ( )
 
 Not that exciting we can see the script worked and returned a critical
 state. To make things a bit more interesting lets run the second one
@@ -306,27 +293,24 @@ which takes arguments instead:
 
 .. code-block:: text
 
-     test2 world foo
-     debug core Injecting: test2...
-     debug ext-script Arguments: Hello world foo
-     debug core Result test2: CRITICAL
-     message client CRITICAL:CRITICAL: Everything is not going to be ok!
-    (Hello world foo)
-    >THE END<
+   test2 world foo
+   debug core Injecting: test2...
+   debug ext-script Arguments: Hello world foo
+   debug core Result test2: CRITICAL
+   message client CRITICAL:CRITICAL: Everything is not going to be ok!
+   (Hello world foo)
 
 So arguments seems to work, now since we have enabled NRPE lets try
 locally from NRPE as well to that open up a new console window and run
 the following commands. If it does not work please go back to the first
 console and check the log which usually tells you want is wrong!
 
-[sourcecode language="bash"]
- d:\\source\\nscp\\build\\x64>nscp nrpe -H 127.0.0.1 -- -c test1
- CRITICAL: Everything is not going to be ok! ( )
+.. code-block:: bash
 
-| d:\\source\\nscp\\build\\x64>nscp nrpe -H 127.0.0.1 -- -c test2 -a 1 2
-  3
-|  CRITICAL: Everything is not going to be ok! (Hello 1 2)
-|  [/sourcecode]
+   d:\\source\\nscp\\build\\x64>nscp nrpe -H 127.0.0.1 -- -c test1
+   CRITICAL: Everything is not going to be ok! ( )
+   d:\\source\\nscp\\build\\x64>nscp nrpe -H 127.0.0.1 -- -c test2 -a 1 2 3
+   CRITICAL: Everything is not going to be ok! (Hello 1 2)
 
 Simplifying with wrapped scripts
 --------------------------------
@@ -337,8 +321,8 @@ not once you change from Strawberry to activestate or something similar
 so the command changes for all of them.
 
 To resolve this I added something called wrapped-scripts. The reside in
-the own section called: ***/settings/external scripts/wrapped
-scripts***. Essentially a wrapped script will use a macro during
+the own section called: **/settings/external scripts/wrapped
+scripts**. Essentially a wrapped script will use a macro during
 instantiation splitting the script configuration from the runtime
 configuration.
 
@@ -349,26 +333,20 @@ section) a script with that extension the template will be used.
 The default wrappings are for batch, vba and powershell scripts. But you
 can easily define you own as I have done below for pl scripts.
 
-.. code-block:: text
+.. code-block:: ini
 
-     ; A list of wrappped scripts (ie. using the template mechanism)
-     [/settings/external scripts/wrapped scripts]
-     custom\_ok = check\_ok.bat
-     custom\_crit = check\_crit.bat "Hello World"
-     custom\_check\_perl = check\_perl.pl "Argument 1" "Argument " "$ARG1$"
-    
-    .. raw:: html
-    
-       </p>
-    
-    ; A list of templates for wrapped scripts
-     [/settings/external scripts/wrappings]
-     ; Perl scripts
-     pl = "C:\\\\strawberry\\\\perl\\\\bin\\\\perl.exe"
-      scripts\\\\%SCRIPT% %ARGS%
-     ; BATCH FILE WRAPPING -
-     bat = scripts\\\\%SCRIPT% %ARGS%
-    >THE END<
+   ; A list of wrappped scripts (ie. using the template mechanism)
+   [/settings/external scripts/wrapped scripts]
+   custom\_ok = check\_ok.bat
+   custom\_crit = check\_crit.bat "Hello World"
+   custom\_check\_perl = check\_perl.pl "Argument 1" "Argument " "$ARG1$"
+   
+   ; A list of templates for wrapped scripts
+   [/settings/external scripts/wrappings]
+   ; Perl scripts
+   pl = "C:\\\\strawberry\\\\perl\\\\bin\\\\perl.exe" scripts\\\\%SCRIPT% %ARGS%
+   ; BATCH FILE WRAPPING -
+   bat = scripts\\\\%SCRIPT% %ARGS%
 
 The way it works is that when our .pl script is found it looks up the pl
 template and replaces %SCRIPT% with the name of the script and %ARGS%
@@ -400,11 +378,10 @@ A good example: A standard CheckCPU check might look like this:
 typing to do on the Nagios server since it is always the same you can
 create an alias like so and just call “alias_cpu”.
 
-.. code-block:: text
+.. code-block:: ini
 
-     [/settings/external scripts/alias]
-     alias\_cpu = checkCPU warn=80 crit=90 time=5m time=1m time=30s
-    >THE END<
+   [/settings/external scripts/alias]
+   alias\_cpu = checkCPU warn=80 crit=90 time=5m time=1m time=30s
 
 Conclusion
 ----------
@@ -416,7 +393,3 @@ script if you keep having to type a lot in your script command line.
 And remember alias is not just for scripts just as useful for internal
 commands as well.
 
-.. |image| image:: /images/image_thumb.png
-   :target: /images/image.png
-.. |image2| image:: /images/image_thumb1.png
-   :target: /images/image1.png

@@ -730,167 +730,167 @@ swim” and “old people … should be accompanied by skilled adults”…
 
 With that I end this extremely length post and you can continue reading
 about the continued \ `adventures in
-Vietnam <http://blog.medin.name/2013/03/18/trip-to-china-vietnam-24/>`__!
+Vietnam </blog/2013/03/18/trip-to-china-vietnam-24/>`__!
 
-.. |DSC01230| image:: /images/DSC01230_thumb.jpg
+.. |DSC01230| image:: /images/thumbnails/500x-/DSC01230.jpg
    :target: /images/DSC01230.jpg
-.. |DSC00795| image:: /images/DSC00795_thumb.jpg
+.. |DSC00795| image:: /images/thumbnails/500x-/DSC00795.jpg
    :target: /images/DSC00795.jpg
 .. |Ler| image:: /images/wlEmoticon-smile.png
-.. |DSC00799| image:: /images/DSC00799_thumb.jpg
+.. |DSC00799| image:: /images/thumbnails/500x-/DSC00799.jpg
    :target: /images/DSC00799.jpg
-.. |DSC01215| image:: /images/DSC01215_thumb.jpg
+.. |DSC01215| image:: /images/thumbnails/500x-/DSC01215.jpg
    :target: /images/DSC01215.jpg
-.. |DSC01221| image:: /images/DSC01221_thumb.jpg
+.. |DSC01221| image:: /images/thumbnails/500x-/DSC01221.jpg
    :target: /images/DSC01221.jpg
-.. |DSC01240| image:: /images/DSC01240_thumb.jpg
+.. |DSC01240| image:: /images/thumbnails/500x-/DSC01240.jpg
    :target: /images/DSC01240.jpg
-.. |DSC00887| image:: /images/DSC00887_thumb.jpg
+.. |DSC00887| image:: /images/thumbnails/500x-/DSC00887.jpg
    :target: /images/DSC00887.jpg
-.. |DSC01506| image:: /images/DSC01506_thumb.jpg
+.. |DSC01506| image:: /images/thumbnails/500x-/DSC01506.jpg
    :target: /images/DSC01506.jpg
-.. |DSC01507| image:: /images/DSC01507_thumb.jpg
+.. |DSC01507| image:: /images/thumbnails/500x-/DSC01507.jpg
    :target: /images/DSC01507.jpg
-.. |DSC01510| image:: /images/DSC01510_thumb.jpg
+.. |DSC01510| image:: /images/thumbnails/500x-/DSC01510.jpg
    :target: /images/DSC01510.jpg
-.. |DSC01026| image:: /images/DSC01026_thumb1.jpg
+.. |DSC01026| image:: /images/thumbnails/500x-/DSC010261.jpg
    :target: /images/DSC010261.jpg
-.. |DSC00865| image:: /images/DSC00865_thumb.jpg
+.. |DSC00865| image:: /images/thumbnails/500x-/DSC00865.jpg
    :target: /images/DSC00865.jpg
 .. |Ler med tungan ute| image:: /images/wlEmoticon-smilewithtongueout.png
-.. |DSC00852| image:: /images/DSC00852_thumb2.jpg
+.. |DSC00852| image:: /images/thumbnails/500x-/DSC008522.jpg
    :target: /images/DSC008522.jpg
-.. |DSC01147| image:: /images/DSC01147_thumb2.jpg
+.. |DSC01147| image:: /images/thumbnails/500x-/DSC011472.jpg
    :target: /images/DSC011472.jpg
-.. |DSC01231| image:: /images/DSC01231_thumb1.jpg
+.. |DSC01231| image:: /images/thumbnails/500x-/DSC012311.jpg
    :target: /images/DSC012311.jpg
-.. |DSC00937| image:: /images/DSC00937_thumb1.jpg
+.. |DSC00937| image:: /images/thumbnails/500x-/DSC009371.jpg
    :target: /images/DSC009371.jpg
-.. |DSC00944| image:: /images/DSC00944_thumb.jpg
+.. |DSC00944| image:: /images/thumbnails/500x-/DSC00944.jpg
    :target: /images/DSC00944.jpg
-.. |DSC00945| image:: /images/DSC00945_thumb.jpg
+.. |DSC00945| image:: /images/thumbnails/500x-/DSC00945.jpg
    :target: /images/DSC00945.jpg
-.. |DSC00970| image:: /images/DSC00970_thumb.jpg
+.. |DSC00970| image:: /images/thumbnails/500x-/DSC00970.jpg
    :target: /images/DSC00970.jpg
-.. |DSC01004| image:: /images/DSC01004_thumb.jpg
+.. |DSC01004| image:: /images/thumbnails/500x-/DSC01004.jpg
    :target: /images/DSC01004.jpg
-.. |DSC01008| image:: /images/DSC01008_thumb.jpg
+.. |DSC01008| image:: /images/thumbnails/500x-/DSC01008.jpg
    :target: /images/DSC01008.jpg
-.. |DSC01015| image:: /images/DSC01015_thumb.jpg
+.. |DSC01015| image:: /images/thumbnails/500x-/DSC01015.jpg
    :target: /images/DSC01015.jpg
-.. |DSC01033| image:: /images/DSC01033_thumb.jpg
+.. |DSC01033| image:: /images/thumbnails/500x-/DSC01033.jpg
    :target: /images/DSC01033.jpg
-.. |DSC01019| image:: /images/DSC01019_thumb.jpg
+.. |DSC01019| image:: /images/thumbnails/500x-/DSC01019.jpg
    :target: /images/DSC01019.jpg
-.. |DSC01132| image:: /images/DSC01132_thumb1.jpg
+.. |DSC01132| image:: /images/thumbnails/500x-/DSC011321.jpg
    :target: /images/DSC011321.jpg
-.. |DSC01162| image:: /images/DSC01162_thumb.jpg
+.. |DSC01162| image:: /images/thumbnails/500x-/DSC01162.jpg
    :target: /images/DSC01162.jpg
-.. |DSC01165| image:: /images/DSC01165_thumb.jpg
+.. |DSC01165| image:: /images/thumbnails/500x-/DSC01165.jpg
    :target: /images/DSC01165.jpg
-.. |DSC01205| image:: /images/DSC01205_thumb.jpg
+.. |DSC01205| image:: /images/thumbnails/500x-/DSC01205.jpg
    :target: /images/DSC01205.jpg
-.. |DSC01207| image:: /images/DSC01207_thumb.jpg
+.. |DSC01207| image:: /images/thumbnails/500x-/DSC01207.jpg
    :target: /images/DSC01207.jpg
-.. |DSC01229| image:: /images/DSC01229_thumb.jpg
+.. |DSC01229| image:: /images/thumbnails/500x-/DSC01229.jpg
    :target: /images/DSC01229.jpg
-.. |DSC01248| image:: /images/DSC01248_thumb.jpg
+.. |DSC01248| image:: /images/thumbnails/500x-/DSC01248.jpg
    :target: /images/DSC01248.jpg
-.. |DSC01352| image:: /images/DSC01352_thumb.jpg
+.. |DSC01352| image:: /images/thumbnails/500x-/DSC01352.jpg
    :target: /images/DSC01352.jpg
-.. |DSC01362| image:: /images/DSC01362_thumb.jpg
+.. |DSC01362| image:: /images/thumbnails/500x-/DSC01362.jpg
    :target: /images/DSC01362.jpg
-.. |DSC01292| image:: /images/DSC01292_thumb.jpg
+.. |DSC01292| image:: /images/thumbnails/500x-/DSC01292.jpg
    :target: /images/DSC01292.jpg
-.. |DSC01305| image:: /images/DSC01305_thumb.jpg
+.. |DSC01305| image:: /images/thumbnails/500x-/DSC01305.jpg
    :target: /images/DSC01305.jpg
-.. |DSC01309| image:: /images/DSC01309_thumb.jpg
+.. |DSC01309| image:: /images/thumbnails/500x-/DSC01309.jpg
    :target: /images/DSC01309.jpg
-.. |DSC01307| image:: /images/DSC01307_thumb.jpg
+.. |DSC01307| image:: /images/thumbnails/500x-/DSC01307.jpg
    :target: /images/DSC01307.jpg
-.. |DSC01313| image:: /images/DSC01313_thumb.jpg
+.. |DSC01313| image:: /images/thumbnails/500x-/DSC01313.jpg
    :target: /images/DSC01313.jpg
-.. |DSC01324| image:: /images/DSC01324_thumb.jpg
+.. |DSC01324| image:: /images/thumbnails/500x-/DSC01324.jpg
    :target: /images/DSC01324.jpg
-.. |DSC01380| image:: /images/DSC01380_thumb.jpg
+.. |DSC01380| image:: /images/thumbnails/500x-/DSC01380.jpg
    :target: /images/DSC01380.jpg
-.. |DSC01396| image:: /images/DSC01396_thumb.jpg
+.. |DSC01396| image:: /images/thumbnails/500x-/DSC01396.jpg
    :target: /images/DSC01396.jpg
-.. |DSC01426| image:: /images/DSC01426_thumb.jpg
+.. |DSC01426| image:: /images/thumbnails/500x-/DSC01426.jpg
    :target: /images/DSC01426.jpg
-.. |DSC01427| image:: /images/DSC01427_thumb1.jpg
+.. |DSC01427| image:: /images/thumbnails/500x-/DSC014271.jpg
    :target: /images/DSC014271.jpg
-.. |DSC01429| image:: /images/DSC01429_thumb1.jpg
+.. |DSC01429| image:: /images/thumbnails/500x-/DSC014291.jpg
    :target: /images/DSC014291.jpg
-.. |DSC01431| image:: /images/DSC01431_thumb1.jpg
+.. |DSC01431| image:: /images/thumbnails/500x-/DSC014311.jpg
    :target: /images/DSC014311.jpg
-.. |DSC01434| image:: /images/DSC01434_thumb1.jpg
+.. |DSC01434| image:: /images/thumbnails/500x-/DSC014341.jpg
    :target: /images/DSC014341.jpg
-.. |DSC01437| image:: /images/DSC01437_thumb1.jpg
+.. |DSC01437| image:: /images/thumbnails/500x-/DSC014371.jpg
    :target: /images/DSC014371.jpg
-.. |DSC01453| image:: /images/DSC01453_thumb.jpg
+.. |DSC01453| image:: /images/thumbnails/500x-/DSC01453.jpg
    :target: /images/DSC01453.jpg
-.. |DSC01473| image:: /images/DSC01473_thumb.jpg
+.. |DSC01473| image:: /images/thumbnails/500x-/DSC01473.jpg
    :target: /images/DSC01473.jpg
-.. |DSC01477| image:: /images/DSC01477_thumb.jpg
+.. |DSC01477| image:: /images/thumbnails/500x-/DSC01477.jpg
    :target: /images/DSC01477.jpg
-.. |DSC01480| image:: /images/DSC01480_thumb.jpg
+.. |DSC01480| image:: /images/thumbnails/500x-/DSC01480.jpg
    :target: /images/DSC01480.jpg
-.. |DSC01464| image:: /images/DSC01464_thumb.jpg
+.. |DSC01464| image:: /images/thumbnails/500x-/DSC01464.jpg
    :target: /images/DSC01464.jpg
-.. |DSC01481| image:: /images/DSC01481_thumb.jpg
+.. |DSC01481| image:: /images/thumbnails/500x-/DSC01481.jpg
    :target: /images/DSC01481.jpg
-.. |DSC01517| image:: /images/DSC01517_thumb.jpg
+.. |DSC01517| image:: /images/thumbnails/500x-/DSC01517.jpg
    :target: /images/DSC01517.jpg
-.. |DSC01557| image:: /images/DSC01557_thumb.jpg
+.. |DSC01557| image:: /images/thumbnails/500x-/DSC01557.jpg
    :target: /images/DSC01557.jpg
-.. |DSC01558| image:: /images/DSC01558_thumb.jpg
+.. |DSC01558| image:: /images/thumbnails/500x-/DSC01558.jpg
    :target: /images/DSC01558.jpg
-.. |DSC01569| image:: /images/DSC01569_thumb.jpg
+.. |DSC01569| image:: /images/thumbnails/500x-/DSC01569.jpg
    :target: /images/DSC01569.jpg
-.. |DSC01538| image:: /images/DSC01538_thumb.jpg
+.. |DSC01538| image:: /images/thumbnails/500x-/DSC01538.jpg
    :target: /images/DSC01538.jpg
-.. |DSC01540| image:: /images/DSC01540_thumb.jpg
+.. |DSC01540| image:: /images/thumbnails/500x-/DSC01540.jpg
    :target: /images/DSC01540.jpg
-.. |DSC01545| image:: /images/DSC01545_thumb.jpg
+.. |DSC01545| image:: /images/thumbnails/500x-/DSC01545.jpg
    :target: /images/DSC01545.jpg
-.. |DSC01549| image:: /images/DSC01549_thumb.jpg
+.. |DSC01549| image:: /images/thumbnails/500x-/DSC01549.jpg
    :target: /images/DSC01549.jpg
-.. |DSC01630| image:: /images/DSC01630_thumb.jpg
+.. |DSC01630| image:: /images/thumbnails/500x-/DSC01630.jpg
    :target: /images/DSC01630.jpg
-.. |DSC01627| image:: /images/DSC01627_thumb.jpg
+.. |DSC01627| image:: /images/thumbnails/500x-/DSC01627.jpg
    :target: /images/DSC01627.jpg
-.. |DSC01631| image:: /images/DSC01631_thumb.jpg
+.. |DSC01631| image:: /images/thumbnails/500x-/DSC01631.jpg
    :target: /images/DSC01631.jpg
-.. |DSC01609| image:: /images/DSC01609_thumb.jpg
+.. |DSC01609| image:: /images/thumbnails/500x-/DSC01609.jpg
    :target: /images/DSC01609.jpg
-.. |DSC01735| image:: /images/DSC01735_thumb.jpg
+.. |DSC01735| image:: /images/thumbnails/500x-/DSC01735.jpg
    :target: /images/DSC01735.jpg
-.. |DSC01660| image:: /images/DSC01660_thumb.jpg
+.. |DSC01660| image:: /images/thumbnails/500x-/DSC01660.jpg
    :target: /images/DSC01660.jpg
-.. |DSC01710| image:: /images/DSC01710_thumb.jpg
+.. |DSC01710| image:: /images/thumbnails/500x-/DSC01710.jpg
    :target: /images/DSC01710.jpg
-.. |DSC01756| image:: /images/DSC01756_thumb.jpg
+.. |DSC01756| image:: /images/thumbnails/500x-/DSC01756.jpg
    :target: /images/DSC01756.jpg
-.. |DSC01766| image:: /images/DSC01766_thumb.jpg
+.. |DSC01766| image:: /images/thumbnails/500x-/DSC01766.jpg
    :target: /images/DSC01766.jpg
-.. |DSC01765| image:: /images/DSC01765_thumb.jpg
+.. |DSC01765| image:: /images/thumbnails/500x-/DSC01765.jpg
    :target: /images/DSC01765.jpg
-.. |DSC01782| image:: /images/DSC01782_thumb.jpg
+.. |DSC01782| image:: /images/thumbnails/500x-/DSC01782.jpg
    :target: /images/DSC01782.jpg
-.. |DSC01788| image:: /images/DSC01788_thumb.jpg
+.. |DSC01788| image:: /images/thumbnails/500x-/DSC01788.jpg
    :target: /images/DSC01788.jpg
-.. |DSC01797| image:: /images/DSC01797_thumb.jpg
+.. |DSC01797| image:: /images/thumbnails/500x-/DSC01797.jpg
    :target: /images/DSC01797.jpg
-.. |DSC01798| image:: /images/DSC01798_thumb.jpg
+.. |DSC01798| image:: /images/thumbnails/500x-/DSC01798.jpg
    :target: /images/DSC01798.jpg
-.. |DSC01803| image:: /images/DSC01803_thumb.jpg
+.. |DSC01803| image:: /images/thumbnails/500x-/DSC01803.jpg
    :target: /images/DSC01803.jpg
-.. |DSC01828| image:: /images/DSC01828_thumb.jpg
+.. |DSC01828| image:: /images/thumbnails/500x-/DSC01828.jpg
    :target: /images/DSC01828.jpg
-.. |DSC01807| image:: /images/DSC01807_thumb.jpg
+.. |DSC01807| image:: /images/thumbnails/500x-/DSC01807.jpg
    :target: /images/DSC01807.jpg
-.. |DSC01860| image:: /images/DSC01860_thumb.jpg
+.. |DSC01860| image:: /images/thumbnails/500x-/DSC01860.jpg
    :target: /images/DSC01860.jpg
-.. |DSC01932| image:: /images/DSC01932_thumb.jpg
+.. |DSC01932| image:: /images/thumbnails/500x-/DSC01932.jpg
    :target: /images/DSC01932.jpg

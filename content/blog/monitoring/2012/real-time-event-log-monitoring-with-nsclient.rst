@@ -5,8 +5,9 @@ Real time event-log monitoring with NSClient++
 :category: Monitoring
 :tags: eventlog, monitoring, nagios, NSCP
 :slug: real-time-event-log-monitoring-with-nsclient
-:image: /images/image_thumb.png
-:social_image: /images/image_thumb.png
+:image: /images/real-time-event-log-monitoring-with-nsclient-image.png
+:social_image: /images/real-time-event-log-monitoring-with-nsclient-image.png
+
 
 Monitoring the event log can quickly become straining for both the
 computer as well as the administrator as the event log grows and grows.
@@ -419,10 +420,10 @@ know what you want me to write about next!
 **UPDATE:** Added information about check_eventlog_cache being
 replaced by the more generic check_cache.
 
-.. |image| image:: /images/image_thumb.png
-   :target: /images/image.png
-.. |image2| image:: /images/image_thumb1.png
-   :target: /images/image1.png
-.. |image3| image:: /images/image_thumb2.png
-   :target: /images/image2.png
+.. |image| image:: /images/real-time-event-log-monitoring-with-nsclient-image.png
+   :target: /images/real-time-event-log-monitoring-with-nsclient-image.png
+.. |image2| image:: /images/real-time-event-log-monitoring-with-nsclient-image1.png
+   :target: /images/real-time-event-log-monitoring-with-nsclient-image1.png
+.. |image3| image:: /images/real-time-event-log-monitoring-with-nsclient-image2.png
+   :target: /images/real-time-event-log-monitoring-with-nsclient-image2.png
 .. |Ler| image:: /images/wlEmoticon-smile1.png

@@ -12,7 +12,7 @@ Might sounds like a strange title since Vietnam is by no means a part of
 China but we decided to take a vacation from our vacation and head over
 to Ha Long Bay in Vietnam. The first part of this trip has already been
 chronicled in the first trip report: `Trip to China: Dong Xing, Part
-1 <http://blog.medin.name/?p=686>`__ and later parts will be published
+1 <http://www.medin.name/blog/2013/03/14/trip-to-china-dong-xing-part-1/>` and later parts will be published
 in a bit.
 
 .. PELICAN_END_SUMMARY
@@ -615,121 +615,121 @@ communism I leave you for this time and will try to get back in a day or
 so with the third epos in this saga which is about our triumphant return
 to china!
 
-.. |DSC02385| image:: /images/DSC02385_thumb.jpg
+.. |DSC02385| image:: /images/thumbnails/500x-/DSC02385.jpg
    :target: /images/DSC02385.jpg
-.. |DSC01946| image:: /images/DSC01946_thumb.jpg
+.. |DSC01946| image:: /images/thumbnails/500x-/DSC01946.jpg
    :target: /images/DSC01946.jpg
-.. |DSC01948| image:: /images/DSC01948_thumb.jpg
+.. |DSC01948| image:: /images/thumbnails/500x-/DSC01948.jpg
    :target: /images/DSC01948.jpg
-.. |DSC01950| image:: /images/DSC01950_thumb.jpg
+.. |DSC01950| image:: /images/thumbnails/500x-/DSC01950.jpg
    :target: /images/DSC01950.jpg
-.. |DSC01957| image:: /images/DSC01957_thumb.jpg
+.. |DSC01957| image:: /images/thumbnails/500x-/DSC01957.jpg
    :target: /images/DSC01957.jpg
-.. |DSC01959| image:: /images/DSC01959_thumb.jpg
+.. |DSC01959| image:: /images/thumbnails/500x-/DSC01959.jpg
    :target: /images/DSC01959.jpg
-.. |DSC01964| image:: /images/DSC01964_thumb.jpg
+.. |DSC01964| image:: /images/thumbnails/500x-/DSC01964.jpg
    :target: /images/DSC01964.jpg
-.. |DSC02012| image:: /images/DSC02012_thumb.jpg
+.. |DSC02012| image:: /images/thumbnails/500x-/DSC02012.jpg
    :target: /images/DSC02012.jpg
-.. |DSC01988| image:: /images/DSC01988_thumb.jpg
+.. |DSC01988| image:: /images/thumbnails/500x-/DSC01988.jpg
    :target: /images/DSC01988.jpg
-.. |DSC02000| image:: /images/DSC02000_thumb.jpg
+.. |DSC02000| image:: /images/thumbnails/500x-/DSC02000.jpg
    :target: /images/DSC02000.jpg
-.. |image| image:: /images/image_thumb.png
+.. |image| image:: /images/thumbnails/500x-/trip-to-china-vietnam-24-image.png
    :target: /images/image.png
-.. |DSC02004| image:: /images/DSC02004_thumb.jpg
+.. |DSC02004| image:: /images/thumbnails/500x-/DSC02004.jpg
    :target: /images/DSC02004.jpg
-.. |image1| image:: /images/image_thumb1.png
+.. |image1| image:: /images/thumbnails/500x-/trip-to-china-vietnam-24-image1.png
    :target: /images/image1.png
-.. |DSC02065| image:: /images/DSC02065_thumb.jpg
+.. |DSC02065| image:: /images/thumbnails/500x-/DSC02065.jpg
    :target: /images/DSC02065.jpg
-.. |DSC02062| image:: /images/DSC02062_thumb.jpg
+.. |DSC02062| image:: /images/thumbnails/500x-/DSC02062.jpg
    :target: /images/DSC02062.jpg
-.. |DSC02064| image:: /images/DSC02064_thumb.jpg
+.. |DSC02064| image:: /images/thumbnails/500x-/DSC02064.jpg
    :target: /images/DSC02064.jpg
-.. |DSC02078| image:: /images/DSC02078_thumb.jpg
+.. |DSC02078| image:: /images/thumbnails/500x-/DSC02078.jpg
    :target: /images/DSC02078.jpg
-.. |DSC02131| image:: /images/DSC02131_thumb.jpg
+.. |DSC02131| image:: /images/thumbnails/500x-/DSC02131.jpg
    :target: /images/DSC02131.jpg
-.. |DSC02139| image:: /images/DSC02139_thumb.jpg
+.. |DSC02139| image:: /images/thumbnails/500x-/DSC02139.jpg
    :target: /images/DSC02139.jpg
-.. |DSC02147| image:: /images/DSC02147_thumb.jpg
+.. |DSC02147| image:: /images/thumbnails/500x-/DSC02147.jpg
    :target: /images/DSC02147.jpg
-.. |image2| image:: /images/image_thumb2.png
+.. |image2| image:: /images/thumbnails/500x-/image2.png
    :target: /images/image2.png
 .. |Ler| image:: /images/wlEmoticon-smile2.png
-.. |DSC02160| image:: /images/DSC02160_thumb.jpg
+.. |DSC02160| image:: /images/thumbnails/500x-/DSC02160.jpg
    :target: /images/DSC02160.jpg
 .. |image23| image:: http://www.benhvienbaichay.vn/data/upload_file/Image/logo/anhbenhvien760.jpg
-.. |DSC02152| image:: /images/DSC02152_thumb.jpg
+.. |DSC02152| image:: /images/thumbnails/500x-/DSC02152.jpg
    :target: /images/DSC02152.jpg
-.. |DSC02163| image:: /images/DSC02163_thumb1.jpg
+.. |DSC02163| image:: /images/thumbnails/500x-/DSC021631.jpg
    :target: /images/DSC021631.jpg
-.. |DSC02189| image:: /images/DSC02189_thumb.jpg
+.. |DSC02189| image:: /images/thumbnails/500x-/DSC02189.jpg
    :target: /images/DSC02189.jpg
-.. |DSC02196| image:: /images/DSC02196_thumb.jpg
+.. |DSC02196| image:: /images/thumbnails/500x-/DSC02196.jpg
    :target: /images/DSC02196.jpg
-.. |DSC02212| image:: /images/DSC02212_thumb.jpg
+.. |DSC02212| image:: /images/thumbnails/500x-/DSC02212.jpg
    :target: /images/DSC02212.jpg
-.. |DSC02318| image:: /images/DSC02318_thumb.jpg
+.. |DSC02318| image:: /images/thumbnails/500x-/DSC02318.jpg
    :target: /images/DSC02318.jpg
-.. |DSC02332| image:: /images/DSC02332_thumb.jpg
+.. |DSC02332| image:: /images/thumbnails/500x-/DSC02332.jpg
    :target: /images/DSC02332.jpg
-.. |DSC02372| image:: /images/DSC02372_thumb.jpg
+.. |DSC02372| image:: /images/thumbnails/500x-/DSC02372.jpg
    :target: /images/DSC02372.jpg
-.. |DSC02370| image:: /images/DSC02370_thumb.jpg
+.. |DSC02370| image:: /images/thumbnails/500x-/DSC02370.jpg
    :target: /images/DSC02370.jpg
-.. |DSC02330| image:: /images/DSC02330_thumb.jpg
+.. |DSC02330| image:: /images/thumbnails/500x-/DSC02330.jpg
    :target: /images/DSC02330.jpg
-.. |DSC02391| image:: /images/DSC02391_thumb.jpg
+.. |DSC02391| image:: /images/thumbnails/500x-/DSC02391.jpg
    :target: /images/DSC02391.jpg
-.. |DSC02411| image:: /images/DSC02411_thumb1.jpg
+.. |DSC02411| image:: /images/thumbnails/500x-/DSC024111.jpg
    :target: /images/DSC024111.jpg
-.. |DSC02449| image:: /images/DSC02449_thumb1.jpg
+.. |DSC02449| image:: /images/thumbnails/500x-/DSC024491.jpg
    :target: /images/DSC024491.jpg
-.. |DSC02451| image:: /images/DSC02451_thumb1.jpg
+.. |DSC02451| image:: /images/thumbnails/500x-/DSC024511.jpg
    :target: /images/DSC024511.jpg
-.. |DSC02455| image:: /images/DSC02455_thumb1.jpg
+.. |DSC02455| image:: /images/thumbnails/500x-/DSC024551.jpg
    :target: /images/DSC024551.jpg
-.. |DSC02526| image:: /images/DSC02526_thumb.jpg
+.. |DSC02526| image:: /images/thumbnails/500x-/DSC02526.jpg
    :target: /images/DSC02526.jpg
-.. |DSC02528| image:: /images/DSC02528_thumb.jpg
+.. |DSC02528| image:: /images/thumbnails/500x-/DSC02528.jpg
    :target: /images/DSC02528.jpg
-.. |DSC02498| image:: /images/DSC02498_thumb.jpg
+.. |DSC02498| image:: /images/thumbnails/500x-/DSC02498.jpg
    :target: /images/DSC02498.jpg
-.. |DSC02481| image:: /images/DSC02481_thumb.jpg
+.. |DSC02481| image:: /images/thumbnails/500x-/DSC02481.jpg
    :target: /images/DSC02481.jpg
-.. |DSC02573| image:: /images/DSC02573_thumb1.jpg
+.. |DSC02573| image:: /images/thumbnails/500x-/DSC025731.jpg
    :target: /images/DSC025731.jpg
-.. |DSC02622| image:: /images/DSC02622_thumb1.jpg
+.. |DSC02622| image:: /images/thumbnails/500x-/DSC026221.jpg
    :target: /images/DSC026221.jpg
-.. |DSC02661| image:: /images/DSC02661_thumb1.jpg
+.. |DSC02661| image:: /images/thumbnails/500x-/DSC026611.jpg
    :target: /images/DSC026611.jpg
-.. |DSC02662| image:: /images/DSC02662_thumb.jpg
+.. |DSC02662| image:: /images/thumbnails/500x-/DSC02662.jpg
    :target: /images/DSC02662.jpg
-.. |DSC02672| image:: /images/DSC02672_thumb.jpg
+.. |DSC02672| image:: /images/thumbnails/500x-/DSC02672.jpg
    :target: /images/DSC02672.jpg
-.. |DSC02663| image:: /images/DSC02663_thumb.jpg
+.. |DSC02663| image:: /images/thumbnails/500x-/DSC02663.jpg
    :target: /images/DSC02663.jpg
-.. |DSC02696| image:: /images/DSC02696_thumb.jpg
+.. |DSC02696| image:: /images/thumbnails/500x-/DSC02696.jpg
    :target: /images/DSC02696.jpg
-.. |DSC02751| image:: /images/DSC02751_thumb.jpg
+.. |DSC02751| image:: /images/thumbnails/500x-/DSC02751.jpg
    :target: /images/DSC02751.jpg
-.. |DSC02744| image:: /images/DSC02744_thumb.jpg
+.. |DSC02744| image:: /images/thumbnails/500x-/DSC02744.jpg
    :target: /images/DSC02744.jpg
-.. |DSC02764| image:: /images/DSC02764_thumb.jpg
+.. |DSC02764| image:: /images/thumbnails/500x-/DSC02764.jpg
    :target: /images/DSC02764.jpg
-.. |DSC02690| image:: /images/DSC02690_thumb.jpg
+.. |DSC02690| image:: /images/thumbnails/500x-/DSC02690.jpg
    :target: /images/DSC02690.jpg
-.. |DSC02770| image:: /images/DSC02770_thumb.jpg
+.. |DSC02770| image:: /images/thumbnails/500x-/DSC02770.jpg
    :target: /images/DSC02770.jpg
-.. |DSC02780| image:: /images/DSC02780_thumb.jpg
+.. |DSC02780| image:: /images/thumbnails/500x-/DSC02780.jpg
    :target: /images/DSC02780.jpg
-.. |DSC02790| image:: /images/DSC02790_thumb.jpg
+.. |DSC02790| image:: /images/thumbnails/500x-/DSC02790.jpg
    :target: /images/DSC02790.jpg
-.. |DSC02827| image:: /images/DSC02827_thumb.jpg
+.. |DSC02827| image:: /images/thumbnails/500x-/DSC02827.jpg
    :target: /images/DSC02827.jpg
-.. |DSC02836| image:: /images/DSC02836_thumb.jpg
+.. |DSC02836| image:: /images/thumbnails/500x-/DSC02836.jpg
    :target: /images/DSC02836.jpg
-.. |DSC02830| image:: /images/DSC02830_thumb.jpg
+.. |DSC02830| image:: /images/thumbnails/500x-/DSC02830.jpg
    :target: /images/DSC02830.jpg

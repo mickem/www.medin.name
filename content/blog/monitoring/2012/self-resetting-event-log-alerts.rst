@@ -5,8 +5,8 @@ Self-resetting event log alerts
 :category: Monitoring
 :tags: eventlog, icinga, nagios, nsclient++, windows
 :slug: self-resetting-event-log-alerts
-:image: /images/1098106984_d250a227fb_b.jpg
-:social_image: /images/1098106984_d250a227fb_b.jpg
+:image: /images/thumbnails/300x-/1098106984_d250a227fb_b.jpg
+:social_image: /images/thumbnails/300x-/1098106984_d250a227fb_b.jpg
 
 Take your monitoring to the next level by
 creating self-resetting event log checks. Sometimes it is not only
@@ -77,17 +77,17 @@ when a filter is matched.
 
 An example of a real-time event log filter can be found here:
 
-| [sourcecode language="text" padlinenumbers="true"]
-|  [/settings/eventlog/real-time]
-|  enabled = true
-|  [/settings/eventlog/real-time/filters/my_filter]
-|  # Report all messages with level = error (ie. errors)
-|  filter=level = 'error'
-|  # Send this to the NSCAClient for further dispatching to Nagios.
-|  target=NSCA
-|  # Report this message as a CRITICAL alert.
-|  severity=CRITICAL
-|  [/sourcecode]
+.. code-block::ini
+
+   [/settings/eventlog/real-time]
+   enabled = true
+   [/settings/eventlog/real-time/filters/my_filter]
+   # Report all messages with level = error (ie. errors)
+   filter=level = 'error'
+   # Send this to the NSCAClient for further dispatching to Nagios.
+   target=NSCA
+   # Report this message as a CRITICAL alert.
+   severity=CRITICAL
 
 This means when an error is reported in to the event log NSClient++ will
 submit a CRITICAL message to Nagios via NSCA (assuming we have configure
@@ -103,30 +103,25 @@ In our case it is slightly more complicated, we will start by adding
 three filters one capturing each application message as we stated
 initially by filtering on id = 100, 200 and 300.
 
-.. code-block:: text
+.. code-block:: ini
 
-     [/settings/eventlog/real-time]
-     enabled = true
-    
-    .. raw:: html
-    
-       </p>
-    
-    [/settings/eventlog/real-time/filters/ourapp\_ok]
-     filter=source = 'ourapp' AND id = 100
-     severity=OK
-     destination=NSCA
-    
-    [/settings/eventlog/real-time/filters/ourapp\_warning]
-     filter=source = 'ourapp' AND id = 200
-     severity=WARNING
-     destination=NSCA
-    
-    [/settings/eventlog/real-time/filters/ourapp\_critical]
-     filter=source = 'ourapp' AND id = 300
-     severity=CRITICAL
-     destination=NSCA
-    >THE END<
+   [/settings/eventlog/real-time]
+   enabled = true
+   
+   [/settings/eventlog/real-time/filters/ourapp\_ok]
+   filter=source = 'ourapp' AND id = 100
+   severity=OK
+   destination=NSCA
+   
+   [/settings/eventlog/real-time/filters/ourapp\_warning]
+   filter=source = 'ourapp' AND id = 200
+   severity=WARNING
+   destination=NSCA
+   
+   [/settings/eventlog/real-time/filters/ourapp\_critical]
+   filter=source = 'ourapp' AND id = 300
+   severity=CRITICAL
+   destination=NSCA
 
 If we were to use this we would most likely get errors reported by NSCA
 Server saying it drops messages because of unknown service name.
@@ -142,34 +137,28 @@ set this to the same value.
 
 Thus we end up with the following:
 
-.. code-block:: text
+.. code-block:: ini
 
-    highlight=""]
-     [/settings/eventlog/real-time]
-     enabled = true
-    
-    .. raw:: html
-    
-       </p>
-    
-    [/settings/eventlog/real-time/filters/ourapp\_ok]
-     filter=source = 'ourapp' AND id = 100
-     severity=OK
-     destination=NSCA
-     command=check\_ourapp\_eventlog
-    
-    [/settings/eventlog/real-time/filters/ourapp\_warning]
-     filter=source = 'ourapp' AND id = 200
-     severity=WARNING
-     destination=NSCA
-     command=check\_ourapp\_eventlog
-    
-    [/settings/eventlog/real-time/filters/ourapp\_critical]
-     filter=source = 'ourapp' AND id = 300
-     severity=CRITICAL
-     destination=NSCA
-     command=check\_ourapp\_eventlog
-    >THE END<
+   [/settings/eventlog/real-time]
+   enabled = true
+   
+   [/settings/eventlog/real-time/filters/ourapp\_ok]
+   filter=source = 'ourapp' AND id = 100
+   severity=OK
+   destination=NSCA
+   command=check\_ourapp\_eventlog
+   
+   [/settings/eventlog/real-time/filters/ourapp\_warning]
+   filter=source = 'ourapp' AND id = 200
+   severity=WARNING
+   destination=NSCA
+   command=check\_ourapp\_eventlog
+   
+   [/settings/eventlog/real-time/filters/ourapp\_critical]
+   filter=source = 'ourapp' AND id = 300
+   severity=CRITICAL
+   destination=NSCA
+   command=check\_ourapp\_eventlog
 
 Now what happens is that NSClient++ will always report these matches
 against the service name check_ourapp_eventlog which means we get all
@@ -195,24 +184,23 @@ eventlog" without any options:
 
 .. code-block:: text
 
-     nscp eventlog
-     CheckEventLog Command line syntax:
-     Allowed options:
-     -h [ --help ] Show help screen
-     -s [ --source ] arg (=Application Error)
-     source to use
-     -t [ --type ] arg Event type
-     -l [ --level ] arg Event level (type)
-     -f [ --facility ] arg Facility/Qualifier
-     -q [ --qualifier ] arg Facility/Qualifier
-     --severity arg Event severity
-     -c [ --category ] arg Event category
-     --customer arg Customer bit 0,1
-     -a [ --arguments ] arg Message arguments (strings)
-     --eventlog-arguments arg Message arguments (strings)
-     --event-arguments arg Message arguments (strings)
-     -i [ --id ] arg Event ID
-    >THE END<
+   nscp eventlog
+   CheckEventLog Command line syntax:
+   Allowed options:
+   -h [ --help ] Show help screen
+   -s [ --source ] arg (=Application Error)
+   source to use
+   -t [ --type ] arg Event type
+   -l [ --level ] arg Event level (type)
+   -f [ --facility ] arg Facility/Qualifier
+   -q [ --qualifier ] arg Facility/Qualifier
+   --severity arg Event severity
+   -c [ --category ] arg Event category
+   --customer arg Customer bit 0,1
+   -a [ --arguments ] arg Message arguments (strings)
+   --eventlog-arguments arg Message arguments (strings)
+   --event-arguments arg Message arguments (strings)
+   -i [ --id ] arg Event ID
 
 In our case we want to set id to 100, 200 and 300 as well as source to
 ourapp so we end up with (I add level error for good sake as well but
@@ -220,10 +208,8 @@ this is not really necessary):
 
 .. code-block:: text
 
-     d:\\source\\nscp\\build\\x64>nscp eventlog --level error --id 100
-    --source ourapp
-     Message reported successfully
-    >THE END<
+   d:\\source\\nscp\\build\\x64>nscp eventlog --level error --id 100 --source ourapp
+   Message reported successfully
 
 The best way to test this is to open up two command windows one running
 NSClient++ in “test mode” and the other posting the messages.
@@ -256,36 +242,30 @@ SO we create a template called orapp_template which sets destination,
 command as well as the magic "is template" option. This option prevents
 this template for becoming registered as a filter.
 
-.. code-block:: text
+.. code-block:: ini
 
-    highlight=""]
-     [/settings/eventlog/real-time]
-     enabled = true
-    
-    .. raw:: html
-    
-       </p>
-    
-    [/settings/eventlog/real-time/filters/ourapp\_template]
-     destination=NSCA
-     command=check\_ourapp\_eventlog
-     is template=true
-    
-    [/settings/eventlog/real-time/filters/ourapp\_ok]
-     template=ourapp\_template
-     filter=source = 'ourapp' AND id = 100
-     severity=OK
-    
-    [/settings/eventlog/real-time/filters/ourapp\_warning]
-     template=ourapp\_template
-     filter=source = 'ourapp' AND id = 200
-     severity=WARNING
-    
-    [/settings/eventlog/real-time/filters/ourapp\_critical]
-     template=ourapp\_template
-     filter=source = 'ourapp' AND id = 300
-     severity=CRITICAL
-    >THE END<
+   [/settings/eventlog/real-time]
+   enabled = true
+   
+   [/settings/eventlog/real-time/filters/ourapp\_template]
+   destination=NSCA
+   command=check\_ourapp\_eventlog
+   is template=true
+   
+   [/settings/eventlog/real-time/filters/ourapp\_ok]
+   template=ourapp\_template
+   filter=source = 'ourapp' AND id = 100
+   severity=OK
+   
+   [/settings/eventlog/real-time/filters/ourapp\_warning]
+   template=ourapp\_template
+   filter=source = 'ourapp' AND id = 200
+   severity=WARNING
+   
+   [/settings/eventlog/real-time/filters/ourapp\_critical]
+   template=ourapp\_template
+   filter=source = 'ourapp' AND id = 300
+   severity=CRITICAL
 
 Not too much saved maybe but this is a very short example so you will
 hopefully save some more once you start doing this yourself.
@@ -300,23 +280,16 @@ and not NSCA configuration but the following is a simple chunk for
 setting up a very basic NSCA client (this chunk is straight from the
 event log previous event log monitoring post
 
-.. code-block:: text
+.. code-block:: ini
 
-     [/modules]
-     ; ...
-     NSCAClient = 1
-    
-    .. raw:: html
-    
-       </p>
-    
-    [/settings/NSCA/client/targets/default]
-     address=nsca://127.0.0.1:5667
-     encryption=aes256
-     password=YL04nBb14stIgCjZxcudGtMqz4E6NN3W
-    >THE END<
-
-.
+   [/modules]
+   ; ...
+   NSCAClient = 1
+   
+   [/settings/NSCA/client/targets/default]
+   address=nsca://127.0.0.1:5667
+   encryption=aes256
+   password=YL04nBb14stIgCjZxcudGtMqz4E6NN3W
 
 **Active Monitoring (NRPE)**
 ============================
@@ -334,26 +307,20 @@ Configuring the SimpleCache module is extremely simple all we can really
 tweak is the channel to listen on and the index to use when caching
 results.
 
-.. code-block:: text
+.. code-block:: ini
 
-     [/modules]
-     ; SimpleCache module - Caches results for later checking.
-     SimpleCache = enabled
-    
-    .. raw:: html
-    
-       </p>
-    
-    ; Section for simple cache module (SimpleCache.dll).
-     [/settings/cache]
-    
-    ; CHANNEL - The channel to listen to.
-     channel = CACHE
-    
-    ; PRIMARY CACHE INDEX - Set this to the value you want to use as
-      unique key for the cache (host, command, result,...).
-     primary index = ${alias-or-command}
-    >THE END<
+   [/modules]
+   ; SimpleCache module - Caches results for later checking.
+   SimpleCache = enabled
+   
+   ; Section for simple cache module (SimpleCache.dll).
+   [/settings/cache]
+   
+   ; CHANNEL - The channel to listen to.
+   channel = CACHE
+   
+   ; PRIMARY CACHE INDEX - Set this to the value you want to use as unique key for the cache (host, command, result,...).
+   primary index = ${alias-or-command}
 
 The default channel is CACHE and the default index is alias-or-command
 which is exactly what we want so we need not enter anything at all
@@ -373,18 +340,13 @@ have submitted the warning state message.
 
 .. code-block:: text
 
-     check\_cache index=check\_ourapp\_eventlog
-     d rvice\\NSClient++.cpp:958 Result check\_cache: OK
-     l ce\\simple\_client.hpp:80 OK:Our application works
-    
-    .. raw:: html
-    
-       </p>
-    
-    check\_cache index=check\_ourapp\_eventlog
-     d rvice\\NSClient++.cpp:958 Result check\_cache: WARNING
-     l ce\\simple\_client.hpp:80 WARNING:Our application is not good
-    >THE END<
+   check\_cache index=check\_ourapp\_eventlog
+   d rvice\\NSClient++.cpp:958 Result check\_cache: OK
+   l ce\\simple\_client.hpp:80 OK:Our application works
+   
+   check\_cache index=check\_ourapp\_eventlog
+   d rvice\\NSClient++.cpp:958 Result check\_cache: WARNING
+   l ce\\simple\_client.hpp:80 WARNING:Our application is not good
 
 Rounding off
 ============

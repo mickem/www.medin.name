@@ -5,8 +5,8 @@ Real-time log file monitoring (both event log and text files)
 :category: Monitoring
 :tags: eventlog, icinga, nagios, nsclient++, realtime
 :slug: real-time-log-file-monitoring-both-event-log-and-text-files
-:image: /images/image_thumb.png
-:social_image: /images/image_thumb.png
+:image: /images/real-time-log-file-monitoring-both-event-log-and-text-files-image.png
+:social_image: /images/real-time-log-file-monitoring-both-event-log-and-text-files-image.png
 
 Time for yet another tutorial this time detailing how to monitoring log
 files both event log and regular text files. The event log parts will
@@ -79,37 +79,26 @@ For CheckEventlog we need essentially three things:
 
 #. Load the module
 
-   .. raw:: html
+.. code-block: ini
 
-      <div
-      id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:df2a1418-4bdf-4380-840d-7af67cec0e0b"
-      class="wlWriterEditableSmartContent"
-      style="margin: 0px; display: inline; float: none; padding: 0px;">
+   [/modules]
+   CheckEventLog = enabled
 
-   [sourcecode language="text"]
-    [/modules]
-    CheckEventLog = enabled
-    [/sourcecode]
-
-   .. raw:: html
-
-      </p>
-
-   .. raw:: html
-
-      </div>
 
 #. Enable real time monitoring
-   [sourcecode language="text"]
+
+.. code-block: ini
+
    [/settings/eventlog/real-time]
    enabled = true
-   [/sourcecode]
+
 #. Create a simple filter
-   [sourcecode language="text" highlight="3"]
+
+.. code-block: ini
+
    [/settings/eventlog/real-time/filters/eventlog]
    filter=level = 'error'
    target=NSCA,CACHE,FILE
-   [/sourcecode]
 
 I wont go into the details as this has all been covered in earlier blog
 posts:
@@ -130,22 +119,28 @@ Real-time log file monitoring is pretty easy to configure as well and
 very similar. Again we need three things.
 
 #. Load the module
-   [sourcecode language="text"] [/modules] CheckLogFile = enabled
-   [/sourcecode]
+
+.. code-block: ini
+
+   [/modules] CheckLogFile = enabled
+
 #. Enable real time monitoring
-   [sourcecode language="text"]
+
+.. code-block: ini
+
    [/settings/logfile/real-time]
    enabled = true
-   [/sourcecode]
+
 #. Create a simple filter
-   [sourcecode language="text" highlight="3"]
+
+.. code-block: ini
+
    [/settings/logfile/real-time/checks/logfile]
    file = ./test.txt
    destination = NSCA,CACHE,FILE
    filter = column1 like 'hello'
    critical = column2 like 'world'
    column separator=;
-   [/sourcecode]
 
 Again I wont go into details as the information can be found in the post
 where I presented my slides from OSMC 2012:
@@ -171,19 +166,22 @@ Now that we have the important things in place (the real-time
 monitoring) I will quickly introduce the rest we need to do:
 
 #. Load all the other modules:
-   [sourcecode language="actionscript3"]
+
+.. code-block: ini
+
    [/modules]
    SimpleFileWriter = enabled
    SimpleCache = enabled
    NSCAClient = enabled
-   [/sourcecode]
+
 #. Configure a default target for the NSCA destination
-   [sourcecode language="actionscript3"]
+
+.. code-block: ini
+
    [/settings/NSCA/client/targets/default]
    address=nsca://127.0.0.1:5667
    encryption=aes256
    password=YL04nBb14stIgCjZxcudGtMqz4E6NN3W
-   [/sourcecode]
 
 This has already been covered many times before so I wont even mention
 what this is/does.
@@ -196,36 +194,36 @@ what this is/does.
 
 The entire configuration looks like this:
 
-[sourcecode language="actionscript3"]
- [/modules]
- CheckLogFile = enabled
- CheckEventLog = enabled
- SimpleFileWriter = enabled
- SimpleCache = enabled
- NSCAClient = enabled
+.. code-block: ini
 
-| [/settings/eventlog/real-time]
-|  enabled = true
-
-| [/settings/eventlog/real-time/filters/eventlog]
-|  filter=level = 'error'
-|  target=NSCA,CACHE,FILE
-
-| [/settings/logfile/real-time]
-|  enabled = true
-
-| [/settings/logfile/real-time/checks/logfile]
-|  file = ./test.txt
-|  destination = NSCA,CACHE,FILE
-|  filter = column1 like 'hello'
-|  critical = column2 like 'world'
-|  column separator=;
-
-| [/settings/NSCA/client/targets/default]
-|  address=nsca://127.0.0.1:5667
-|  encryption=aes256
-|  password=YL04nBb14stIgCjZxcudGtMqz4E6NN3W
-|  [/sourcecode]
+   [/modules]
+   CheckLogFile = enabled
+   CheckEventLog = enabled
+   SimpleFileWriter = enabled
+   SimpleCache = enabled
+   NSCAClient = enabled
+   
+   [/settings/eventlog/real-time]
+   enabled = true
+   
+   [/settings/eventlog/real-time/filters/eventlog]
+   filter=level = 'error'
+   target=NSCA,CACHE,FILE
+   
+   [/settings/logfile/real-time]
+   enabled = true
+   
+   [/settings/logfile/real-time/checks/logfile]
+   file = ./test.txt
+   destination = NSCA,CACHE,FILE
+   filter = column1 like 'hello'
+   critical = column2 like 'world'
+   column separator=;
+   
+   [/settings/NSCA/client/targets/default]
+   address=nsca://127.0.0.1:5667
+   encryption=aes256
+   password=YL04nBb14stIgCjZxcudGtMqz4E6NN3W
 
 And this is pretty much it.
 
@@ -239,41 +237,41 @@ since we cant listen to events from a non existing file.
 
 So lets create the file and start NSClient++ in test mode.
 
-[sourcecode language="actionscript3"]
- echo. > test.txt
- nscp test --log info
- [/sourcecode]
+.. code-block: text
+
+   echo. > test.txt
+   nscp test --log info
 
 Next up we fire up another console and add some data to our file:
 
-[sourcecode language="actionscript3"]
- echo hello;world >> test.txt
- [/sourcecode]
+.. code-block: text
+
+   echo hello;world >> test.txt
 
 In my case I get errors in the console since I have not configured a
 proper NSCA server if your NSCA server is responding you will not see
 anything but on the other hand you will hopefully receive some nifty
 messages.
 
-[sourcecode language="actionscript3"]
- e lient\\NSCAClient.cpp:435 Error: Failed to connect to: 127.0.0.1:5667
- [/sourcecode]
+.. code-block: text
+
+   e lient\\NSCAClient.cpp:435 Error: Failed to connect to: 127.0.0.1:5667
 
 Next we want to verify that the SimpleFileWriter works so lets open up
 the a file called ***output.txt*** where you should see something along
 the following lines:
 
-[sourcecode language="actionscript3"]
- logfile OK ./test.txt: 1 (hello;world , , )
- [/sourcecode]
+.. code-block: text
+
+   logfile OK ./test.txt: 1 (hello;world , , )
 
 Finally we want to confirm the cache module which we can do using the
 ***check_cache*** command like so:
 
-[sourcecode language="actionscript3"]
- check_cache index=logfile
- l ce\\simple_client.hpp:80 OK:./test.txt: 1 (hello;world , , )
- [/sourcecode]
+.. code-block: text
+
+   check_cache index=logfile
+   l ce\\simple_client.hpp:80 OK:./test.txt: 1 (hello;world , , )
 
 Which means it seems that everything is working. If we wait for a bit we
 will most likely get a few message from the event log as well or we can
@@ -297,5 +295,4 @@ would very much like to get some feedback on it as well as please let me
 know how this could be made more useful and how I could tweak and extend
 this to help solve ***YOUR PROBLEMS!***
 
-.. |image| image:: /images/image_thumb.png
-   :target: /images/image.png
+.. |image| image:: /images/real-time-log-file-monitoring-both-event-log-and-text-files-image.png

@@ -5,8 +5,8 @@ Summer projects
 :category: Personal
 :tags: construction, vacation
 :slug: summer-projects
-:image: /images/DSC03632_thumb.jpg
-:social_image: /images/DSC03632_thumb.jpg
+:image: /images/thumbnails/500x-/DSC03632.jpg
+:social_image: /images/thumbnails/500x-/DSC03632.jpg
 
 Sometimes I am actually not working with my computer. Usually this
 happens during summer when I am having what other people call vacation.
@@ -116,15 +116,15 @@ with the result. Regardless of any issues the end result turned out
 rather nice. So it is now safe again to enter the building (for another
 10 years or so).
 
-.. |DSC03632| image:: /images/DSC03632_thumb.jpg
+.. |DSC03632| image:: /images/thumbnails/500x-/DSC03632.jpg
    :target: /images/DSC03632.jpg
-.. |DSC03675| image:: /images/DSC03675_thumb.jpg
+.. |DSC03675| image:: /images/thumbnails/500x-/DSC03675.jpg
    :target: /images/DSC03675.jpg
-.. |Cgosms_2012-06-2911-08-52| image:: /images/Cgosms_2012-06-2911-08-52_thumb.jpg
+.. |Cgosms_2012-06-2911-08-52| image:: /images/thumbnails/500x-/Cgosms_2012-06-2911-08-52.jpg
    :target: /images/Cgosms_2012-06-2911-08-52.jpg
-.. |DSC03672| image:: /images/DSC03672_thumb.jpg
+.. |DSC03672| image:: /images/thumbnails/500x-/DSC03672.jpg
    :target: /images/DSC03672.jpg
-.. |trapp| image:: /images/trapp_thumb.png
+.. |trapp| image:: /images/thumbnails/500x-/trapp.png
    :target: /images/trapp.png
-.. |20120719_171700| image:: /images/20120719_171700_thumb.jpg
+.. |20120719_171700| image:: /images/thumbnails/500x-/20120719_171700.jpg
    :target: /images/20120719_171700.jpg

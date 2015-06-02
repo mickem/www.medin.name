@@ -5,8 +5,8 @@ Video: Simplified Monitoring? from OSMC 2013
 :category: Monitoring
 :tags: conference, monitoring, nagios, nsclient++, NSCP, OSMC, video
 :slug: video-simplified-monitoring-from-osmc-2013
-:image: /images/DSC07334.jpg
-:social_image: /images/DSC07334.jpg
+:image: /images/thumbnails/300x-/DSC07334.jpg
+:social_image: /images/thumbnails/300x-/DSC07334.jpg
 
 This is a YouTube video from my presentation at
 OSMC this year. The good folks over at
