@@ -1,11 +1,14 @@
 {% if articles %}
 	{% for article in (articles_page.object_list if articles_page else articles) %}
-		<article>
+		<article class="container index">
 			{% for file in CUSTOM_INDEX_ARTICLE_HEADERS %}
 				{% include "includes/" + file %}
 			{% else %}
-				{% include "includes/index_article_header.html" %}
+				<div class="row">
+					{% include "includes/index_article_header.html" %}
+				</div>
 			{% endfor %}
+
 			{% include "includes/index_summary.html" %}
 		</article>
 	{% endfor %}

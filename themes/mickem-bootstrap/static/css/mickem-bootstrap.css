@@ -39,8 +39,6 @@ img.align-center, img.article-image {
 h1 {
   font-family: Lato, sans-serif;
   font-weight: 400;
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
 .not-showed {
   visibility:hidden;
@@ -135,6 +133,9 @@ a:hover {
 	.banner h1 {
 	  font-size: 32px;
 	}
+	.slider-bullet {
+	  display: none;
+	}
 }
 
 .navbar-brand {
@@ -185,6 +186,10 @@ p.standfirst {
     font-weight: 700;
 }
 
+.index  h1, article h1 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 #site-colophon {
     font-size: 12px;
     margin-bottom: 0px;
