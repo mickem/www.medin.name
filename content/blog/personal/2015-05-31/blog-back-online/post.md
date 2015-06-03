@@ -1,7 +1,7 @@
 Title: Blog back online!
 Authors: Michael Medin
 Date: 2015-05-31
-Catgory: personal
+Category: personal
 Tags: web,
  
 Yaay!
