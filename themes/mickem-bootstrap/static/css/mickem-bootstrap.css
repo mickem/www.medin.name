@@ -240,6 +240,9 @@ p.standfirst {
 /* 
  *SIDE BARS
  */
+.sidebar ul {
+  padding-left: 3px;
+}
 .sidebar li {
   list-style: none;
   line-height: 25px;
