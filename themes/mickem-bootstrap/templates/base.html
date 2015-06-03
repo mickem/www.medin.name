@@ -1,80 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="{% block metadesc %}{{ DEFAULT_METADESC|e }}{% endblock %}" />
-    <meta name="author" content="{{ AUTHOR }}" />
-    <meta name="generator" content="Pelican (mickem-bootstrap theme)" />
-	{% block meta_other %}{% endblock %}
-    {% if OPEN_GRAPH_FB_APP_ID %}
-    <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
-    {% endif %}
-	{% block open_graph %}
-      {% if OPEN_GRAPH %}
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="{{ SITENAME|striptags|e }}"/>
-        <meta property="og:url" content="{{ SITEURL }}"/>
-        {% if DEFAULT_METADESC %}
-        <meta property="og:description" content="{{ DEFAULT_METADESC|e }}"/>
-        {% endif %}
-        {% if OPEN_GRAPH_IMAGE %}
-        <meta property="og:image"
-              content="{{ SITEURL }}/images/{{ OPEN_GRAPH_IMAGE }}"/>
-        {% endif %}
-      {% endif %}
-    {% endblock %}
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="{% block metadesc %}{{ DEFAULT_METADESC|e }}{% endblock %}" />
+		<meta name="author" content="{{ AUTHOR }}" />
+		<meta name="generator" content="Pelican (mickem-bootstrap theme)" />
+		{% block meta_other %}{% endblock %}
+		{% if OPEN_GRAPH_FB_APP_ID %}
+		<meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
+		{% endif %}
+		{% block open_graph %}
+			{% if OPEN_GRAPH %}
+				<meta property="og:type" content="website"/>
+				<meta property="og:title" content="{{ SITENAME|striptags|e }}"/>
+				<meta property="og:url" content="{{ SITEURL }}"/>
+				{% if DEFAULT_METADESC %}
+					<meta property="og:description" content="{{ DEFAULT_METADESC|e }}"/>
+				{% endif %}
+				{% if OPEN_GRAPH_IMAGE %}
+					<meta property="og:image" content="{{ SITEURL }}/images/{{ OPEN_GRAPH_IMAGE }}"/>
+				{% endif %}
+			{% endif %}
+		{% endblock %}
 
-    <title>{% block title %}{{ SITENAME }} - {{ SITETAG|escape }}{% endblock %}</title>
+		<title>{% block title %}{{ SITENAME }} - {{ SITETAG|escape }}{% endblock %}</title>
+	
+		{% if not SKIP_DEFAULT_CSS %}   
+		{% if BOOTSTRAP_STYLESHEET %} 
+			<link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ BOOTSTRAP_STYLESHEET }}" />
+		{% else %}
+			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+		{% endif %}
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />  
+		{% endif %}
+		<link href='//fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+	
+		{% for url in STYLESHEET_URLS %}
+			<link rel="stylesheet" href="{{ url }}" />
+		{% endfor %}
+	
+		{% if not STYLESHEET_FILES and STYLESHEETS %}   
+			{% set STYLESHEET_FILES = STYLESHEETS %}
+		{% endif %}
+		{% for css in STYLESHEET_FILES %}
+			<link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ css }}" />
+		{% endfor %}
 
-    {% if not SKIP_DEFAULT_CSS %}   
-      {% if BOOTSTRAP_STYLESHEET %} 
-        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ BOOTSTRAP_STYLESHEET }}" />
-      {% else %}
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
-      {% endif %}
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />  
-    {% endif %}
-	<link href='//fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-	<link href='//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-	<link href='//fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-	<link href='//fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+		<!--[if lt IE 9]>
+			<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
 
-    {% for url in STYLESHEET_URLS %}
-      <link rel="stylesheet" href="{{ url }}" />
-    {% endfor %}
+		<link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON|default('favicon.ico') }}" />
+		{% if CUSTOM_HTML_HEAD %}
+		{% include "includes/" + CUSTOM_HTML_HEAD %}
+		{% endif %}
+		{% if FEED_ALL_ATOM %}
+			<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+		{% endif %}
+		{% if FEED_ALL_RSS %}
+			<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+		{% endif %}
+		{% include 'includes/analytics.html' %}
+	</head>
 
-    {% if not STYLESHEET_FILES and STYLESHEETS %}   
-      {% set STYLESHEET_FILES = STYLESHEETS %}
-    {% endif %}
-    {% for css in STYLESHEET_FILES %}
-      <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ css }}" />
-    {% endfor %}
-
-    <!--[if lt IE 9]>
-      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON|default('favicon.ico') }}" />
-    {% if CUSTOM_HTML_HEAD %}
-    {% include "includes/" + CUSTOM_HTML_HEAD %}
-    {% endif %}
-    {% if FEED_ALL_ATOM %}
-        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
-    {% endif %}
-    {% if FEED_ALL_RSS %}
-        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
-    {% endif %}
-    {% include 'includes/analytics.html' %}
-  </head>
-
-  <body>
+	<body>
 {%block slider %}
 {%endblock %}
 
-    <div class="container">
+	<div class="container">
 		<div class="banner{%block banner_class %}{% endblock %}">
 			<h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
 			{% if SITESUBTITLE %}
@@ -297,31 +296,32 @@
 	</div>
 </footer>
 
-    {% include 'includes/piwik.html' %}
-    {% include 'includes/disqus_script.html' %}
-
-    <!-- javascript -->
-    {% if not SKIP_DEFAULT_JS %}   
+	{% include 'includes/piwik.html' %}
+	{% include 'includes/disqus_script.html' %}
+	
+	<!-- javascript -->
+	{% if not SKIP_DEFAULT_JS %}
+	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    {% endif %}
-
-    {% for url in JAVASCRIPT_URLS %}
+	{% endif %}
+	
+	{% for url in JAVASCRIPT_URLS %}
 	<script src="{{ url }}"></script>
-    {% endfor %}
-    {% for js in JAVASCRIPT_FILES %}
-    <script src="{{ SITEURL }}/theme/js/{{ js }}" ></script>
-    {% endfor %}
-
-    {% block scripts %}
-    {% endblock %}
-    {% if CUSTOM_SCRIPTS_BASE %}
-    {% include "includes/" + CUSTOM_SCRIPTS_BASE %}
-    {% endif %}
+	{% endfor %}
+	{% for js in JAVASCRIPT_FILES %}
+	<script src="{{ SITEURL }}/theme/js/{{ js }}" ></script>
+	{% endfor %}
+	
+{% block scripts %}
+{% endblock %}
+	{% if CUSTOM_SCRIPTS_BASE %}
+	{% include "includes/" + CUSTOM_SCRIPTS_BASE %}
+	{% endif %}
 
 {%block slider_js %}
 {%endblock %}
 
 
-  </body>
+	</body>
 </html>
