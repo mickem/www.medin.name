@@ -78,9 +78,9 @@ TWITTER_CARD = True
 OPEN_GRAPH = True
 OPEN_GRAPH_ARTICLE_AUTHOR = "Michael Medin"
 DEFAULT_METADESC = 'Random thoughts on development, monitoring and family life…'
-DEFAULT_SOCIAL_IMAGE = '/images/michael-medin.jpg'
+DEFAULT_SOCIAL_IMAGE = 'images/michael-medin.jpg'
 DEFAULT_PAGINATION = 10
-FAVICON = '/images/michael-medin.jpg'
+FAVICON = 'images/michael-medin.jpg'
 #######################################################################
 #                             Contents                                #
 #######################################################################

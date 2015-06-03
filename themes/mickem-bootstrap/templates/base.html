@@ -73,7 +73,7 @@
 	<body>
 {%block slider %}
 {%endblock %}
-
+{%block banner %}
 	<div class="container">
 		<div class="banner{%block banner_class %}{% endblock %}">
 			<h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
@@ -82,7 +82,7 @@
 			{% endif %}
 		</div>
 	</div>
-
+{%endblock %}
     <div class="container">
 
 		<nav class="navbar navbar-inverse navbar-default" id="nav" role="navigation">
@@ -303,8 +303,8 @@
 	<!-- javascript -->
 
 	{% if THEME_DEVELOPMENT %} 
-		<script src="{{ SITEURL }}/theme/bower_components/bootstrap/dist/js/bootstrap.js" />
-		<script src="{{ SITEURL }}/theme/bower_components/jquery/dist/jquery.js" />
+		<script src="{{ SITEURL }}/theme/bower_components/jquery/dist/jquery.js"></script>
+		<script src="{{ SITEURL }}/theme/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	{% else %}
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

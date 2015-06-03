@@ -112,28 +112,12 @@ a:hover {
   font-size: 14px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
-.index-banner {
-  position:absolute;
-  top: 50px;
-  left:200px;
-  z-index: 1000;
-}
 .banner h1 {
   font-size: 72px;
   margin-bottom: -10px;
 }
 @media (max-width: 750px) {
-	.index-banner {
-		top: 10px;
-		left: 20px;
-	}
-	.banner {
-		font-size: 8px;
-	}
-	.banner h1 {
-	  font-size: 32px;
-	}
-	.slider-bullet {
+	.slider-bullet, .slider-arrows {
 	  display: none;
 	}
 }
@@ -146,7 +130,7 @@ a:hover {
 }
 .blog-text {
   position:absolute;
-  top: 250px;
+  top: 200px;
   left:200px
 }
 .blog-text h1 {

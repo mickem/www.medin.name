@@ -1,6 +1,7 @@
 {
   "name": "medin.name",
   "version": "1.0.0",
+  "license": "LGPL-3.0",
   "description": "Powered by Pelican",
   "main": "index.js",
   "scripts": {
