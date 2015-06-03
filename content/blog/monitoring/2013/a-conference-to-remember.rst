@@ -90,8 +90,8 @@ lights. And then off the limousine goes.
 
 Once again I get this odd thoughts:
 
-| What you actually do in a dark limousine
-| alone with two pretty girls?
+ | What you actually do in a dark limousine
+ | alone with two pretty girls?
 
 |DSC07321| Fortunately (for the sake of my sanity) the answer is not
 much really, at least in my case, we just spend the next ten minutes or
@@ -156,8 +156,8 @@ adventures the night before…
 No matter how hard I try I can never shake the weird feeling spending a
 brief few seconds midst giants like David Hasselhoff...
 
-    **“Like David Hasselhoff;
-    **I have now been famous in Germany”.**
+ | “Like David Hasselhoff;
+ | I have now been famous in Germany”.
 
 Next up is the actual review of the Conference, but that will have to
 wait a bit…

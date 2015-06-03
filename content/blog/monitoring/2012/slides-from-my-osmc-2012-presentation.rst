@@ -61,44 +61,35 @@ explained there.
 
 Then removed the configuration file and showed you I was not cheating:
 
-[sourcecode language="bash" padlinenumbers="true"]
- rm nsclient.ini
- ls nsclient.ini
- # ls: cannot access nsclient.ini: No such file or directory
- [/sourcecode]
+.. code-block:: bash
+
+   rm nsclient.ini
+   ls nsclient.ini
+   # ls: cannot access nsclient.ini: No such file or directory
 
 Next up I added a module using the command line syntax:
 
-[sourcecode language="bash" padlinenumbers="true"]
- ./nscp settings --activate-module NRPEServer --add-defaults
- [/sourcecode]
+.. code-block:: bash
+
+   ./nscp settings --activate-module NRPEServer --add-defaults
 
 Which gives as a configuration that looks like this:
 
-.. code-block:: text
+.. code-block:: ini
 
      ; A list of modules.
      [/modules]
     
-    .. raw:: html
-    
-       </p>
-    
-    ; NRPE server - A simple server that listens for incoming NRPE
-      connection and handles them.
+    ; NRPE server - A simple server that listens for incoming NRPE connection and handles them.
      NRPEServer = enabled
     
     ; Section for NRPE (NRPEServer.dll) (check\_nrpe) protocol options.
      [/settings/NRPE/server]
     
-    ; COMMAND ARGUMENT PROCESSING - This option determines whether or not
-      the we will allow clients to specify arguments to commands that are
-      executed.
+    ; COMMAND ARGUMENT PROCESSING - This option determines whether or not the we will allow clients to specify arguments to commands that are executed.
      allow arguments = false
     
-    ; COMMAND ALLOW NASTY META CHARS - This option determines whether or
-      not the we will allow clients to specify nasty (as in \|\`&><'"\\[]{})
-      characters in arguments.
+    ; COMMAND ALLOW NASTY META CHARS - This option determines whether or not the we will allow clients to specify nasty (as in \|\`&><'"\\[]{}) characters in arguments.
      allow nasty characters = false
     
     ; PORT NUMBER - Port to use for NRPE.
@@ -108,24 +99,19 @@ Which gives as a configuration that looks like this:
     
     [/settings/default]
     
-    ; ALLOWED CIPHERS - A better value is:
-      ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
+    ; ALLOWED CIPHERS - A better value is: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
      allowed ciphers = ADH
     
-    ; ALLOWED HOSTS - A comaseparated list of allowed hosts. You can use
-      netmasks (/ syntax) or \* to create ranges.
+    ; ALLOWED HOSTS - A comaseparated list of allowed hosts. You can use netmasks (/ syntax) or \* to create ranges.
      allowed hosts = 127.0.0.1
     
-    ; CACHE ALLOWED HOSTS - If hostnames should be cached, improves speed
-      and security somewhat but wont allow you to have dynamic IPs for your
-      nagios server.
+    ; CACHE ALLOWED HOSTS - If hostnames should be cached, improves speed and security somewhat but wont allow you to have dynamic IPs for your nagios server.
      cache allowed hosts = true
     
     ; SSL CERTIFICATE -
      certificate =
     
-    ; TIMEOUT - Timeout when reading packets on incoming sockets. If the
-      data has not arrived within this time we will bail out.
+    ; TIMEOUT - Timeout when reading packets on incoming sockets. If the data has not arrived within this time we will bail out.
      timeout = 30
     
     ; ENABLE SSL ENCRYPTION - This option controls if SSL should be
@@ -134,23 +120,17 @@ Which gives as a configuration that looks like this:
     
     ; VERIFY MODE -
      verify mode = none
-    >THE END<
 
 If we now first change the port to 1234 and run the following command to
 remove all our default values we end up with the following snippet which
 is essentially the keys we have actually configured.
 
-.. code-block:: text
+.. code-block:: ini
 
      ; A list of modules.
      [/modules]
     
-    .. raw:: html
-    
-       </p>
-    
-    ; NRPE server - A simple server that listens for incoming NRPE
-      connection and handles them.
+    ; NRPE server - A simple server that listens for incoming NRPE connection and handles them.
      NRPEServer = enabled
     
     ; Section for NRPE (NRPEServer.dll) (check\_nrpe) protocol options.
@@ -158,7 +138,6 @@ is essentially the keys we have actually configured.
     
     ; PORT NUMBER - Port to use for NRPE.
      port = 1234
-    >THE END<
 
 Demo 2: Real-time monitoring
 ----------------------------
@@ -178,15 +157,11 @@ introducing several new modules.
 I wont go through the command lines I used to create the configuration
 (since that is not really useful apart from show casing it can be done).
 
-.. code-block:: text
+.. code-block:: ini
 
      [/modules]
      CheckLogFile = enabled
      SimpleFileWriter = enabled
-    
-    .. raw:: html
-    
-       </p>
     
     [/settings/logfile/real-time/checks/sample]
      file = ./test.txt
@@ -197,7 +172,6 @@ I wont go through the command lines I used to create the configuration
     
     [/settings/logfile/real-time]
      enabled = true
-    >THE END<
 
 What we do here is in essence enable the CheckLogFile module and the
 SimpleFileWriter module as well as define a file we want to listen for
@@ -226,41 +200,36 @@ module.
 
 Then I add data to the file using the echo command.
 
-[sourcecode language="bash" padlinenumbers="true"]
- touch test.txt
- touch output.txt
- # In other window:
- tail -f output.txt
- # In yet another window:
- nscp test
- # In yet another window
- echo -e "hello\\tworld"
- echo -e "hello\\tcrit"
- [/sourcecode]
+.. code-block:: bash
+
+   touch test.txt
+   touch output.txt
+   # In other window:
+   tail -f output.txt
+   # In yet another window:
+   nscp test
+   # In yet another window
+   echo -e "hello\\tworld"
+   echo -e "hello\\tcrit"
 
 The result is two lines added to the output.txt file one “ok” and one
 “critical” like so:
 
-.. code-block:: text
+.. code-block:: bash
 
      sample OK ./test.txt: 1 (hello, world, )
      sample CRITICAL ./test.txt: 1 (hello, crit, )
-    >THE END<
 
 Next up we extend this by first adding the NSCAClient module and then
 changing destination to include ***both** FILE and NSCA* which gives us
 the following configuration:
 
-.. code-block:: text
+.. code-block:: ini
 
      [/modules]
      CheckLogFile = enabled
      SimpleFileWriter = enabled
      NSCAClient = enabled
-    
-    .. raw:: html
-    
-       </p>
     
     [/settings/logfile/real-time/checks/sample]
      file = ./test.txt
@@ -276,7 +245,6 @@ the following configuration:
      address = 127.0.0.1
      encryption = xor
      password = secret
-    >THE END<
 
 The result from repeating the above commands are now we in addition to
 get lines in output.txt also gets events sent to our NSCA server.
@@ -289,17 +257,13 @@ stores events for checking via NRPE. This module requires very little
 configuration (out of the box) so we merely enabled it but also changed
 the destination to send to FILE, NSCA and no also CACHE:
 
-.. code-block:: text
+.. code-block:: ini
 
      [/modules]
      CheckLogFile = enabled
      SimpleFileWriter = enabled
      NSCAClient = enabled
      SimpleCache = enabled
-    
-    .. raw:: html
-    
-       </p>
     
     [/settings/logfile/real-time/checks/sample]
      file = ./test.txt
@@ -315,18 +279,17 @@ the destination to send to FILE, NSCA and no also CACHE:
      address = 127.0.0.1
      encryption = xor
      password = secret
-    >THE END<
 
 What we did now was again run the sample commands to add lines to our
 file and NSCA. After which we did an active check from the command line
 (in the NSClient++ window).
 
-[sourcecode language="bash"]
- nscp test
- ...
- check_cache index=sample
- OK:./test.txt: 1 (hello, world, )
- [/sourcecode]
+.. code-block:: bash
+
+   nscp test
+   ...
+   check_cache index=sample
+   OK:./test.txt: 1 (hello, world, )
 
 And that was pretty much it really… Now all that’s left, if you have not
 done so already, is to browse through the

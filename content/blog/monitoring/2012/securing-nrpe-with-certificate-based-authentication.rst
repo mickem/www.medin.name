@@ -75,11 +75,15 @@ script. In my case I start from scratch so I need to generate the CA
 using the following command (it will ask for CA password as well as some
 meta information):
 
-***/usr/lib/ssl/misc/CA.pl -newca***
+.. code:block: bash
+
+   /usr/lib/ssl/misc/CA.pl -newca
 
 Then we can request the first certificate and sign it:
 
-***/usr/lib/ssl/misc/CA.pl -newreq /usr/lib/ssl/misc/CA.pl -sign***
+.. code:block: bash
+
+   /usr/lib/ssl/misc/CA.pl -newreq /usr/lib/ssl/misc/CA.pl -sign
 
 All open ssl commands will ask for meta information as well as
 passphrases and passwords and the only thing which is important is the
@@ -101,7 +105,7 @@ copy these files over to our NSClient++ server we shall remove the
 passphrase from the key (unless you want to manually type a password
 whenever you start NSClient++).
 
-.. code-block:: text
+.. code-block:: bash
 
    openssl rsa -in newkey.pem -out newkey_open.pem
 
@@ -114,18 +118,14 @@ certificate. Which is pretty straight forward first we enable the module
 finally we remove all defaults to keep the configuration clean and
 relevant.
 
-.. code-block:: text
+.. code-block:: bat
 
-     del nsclient.ini
-     nscp settings --activate-module NRPEServer --add-defaults
-     nscp settings --path /settings/default --key "allowed ciphers" --set
-    "ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH"
-     nscp settings --path /settings/default --key "certificate" --set
-    security/server.pem
-     nscp settings --path /settings/default --key "certificate key" --set
-    security/server\_key.pem
-     nscp settings --generate --remove-defaults
-    >THE END<
+   del nsclient.ini
+   nscp settings --activate-module NRPEServer --add-defaults
+   nscp settings --path /settings/default --key "allowed ciphers" --set "ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH"
+   nscp settings --path /settings/default --key "certificate" --set security/server.pem
+   nscp settings --path /settings/default --key "certificate key" --set security/server\_key.pem
+   nscp settings --generate --remove-defaults
 
 -  First we enabled strong ciphers and disable the unsecure ADH option
    by settings the ***allowed ciphers*** list to
@@ -166,10 +166,8 @@ a set of options:
 
 .. code-block:: text
 
-     nscp nrpe -H 127.0.0.1 --ca security/ca.pem --verify peer-cert
-    --allowed-ciphers ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
-     I (0,4,2,1 2012-08-08) seem to be doing fine...
-    >THE END<
+   nscp nrpe -H 127.0.0.1 --ca security/ca.pem --verify peer-cert --allowed-ciphers ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
+   I (0,4,2,1 2012-08-08) seem to be doing fine...
 
 The extra options are (in order):
 
@@ -189,14 +187,12 @@ since it only says something is wrong):
 
 .. code-block:: text
 
-     nscp nrpe -H 127.0.0.1 --ca security/ca.pem --verify peer-cert
-    --allowed-ciphers ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
-     error nrpe SSL handshake failed: short read
-     D:\\source\\nscp\\trunk\\include\\socket/client.hpp:194
-     error nrpe Error: Failed to connect to: 127.0.0.1:5666 :short read
-     ..\\..\\..\\..\\trunk\\modules\\NRPEClient\\NRPEClient.cpp:353
-     Error: Failed to connect to: 127.0.0.1:5666 :short read
-    >THE END<
+   nscp nrpe -H 127.0.0.1 --ca security/ca.pem --verify peer-cert --allowed-ciphers ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
+   error nrpe SSL handshake failed: short read
+   D:\\source\\nscp\\trunk\\include\\socket/client.hpp:194
+   error nrpe Error: Failed to connect to: 127.0.0.1:5666 :short read
+   ..\\..\\..\\..\\trunk\\modules\\NRPEClient\\NRPEClient.cpp:353
+   Error: Failed to connect to: 127.0.0.1:5666 :short read
 
 Better trust?
 =============
@@ -226,27 +222,22 @@ NSClient++ configuration file.
 
 .. code-block:: text
 
-     nscp settings --generate --add-defaults
-     nscp settings --path /settings/default --key ca --set security/ca.pem
-     nscp settings --path /settings/default --key "verify mode" --set
-    "verify peer"
-     nscp settings --generate --remove-defaults
-    >THE END<
+   nscp settings --generate --add-defaults
+   nscp settings --path /settings/default --key ca --set security/ca.pem
+   nscp settings --path /settings/default --key "verify mode" --set "verify peer"
+   nscp settings --generate --remove-defaults
 
 Then we restart NSClient++ *SERVER* and retry the connection command we
 issued before.
 
 .. code-block:: text
 
-     nscp nrpe -H 127.0.0.1 --ca security/ca.pem --verify peer-cert
-    --allowed-ciphers ALL:!ADH
-     :!LOW:!EXP:!MD5:@STRENGTH
-     error nrpe SSL handshake failed: short read
-     D:\\source\\nscp\\trunk\\include\\socket/client.hpp:194
-     error nrpe Error: Failed to connect to: 127.0.0.1:5666 :short read
-     ..\\..\\..\\..\\trunk\\modules\\NRPEClient\\NRPEClient.cpp:353
-     Error: Failed to connect to: 127.0.0.1:5666 :short read
-    >THE END<
+   nscp nrpe -H 127.0.0.1 --ca security/ca.pem --verify peer-cert --allowed-ciphers ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
+   error nrpe SSL handshake failed: short read
+   D:\\source\\nscp\\trunk\\include\\socket/client.hpp:194
+   error nrpe Error: Failed to connect to: 127.0.0.1:5666 :short read
+   ..\\..\\..\\..\\trunk\\modules\\NRPEClient\\NRPEClient.cpp:353
+   Error: Failed to connect to: 127.0.0.1:5666 :short read
 
 This is actually expected as we have not loaded the client certificate.
 Also since we are not interested (yet) in validating the client and thus
@@ -256,11 +247,8 @@ as well as key.
 
 .. code-block:: text
 
-     nscp nrpe -H 127.0.0.1 --allowed-ciphers
-    ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH --certificate security/client.pem
-    --certificate-key security/client\_key.pem
-     I (0,4,2,1 2012-08-08) seem to be doing fine...
-    >THE END<
+   nscp nrpe -H 127.0.0.1 --allowed-ciphers ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH --certificate security/client.pem --certificate-key security/client\_key.pem
+   I (0,4,2,1 2012-08-08) seem to be doing fine...
 
 Going over the options we have:
 
@@ -283,11 +271,8 @@ include the verification we had before again:
 
 .. code-block:: text
 
-     nscp nrpe -H 127.0.0.1 --ca security/ca.pem --verify peer-cert
-    --allowed-ciphers ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH --certificate
-    security/client.pem --certificate-key security/client\_key.pem
-     I (0,4,2,1 2012-08-08) seem to be doing fine...
-    >THE END<
+   nscp nrpe -H 127.0.0.1 --ca security/ca.pem --verify peer-cert --allowed-ciphers ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH --certificate security/client.pem --certificate-key security/client\_key.pem
+   I (0,4,2,1 2012-08-08) seem to be doing fine...
 
 As you can see we end up with a rather long command we can get around
 this by using some configuration but I will leave that for another day
@@ -308,22 +293,17 @@ command line options one last time.
 
 And the configuration as well:
 
-.. code-block:: text
+.. code-block:: ini
 
-     [/modules]
-     NRPEServer = enabled
-    
-    .. raw:: html
-    
-       </p>
-    
-    [/settings/default]
-     allowed ciphers = ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
-     ca=security/ca.pem
-     certificate = security/server.pem
-     certificate key = security/server\_key.pem
-     verify mode = peer-cert
-    >THE END<
+   [/modules]
+   NRPEServer = enabled
+   
+   [/settings/default]
+   allowed ciphers = ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH
+   ca=security/ca.pem
+   certificate = security/server.pem
+   certificate key = security/server\_key.pem
+   verify mode = peer-cert
 
 -  **ca** = security/ca.pem
    Set the CA certificate to use when validating remote peers.
@@ -360,15 +340,9 @@ As always, feedback greatly appreciated (in all its forms)!
 **UPDATE:** As Beaker pointed out the second command is **-newreq** not
 **-newca** again :)
 
-.. |image| image:: /images/image_thumb.png
-   :target: /images/image.png
-.. |image2| image:: /images/image_thumb1.png
-   :target: /images/image1.png
-.. |image3| image:: /images/image_thumb2.png
-   :target: /images/image2.png
-.. |image4| image:: /images/image_thumb3.png
-   :target: /images/image3.png
-.. |image5| image:: /images/image_thumb4.png
-   :target: /images/image4.png
-.. |image6| image:: /images/image_thumb5.png
-   :target: /images/image5.png
+.. |image| image:: /images/securing-nrpe-with-certificate-based-authentication-image.png
+.. |image2| image:: /images/securing-nrpe-with-certificate-based-authentication-image1.png
+.. |image3| image:: /images/securing-nrpe-with-certificate-based-authentication-image2.png
+.. |image4| image:: /images/securing-nrpe-with-certificate-based-authentication-image3.png
+.. |image5| image:: /images/securing-nrpe-with-certificate-based-authentication-image4.png
+.. |image6| image:: /images/securing-nrpe-with-certificate-based-authentication-image5.png

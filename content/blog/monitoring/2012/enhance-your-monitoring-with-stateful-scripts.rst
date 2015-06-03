@@ -49,23 +49,19 @@ Remember the begging: Writing a simple Lua script
 Lets get our hands dirty and begin by looking at a simple
 `Lua <http://www.lua.org/>`__ script and dissect it bit by bit:
 
-.. code-block:: text
+.. code-block:: lua
 
      nscp.print('Hello world from Lua...')
     
-    .. raw:: html
-    
-       </p>
-    
-    function my\_command(command, args)
+    function my_command(command, args)
      nscp.print('Yayyy we got executed: ' .. command)
      return 'ok', 'Everything is fine', ''
      end
     
     reg = nscp.Registry()
-     reg:simple\_query('lua\_test', my\_command, 'This is a sample Lua
+     reg:simple_query('lua_test', my_command, 'This is a sample Lua
       script')
-    >THE END<
+
 
 Since I am not about to teach you `Lua <http://www.lua.org/>`__
 scripting (there are plenty of
@@ -74,10 +70,10 @@ only quickly walk you through the script.
 
 The first line uses the dot notation to access a static function inside
 the nscp object or namespace. This is similar to
-***System.out.println()*** in java in many ways. The string you pass to
+**System.out.println()** in java in many ways. The string you pass to
 the function is sent to the NSCP log.
 
-Then we have a block ***function … end*** which creates a function
+Then we have a block **function … end** which creates a function
 inside our script. The function again use the print function to tell us
 it is being executed and then returns a result (think
 `nagios <http://www.nagios.org/>`__) saying the status is ok with a
@@ -95,8 +91,8 @@ call functions. To work around this they have a : operator which is a
 bit of a macro the to make this simpler thus the following are
 equivalent:
 
-#. ***reg.simple_function(reg,‘lua_’test’, …)***
-#. ***reg:simple_function(‘lua_’test’, …)***
+#. **reg.simple_function(reg,‘lua_’test’, …)**
+#. **reg:simple_function(‘lua_’test’, …)**
 
 This is in a way similar to how `python <http://www.python.org/>`__
 handles self but in lua there are different syntaxes.
@@ -104,13 +100,13 @@ handles self but in lua there are different syntaxes.
 So lets fire this baby up and see how to use this from
 `NSClient++ <http://nsclient.org/>`__.
 
-.. code-block:: text
+.. code-block:: bat
 
-     # rm nsclient.ini (or del nsclient.ini)
-     nscp settings --activate-module LUAScript
-     nscp settings --path /settings/lua/scripts --key foo --set
-    demo\_001.lua
-    >THE END<
+   # rm nsclient.ini (or del nsclient.ini)
+   nscp settings --activate-module LUAScript
+   nscp settings --path /settings/lua/scripts --key foo --set
+   demo_001.lua
+
 
 When I demo something or write tutorials I tend to always start by
 removing the configuration to make sure there is no residual old
@@ -122,12 +118,11 @@ to see any debug messages which might help pinpoint the problem.
 
 .. code-block:: text
 
-    highlight="2"]
-     nscp test --log info
-     l pts/lua/demo\_001.lua:1 Hello world from Lua...
-     l ce\\simple\_client.hpp:32 Enter command to inject or exit to
-    terminate...
-    >THE END<
+   nscp test --log info
+   l pts/lua/demo_001.lua:1 Hello world from Lua...
+   l ce\\simple_client.hpp:32 Enter command to inject or exit to
+   terminate...
+
 
 As we can see here we get the message in the script printed as the
 entire script is executed when `NSClient++ <http://nsclient.org/>`__ is
@@ -137,23 +132,21 @@ our script.
 
 .. code-block:: text
 
-    highlight="1,3"]
-     commands
-     l ce\\simple\_client.hpp:54 Commands:
-     l ce\\simple\_client.hpp:57 \| lua\_test: Tis is a sample Lua script
-    >THE END<
+   commands
+   l ce\\simple_client.hpp:54 Commands:
+   l ce\\simple_client.hpp:57 \| lua_test: Tis is a sample Lua script
+
 
 Finally we run the command and then exit. Our command will first print
 the message and then return an OK message with associated status text.
 
 .. code-block:: text
 
-    highlight="2,3"]
-     lua\_test
-     l pts/lua/demo\_001.lua:4 Yayyy we got executed: lua\_test
-     l ce\\simple\_client.hpp:80 OK:Everything is fine
-     exit
-    >THE END<
+   lua_test
+   l pts/lua/demo_001.lua:4 Yayyy we got executed: lua_test
+   l ce\\simple_client.hpp:80 OK:Everything is fine
+   exit
+
 
 So there we have it a few simple lines of `Lua <http://www.lua.org/>`__
 and we are already on our way to create our state full disc check
@@ -188,50 +181,41 @@ time we call it we will get a bit more.
 
 The script in its entirety looks like this:
 
-.. code-block:: text
+.. code-block:: lua
 
-     gperf = ''
-     function drive\_statefull(command, args)
+   gperf = ''
+   function drive_statefull(command, args)
      local core = nscp.Core()
-     code,msg,perf = core:simple\_query('checkDriveSize', {'c'})
+     code,msg,perf = core:simple_query('checkDriveSize', {'c'})
      gperf = gperf .. perf
      return code, msg, gperf
-     end
-    
-    .. raw:: html
-    
-       </p>
-    
-    reg = nscp.Registry()
-     reg:simple\_query('check\_sdrive', drive\_statefull, 'Check if the
-      drive is full (statefull nonsense version)')
-    >THE END<
+   end
+   
+   reg = nscp.Registry()
+   reg:simple_query('check_sdrive', drive_statefull, 'Check if the drive is full (statefull nonsense version)')
+
 
 Now don’t forget to load the CheckDisk module as well using the
-following command: ***nscp settings --activate-module CheckDisk***
+following command: **nscp settings --activate-module CheckDisk**
 
 A session with nscp test using the script will look like this (again
-starting it with ***nscp test --log info***):
+starting it with **nscp test --log info**):
 
 .. code-block:: text
 
-     check\_sdrive
-     l ce\\simple\_client.hpp:80 OK:OK: All drives within bounds.
-     l ce\\simple\_client.hpp:82 Performance data: 'c: %'=98% 'c:'=221.21G
-     check\_sdrive
-     l ce\\simple\_client.hpp:80 OK:OK: All drives within bounds.
-     l ce\\simple\_client.hpp:82 Performance data: 'c: %'=98%
-    'c:'=221.21G'c: '%''=98% 'c:'=221.21G
-     check\_sdrive
-     l ce\\simple\_client.hpp:80 OK:OK: All drives within bounds.
-     l ce\\simple\_client.hpp:82 Performance data: 'c: %'=98%
-    'c:'=221.21G'c: '%''=98% 'c:'=221.21G'c: '%''=98% 'c:'=221.21G
-     check\_sdrive
-     l ce\\simple\_client.hpp:80 OK:OK: All drives within bounds.
-     l ce\\simple\_client.hpp:82 Performance data: 'c: %'=98%
-    'c:'=221.21G'c: '%''=98% 'c:'=221.21G'c: '%''=98% 'c:'=221.21G'c:
-    '%''=98% 'c:'=221.21G
-    >THE END<
+   check_sdrive
+   l ce\\simple_client.hpp:80 OK:OK: All drives within bounds.
+   l ce\\simple_client.hpp:82 Performance data: 'c: %'=98% 'c:'=221.21G
+   check_sdrive
+   l ce\\simple_client.hpp:80 OK:OK: All drives within bounds.
+   l ce\\simple_client.hpp:82 Performance data: 'c: %'=98% 'c:'=221.21G'c: '%''=98% 'c:'=221.21G
+   check_sdrive
+   l ce\\simple_client.hpp:80 OK:OK: All drives within bounds.
+   l ce\\simple_client.hpp:82 Performance data: 'c: %'=98% 'c:'=221.21G'c: '%''=98% 'c:'=221.21G'c: '%''=98% 'c:'=221.21G
+   check_sdrive
+   l ce\\simple_client.hpp:80 OK:OK: All drives within bounds.
+   l ce\\simple_client.hpp:82 Performance data: 'c: %'=98% 'c:'=221.21G'c: '%''=98% 'c:'=221.21G'c: '%''=98% 'c:'=221.21G'c: '%''=98% 'c:'=221.21G
+
 
 If you scroll to the right you can see that every time we run the
 command we get a bit more performance data returned. So state handling
@@ -252,7 +236,7 @@ we will always get performance data in kilobytes.
 The other thing we need to do is force CheckDriveSize to return the full
 size value to do this we need to have at least one bounds check so we
 will add MaxWarn=80%. Thus our checkDriveSize command will look like
-this: ***checkDriveSize c 'perf-unit=K MaxWarn=80%***.
+this: **checkDriveSize c 'perf-unit=K MaxWarn=80%**.
 
 But lets return to our script and do a quick walk-through of what we
 want the script to do.
@@ -267,73 +251,64 @@ want the script to do.
 That is pretty much it but of course the script will be a bit more code
 as we need to accomplish all this. The entire script looks like this:
 
-.. code-block:: text
+.. code-block:: lua
 
-     last\_value = 0
-     last\_time = 0
-     function split\_perfdata(str)
-     for v,w,c,mi,ma in string.gmatch(str,
-    "(%d-)K;(%d-);(%d-);(%d-);(%d\*)") do
-     return v,w,c,mi,ma
+   last_value = 0
+   last_time = 0
+   function split_perfdata(str)
+     for v,w,c,mi,ma in string.gmatch(str, "(%d-)K;(%d-);(%d-);(%d-);(%d\*)") do
+       return v,w,c,mi,ma
      end
      return nil
-     end
-     function make\_perfdata(v,w,c,mi,ma)
-     return v..'K;'..w..';'..c..';'..mi..';'..ma
-     end
+   end
+   
+   function make_perfdata(v,w,c,mi,ma)
+      return v..'K;'..w..';'..c..';'..mi..';'..ma
+   end
     
-    .. raw:: html
-    
-       </p>
-    
-    function drive\_statefull(command, args)
+   function drive_statefull(command, args)
      -- Reset all variables to default values
      value = 0
      delta = 0
      change = 0
-     extra\_perf = ''
+     extra_perf = ''
      time = os.time()
      -- Execute drive check command
      local core = nscp.Core()
-     code,msg,perf = core:simple\_query('checkDriveSize', {'c',
-      'perf-unit=K', 'MaxWarn=80%'})
+     code,msg,perf = core:simple_query('checkDriveSize', {'c', 'perf-unit=K', 'MaxWarn=80%'})
      -- Extract all (for simplicity we support only one)
-     for k,d in string.gmatch(perf, "'?(.-)'?=([%d;K%%]\*) ?") do
-     if not string.find(k, '%%') then
-     v,w,c,mi,ma = split\_perfdata(d)
-     value = v\*1024
-     max = ma\*1024
-     end
+       for k,d in string.gmatch(perf, "'?(.-)'?=([%d;K%%]\*) ?") do
+       if not string.find(k, '%%') then
+         v,w,c,mi,ma = split_perfdata(d)
+         value = v\*1024
+         max = ma\*1024
+       end
      end
      -- If we have values: Check values and caluclate rates
-     if value ~= 0 and last\_value ~= 0 then
-     change = (value - last\_value)
-     duration = time-last\_time
-     nscp.print('Change: '..change .. ', Duration: '..duration)
-     if change ~= 0 and duration ~= 0 then
-     delta = math.floor(change / duration)
-     -- caluclate predicated value one week from now and create perf data
-     predicted\_value = value + (delta\*7\*24\*60\*60)
-     extra\_perf = " 'c: +7d'=" ..
-      make\_perfdata(math.floor(predicted\_value/1024),0,0,0,math.floor(max/1024))
-     if predicted\_value > max then
-     code = 'crit'
-     msg = 'We expect to be full in a week'
-     end
-     end
-     end
-     -- If we have a new value update "last value"
-     if value > 0 then
-     last\_value = value
-     last\_time = time
-     end
-     return code, msg, perf .. extra\_perf
+     if value ~= 0 and last_value ~= 0 then
+       change = (value - last_value)
+       duration = time-last_time
+       nscp.print('Change: '..change .. ', Duration: '..duration)
+       if change ~= 0 and duration ~= 0 then
+         delta = math.floor(change / duration)
+         -- caluclate predicated value one week from now and create perf data predicted_value = value + (delta\*7\*24\*60\*60)
+         extra_perf = " 'c: +7d'=" .. make_perfdata(math.floor(predicted_value/1024),0,0,0,math.floor(max/1024))
+         if predicted_value > max then
+           code = 'crit'
+           msg = 'We expect to be full in a week'
+           end
+         end
+       end
+       -- If we have a new value update "last value"
+       if value > 0 then
+         last_value = value
+         last_time = time
+       end
+       return code, msg, perf .. extra_perf
      end
     
     reg = nscp.Registry()
-     reg:simple\_query('check\_sdrive', drive\_statefull, 'Check if the
-      drive is full')
-    >THE END<
+    reg:simple_query('check_sdrive', drive_statefull, 'Check if the drive is full')
 
 So there we have it amazing magic to warn if the disk will become full
 in the next seven days. Now this is a very crude script and not very
@@ -365,9 +340,9 @@ cases some more advanced features of both Lua and NSClient++ such as
 using libraries, reading configuration as well as some other nifty
 features.
 
-***But hopefully I have wetted your appetite a bit and hopefully you
+**But hopefully I have wetted your appetite a bit and hopefully you
 have enough information here to start creating some stateful scripts of
-you own!***
+you own!**
 
 .. |lua| image:: /images/lua_thumb.gif
    :target: /images/lua.gif

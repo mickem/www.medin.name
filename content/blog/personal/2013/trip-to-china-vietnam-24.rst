@@ -157,7 +157,7 @@ two in Vietnam on the Chinese border where they usually accepted Chinese
 money. So we decided to head off to see if we could find another hotel
 which accepted my Visa card.
 
-|image|\ This proved difficult as we had other requirements in addition
+|image1|\ This proved difficult as we had other requirements in addition
 to debit card namely an elevator since we had the stroller as well as a
 reasonable price. It was easy to find cheep hotels with elevator which
 only accepted cash or cheep hotels which accepted Visa but had no
@@ -209,7 +209,7 @@ blood on the floor as well as on my bed.
 
 Going to hospitals in a foreign country when you do not speak the
 language is always fun and entertaining and attempting the same in the
-middle of the night just makes it more so. |image|\ I started by heading
+middle of the night just makes it more so. |image2|\ I started by heading
 down to the reception area asking for some help and they provided me
 with `(Povidone)
 iodine <http://en.wikipedia.org/wiki/Povidone-iodine>`__ and bandages
@@ -302,7 +302,7 @@ I later understood was due to the fact that while the hospital said “Bai
 Chay hospital” on the side everyone used the Vietnamese name which is
 BỆNH VIỆN BÃI CHÁY.
 
-|image23|
+|image2|
 
 Arriving at the hospital I again entered the emergency ward and found if
 stock full with people (as well as some food stalls). I went up to the
@@ -516,10 +516,10 @@ going to head home but alas the one day tour we had opted for had a snag
 which no one had mentioned to us it was the two day tour but they would
 ship us home half way through it.
 
-***|DSC02661|\ So what happened was that they dump us alone on a dark
+|DSC02661|\ **So what happened was that they dump us alone on a dark
 tiny boat where no one spoke English (or Chinese) the boat in question
 then in turn dumped us in a harbor somewhere without telling us how to
-get home.***
+get home.**
 
 Let just say I will never travel on the Emeraude again which is a bit of
 a shame since we quite enjoyed the trip up until the point they dumped
@@ -655,7 +655,7 @@ to china!
    :target: /images/DSC02139.jpg
 .. |DSC02147| image:: /images/thumbnails/500x-/DSC02147.jpg
    :target: /images/DSC02147.jpg
-.. |image2| image:: /images/thumbnails/500x-/image2.png
+.. |image2| image:: /images/thumbnails/500x-/trip-to-china-vietnam-24-image2.png
    :target: /images/image2.png
 .. |Ler| image:: /images/wlEmoticon-smile2.png
 .. |DSC02160| image:: /images/thumbnails/500x-/DSC02160.jpg

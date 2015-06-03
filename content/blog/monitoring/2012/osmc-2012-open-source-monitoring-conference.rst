@@ -209,16 +209,10 @@ Thank you netways!
 A big thank you to `Netways <http://www.netways.de/>`__ for arranging a
 nice conference again. And see you all next year!
 
-.. |OSMC-genmeric| image:: /images/OSMC-genmeric_thumb.png
-   :target: /images/OSMC-genmeric.png
-.. |20121018_133428| image:: /images/20121018_133428_thumb.jpg
-   :target: /images/20121018_133428.jpg
-.. |20121018_124200| image:: /images/20121018_124200_thumb.jpg
-   :target: /images/20121018_124200.jpg
-.. |20121017_210442| image:: /images/20121017_210442_thumb.jpg
-   :target: /images/20121017_210442.jpg
-.. |20121018_150044| image:: /images/20121018_150044_thumb.jpg
-   :target: /images/20121018_150044.jpg
+.. |OSMC-genmeric| image:: /images/OSMC-genmeric.png
+.. |20121018_133428| image:: /images/20121018_133428.jpg
+.. |20121018_124200| image:: /images/20121018_124200.jpg
+.. |20121017_210442| image:: /images/20121017_210442.jpg
+.. |20121018_150044| image:: /images/20121018_150044.jpg
 .. |Ler| image:: /images/wlEmoticon-smile.png
-.. |DSC04204| image:: /images/DSC04204_thumb.jpg
-   :target: /images/DSC04204.jpg
+.. |DSC04204| image:: /images/DSC04204.jpg

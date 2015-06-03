@@ -5,8 +5,8 @@ Efficient Work: Context switching via the Keyboard
 :category: Development
 :tags: console, far manager, keyboard, multiple monitors, unix, windows, windows 7
 :slug: efficient-work-context-switching-via-the-keyboard
-:image: http://upload.wikimedia.org/wikipedia/commons/f/f5/BeOS_Workspaces.gif
-:social_image: http://upload.wikimedia.org/wikipedia/commons/f/f5/BeOS_Workspaces.gif
+:image: /images/BeOS_Workspaces.png
+:social_image: /images/BeOS_Workspaces.png
 
 One of the most common perceptions of windows is that it is a PUI (PARC
 User interface) oriented operation system. In other words the mouse is
@@ -23,8 +23,8 @@ This is a short introduction to how I use Modern Windows features and
 various third-party tools to optimize my workflow using the Keyboards in
 Windows..
 
-|image0|\ History
------------------
+History
+-------
 
 In the past context switching has for me always been associated with
 Unix and the concept of virtual desktops. The idea with virtual desktop
@@ -62,8 +62,8 @@ context and definitely not vice versa.
 So the first ting to understand is how this is handled in Windows 7. The
 idea is that the Windows button in conjunction with a number will launch
 or switch to the application in the n:th place of the taskbar.
-|image|\ In the following example we can thus click |image| to switch to
-Google Chrome, |image| to switch to Thunderbird, |image| to Visual
+|image|\ In the following example we can thus click |image1| to switch to
+Google Chrome, |image2| to switch to Thunderbird, |image3| to Visual
 Studio and so on and so forth.
 
 Now this is much better then just switching all applications around as
@@ -95,15 +95,15 @@ far to far away for me to b able to interact with it. Happily in Windows
 7 `Microsoft <http://www.microsoft.com>`__ added a couple of keyboard
 shortcuts for this.
 
-|image| will move a window from a monitor to the next monitor on the
-left and |image| will do the same moving a windows to the next right
+|image4| will move a window from a monitor to the next monitor on the
+left and |image5| will do the same moving a windows to the next right
 most monitor. In my case I just have two so both these do the same:
 Toggle the monitor a windows is showed upon.
 
-|image|\ Modern Console
-=======================
+Modern Console
+==============
 
-Another issue which often plagues Windows user is the lack of a modern
+|image6| Another issue which often plagues Windows user is the lack of a modern
 console application. Unfortunately Microsoft has not deemed it important
 enough to rectify this with Windows 7 but fortunately others have. I
 currently use two open source tools one called ConEmu-Maximus5 and the
@@ -113,16 +113,16 @@ similar tools is that it integrates with Far Manger very nicely. It can
 also launch putty inside tabs but this is a bit flaky currently and
 nothing I use.
 
-|image|\ Now tying this into the keyboard I figured I would mention some
+|image7|\ Now tying this into the keyboard I figured I would mention some
 keyboard shortcuts which really makes conemu and Far Manager shine.
-First off you can switch tab using Host+#. In my case this means |image|
-to |image|. But once you add in Far you have automatically get command
+First off you can switch tab using Host+#. In my case this means |image8|
+to |image9|. But once you add in Far you have automatically get command
 history with completion as well as filename completion and other such
 thing. And I honestly think the Far version of completion is by far
 beyond the similar bash equal if you look in the screen shot on the
-right typing ***more n*** pops up a list with all available file
-starting with n (as well as all historical entries matching “\ ***more
-n***\ ”).
+right typing **more n** pops up a list with all available file
+starting with n (as well as all historical entries matching “\ **more
+n**\ ”).
 
 I think someday I will write-up a blog post on just Far manager as it is
 one of the best tools I have ever come across.
@@ -155,25 +155,14 @@ cool features and is to my knowledge the most complete Window Manager
 out there.
 
 .. |image0| image:: http://upload.wikimedia.org/wikipedia/commons/f/f5/BeOS_Workspaces.gif
-.. |image| image:: /images/image_thumb.png
-   :target: /images/image.png
-.. |image1| image:: /images/image_thumb1.png
-   :target: /images/image1.png
-.. |image2| image:: /images/image_thumb2.png
-   :target: /images/image2.png
-.. |image3| image:: /images/image_thumb3.png
-   :target: /images/image3.png
-.. |Multiple Monitors Circa 2001| image:: /images/P1010003_thumb.jpg
-   :target: /images/P1010003.jpg
-.. |image4| image:: /images/image_thumb4.png
-   :target: /images/image4.png
-.. |image5| image:: /images/image_thumb5.png
-   :target: /images/image5.png
-.. |image6| image:: /images/image_thumb6.png
-   :target: /images/image6.png
-.. |image7| image:: /images/image_thumb7.png
-   :target: /images/image7.png
-.. |image8| image:: /images/image_thumb8.png
-   :target: /images/image8.png
-.. |image9| image:: /images/image_thumb9.png
-   :target: /images/image9.png
+.. |image| image:: /images/image.png
+.. |image1| image:: /images/image1.png
+.. |image2| image:: /images/image2.png
+.. |image3| image:: /images/image3.png
+.. |Multiple Monitors Circa 2001| image:: /images/P1010003.jpg
+.. |image4| image:: /images/image4.png
+.. |image5| image:: /images/image5.png
+.. |image6| image:: /images/image6.png
+.. |image7| image:: /images/efficient-work-context-switching-via-the-keyboard-image7.png
+.. |image8| image:: /images/efficient-work-context-switching-via-the-keyboard-image8.png
+.. |image9| image:: /images/efficient-work-context-switching-via-the-keyboard-image9.png

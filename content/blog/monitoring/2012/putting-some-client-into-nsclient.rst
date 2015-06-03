@@ -189,7 +189,7 @@ Well, best way is to use the --help command like so:
      server)
      --buffer-length arg Same as payload-lenght (used for legacy reasons)
      --ssl Initial an ssl handshake with the server.
-    >THE END<
+
 
 As you can see there is a lot of options but a lot of it is for various
 things you probably wont need initially so if we remove ssl/certificate
@@ -222,7 +222,7 @@ apart from query we end up with the following list:
     Common options for nrpe:
      -n [ --no-ssl ] Do not initial an ssl handshake with the server,
      talk in plaintext.
-    >THE END<
+
 
 And this is very similar to the check_nrpe options which in turns means
 it is very similar to how you use check_nrpe. So one might argue that
@@ -281,7 +281,7 @@ Then we do
      l ce\\simple\_client.hpp:57 \| nrpe\_query: Check remote NRPE host
      l ce\\simple\_client.hpp:57 \| nrpe\_submit: Submit (via query) remote
     NRPE host
-    >THE END<
+
 
 As discussed earlier for NRPE most of these commands are not useful
 since NRPE is a single paradigm protocol. So lets focus on nrpe_query.
@@ -308,7 +308,7 @@ like this:
 
      [/settings/NRPE/client/targets]
      foo=127.0.0.1
-    >THE END<
+
 
 This is marginally useful since all we can configure is host and port.
 What if we want to disable SSL as well? Then we use the longer object
@@ -321,7 +321,7 @@ to the alias).
      [/settings/NRPE/client/targets/foo]
      address=127.0.0.1
      ssl=false
-    >THE END<
+
 
 **Scripts**
 ===========
@@ -358,7 +358,7 @@ here using `Python <http://www.lua.org/>`__.
     
     # Using query:
      (res, msg, perf) = core.simple\_query('nrpe\_query', args)
-    >THE END<
+
 
 So now you might be wondering what the difference between execution and
 query is?
@@ -396,7 +396,7 @@ First we need to configure the proxy
     
        </p>
     
-    >THE END<
+
 
 Next we configure our remote NRPE on our Monitored Host to accept
 requests from our Proxy.
@@ -457,7 +457,7 @@ change the Proxy configuration as below:
      ; TARGET - The target to send the message to (will be resolved by the
       consumer)
      target = remote\_host
-    >THE END<
+
 
 The main difference is that we need to change NRPEServer for NSCAClient
 and of course configure our NSCA connection details including encryption
@@ -480,13 +480,8 @@ both NSClient++ and the tutorial to instead use host=192.168.0.1 over
 --host 192.168.0 etc. (Notice that this syntax requires 0.4.1.73 of
 NSClient++)
 
-.. |image| image:: /images/image_thumb6.png
-   :target: /images/image6.png
-.. |image2| image:: /images/image_thumb7.png
-   :target: /images/image7.png
-.. |image3| image:: /images/image_thumb8.png
-   :target: /images/image8.png
-.. |image4| image:: /images/image_thumb9.png
-   :target: /images/image9.png
-.. |image5| image:: /images/image_thumb10.png
-   :target: /images/image10.png
+.. |image| image:: /images/putting-some-client-into-nsclient-image6.png
+.. |image2| image:: /images/putting-some-client-into-nsclient-image7.png
+.. |image3| image:: /images/putting-some-client-into-nsclient-image8.png
+.. |image4| image:: /images/putting-some-client-into-nsclient-image9.png
+.. |image5| image:: /images/putting-some-client-into-nsclient-image10.png

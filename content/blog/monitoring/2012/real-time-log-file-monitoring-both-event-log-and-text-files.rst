@@ -77,24 +77,23 @@ Configuring real-time event log checks
 
 For CheckEventlog we need essentially three things:
 
-#. Load the module
+Load the module
 
-.. code-block: ini
+.. code-block:: ini
 
    [/modules]
    CheckEventLog = enabled
 
+Enable real time monitoring
 
-#. Enable real time monitoring
-
-.. code-block: ini
+.. code-block:: ini
 
    [/settings/eventlog/real-time]
    enabled = true
 
-#. Create a simple filter
+Create a simple filter
 
-.. code-block: ini
+.. code-block:: ini
 
    [/settings/eventlog/real-time/filters/eventlog]
    filter=level = 'error'
@@ -120,20 +119,20 @@ very similar. Again we need three things.
 
 #. Load the module
 
-.. code-block: ini
+.. code-block:: ini
 
    [/modules] CheckLogFile = enabled
 
 #. Enable real time monitoring
 
-.. code-block: ini
+.. code-block:: ini
 
    [/settings/logfile/real-time]
    enabled = true
 
 #. Create a simple filter
 
-.. code-block: ini
+.. code-block:: ini
 
    [/settings/logfile/real-time/checks/logfile]
    file = ./test.txt
@@ -167,7 +166,7 @@ monitoring) I will quickly introduce the rest we need to do:
 
 #. Load all the other modules:
 
-.. code-block: ini
+.. code-block:: ini
 
    [/modules]
    SimpleFileWriter = enabled
@@ -176,7 +175,7 @@ monitoring) I will quickly introduce the rest we need to do:
 
 #. Configure a default target for the NSCA destination
 
-.. code-block: ini
+.. code-block:: ini
 
    [/settings/NSCA/client/targets/default]
    address=nsca://127.0.0.1:5667
@@ -194,7 +193,7 @@ what this is/does.
 
 The entire configuration looks like this:
 
-.. code-block: ini
+.. code-block:: ini
 
    [/modules]
    CheckLogFile = enabled
@@ -237,14 +236,14 @@ since we cant listen to events from a non existing file.
 
 So lets create the file and start NSClient++ in test mode.
 
-.. code-block: text
+.. code-block:: text
 
    echo. > test.txt
    nscp test --log info
 
 Next up we fire up another console and add some data to our file:
 
-.. code-block: text
+.. code-block:: text
 
    echo hello;world >> test.txt
 
@@ -253,7 +252,7 @@ proper NSCA server if your NSCA server is responding you will not see
 anything but on the other hand you will hopefully receive some nifty
 messages.
 
-.. code-block: text
+.. code-block:: text
 
    e lient\\NSCAClient.cpp:435 Error: Failed to connect to: 127.0.0.1:5667
 
@@ -261,14 +260,14 @@ Next we want to verify that the SimpleFileWriter works so lets open up
 the a file called ***output.txt*** where you should see something along
 the following lines:
 
-.. code-block: text
+.. code-block:: text
 
    logfile OK ./test.txt: 1 (hello;world , , )
 
 Finally we want to confirm the cache module which we can do using the
 ***check_cache*** command like so:
 
-.. code-block: text
+.. code-block:: text
 
    check_cache index=logfile
    l ce\\simple_client.hpp:80 OK:./test.txt: 1 (hello;world , , )

@@ -5,8 +5,8 @@ Embedding Python inside a multithreaded C++ program
 :category: Development
 :tags: boost, c++, python
 :slug: embedding-python-inside-a-multithreaded-c-program
-:image: http://www.python.org/community/logos/python-powered-h-140x182.png
-:social_image: http://www.python.org/community/logos/python-powered-h-140x182.png
+:image: /images/python-powered.png
+:social_image: /images/python-powered.png
 
 This is a tutorial for how to embed python correctly inside a
 multi threaded program. Python is a very neat language which is very
@@ -45,62 +45,54 @@ CMakeList.exe file you can edit which subdirectories are built so if you
 run into issues feel free to comment out the latter ones to make sure
 CMake is configured correctly.
 
-.. code-block:: text
+.. code-block:: cmake
 
-     ADD\_SUBDIRECTORY(00\_hello\_world)
-     ADD\_SUBDIRECTORY(01\_threads)
-     ADD\_SUBDIRECTORY(02\_embed\_python)
-     ADD\_SUBDIRECTORY(03\_python\_callins)
-     ADD\_SUBDIRECTORY(04\_thread\_safe)
-    >THE END<
+   ADD_SUBDIRECTORY(00_hello_world)
+   ADD_SUBDIRECTORY(01_threads)
+   ADD_SUBDIRECTORY(02_embed_python)
+   ADD_SUBDIRECTORY(03_python_callins)
+   ADD_SUBDIRECTORY(04_thread_safe)
 
 If you are on Windows you also need to point CMake to your boost lib and
 include folder as well as python this is done by setting options:
 
-.. code-block:: text
+.. code-block:: cmake
 
-     SET(BOOST\_INCLUDEDIR "D:/source/include/boost-1\_47" CACHE PATH "Path
-    to boost includes")
-     SET(BOOST\_LIBRARYDIR "D:/source/lib/x64" CACHE PATH "Path to boost
-    libraries")
-     ...
-     if(CMAKE\_CL\_64)
-     MESSAGE(STATUS "Detected x64")
-     SET(PYTHON\_ROOT c:/python/27x64)
-     ELSEIF(WIN32)
-     MESSAGE(STATUS "Detected w32")
-     SET(PYTHON\_ROOT c:/python/27)
-     ENDIF()
-    >THE END<
+   SET(BOOST_INCLUDEDIR "D:/source/include/boost-1_47" CACHE PATH "Path to boost includes")
+   SET(BOOST_LIBRARYDIR "D:/source/lib/x64" CACHE PATH "Path to boost libraries")
+   ...
+   if(CMAKE_CL_64)
+   MESSAGE(STATUS "Detected x64")
+   SET(PYTHON_ROOT c:/python/27x64)
+   ELSEIF(WIN32)
+   MESSAGE(STATUS "Detected w32")
+   SET(PYTHON_ROOT c:/python/27)
+   ENDIF()
 
 Looking at the source from Hello World we have two files
 hello_world.hpp and hello_world.cpp. The first one merely has some
 defines for this to compile on both windows and linux. The cpp file has
 the usual “Hello World” sample.
 
-[sourcecode language="cpp" padlinenumbers="true" collapse="false"]
- #pragma once
+.. code-block:: cpp
 
-#include <iostream>
-
-| #ifdef WIN32
-|  #define MAIN wmain
-|  typedef wchar_t unicode_char;
-|  #else
-|  #define MAIN main
-|  typedef char unicode_char;
-|  #endif
-|  [/sourcecode]
-
-[sourcecode language="cpp"]
- #include "hello_world.hpp"
-
-int MAIN(int argc, const unicode_char\* argv[]) {
-
-| std::cout << "Hello World\\n";
-|  }
-
-[/sourcecode]
+   #pragma once
+   
+   #include <iostream>
+   
+   #ifdef WIN32
+   #define MAIN wmain
+   typedef wchar_t unicode_char;
+   #else
+   #define MAIN main
+   typedef char unicode_char;
+   #endif
+   
+   #include "hello_world.hpp"
+   
+   int MAIN(int argc, const unicode_char\* argv[]) {
+     std::cout << "Hello World\\n";
+   }
 
 Multithreaded
 -------------
@@ -115,32 +107,32 @@ threads.
 The thread has to do some work and for this rather simple sample we
 simply wait a bit and then log a few messages in a loop.
 
-[sourcecode language="cpp"]
- void thread_proc(const int id, const int delay) {
- for (int i=0;i<thread_loops;i++) {
- boost::posix_time::millisec time_to_sleep(rand()\*delay/RAND_MAX);
- std::stringstream ss;
- ss << ">>> proc: " << id << "\\n";
- safe_cout << ss.str();
- boost::this_thread::sleep(time_to_sleep);
- }
- }
- [/sourcecode]
+.. code-block:: cpp
+
+   void thread_proc(const int id, const int delay) {
+     for (int i=0;i<thread_loops;i++) {
+       boost::posix_time::millisec time_to_sleep(rand()\*delay/RAND_MAX);
+       std::stringstream ss;
+       ss << ">>> proc: " << id << "\\n";
+       safe_cout << ss.str();
+       boost::this_thread::sleep(time_to_sleep);
+     }
+   }
 
 The other part we need is to start the threads which is done like so:
 
-[sourcecode language="cpp"]
- int MAIN(int argc, const unicode_char\* argv[]) {
- boost::thread_group threads;
+.. code-block:: cpp
 
-| for (int i=0;i<thread_count;i++) {
-|  threads.create_thread(boost::bind(&thread_proc, i, 5));
-|  }
-
-| safe_cout << "main: waiting for threads to join\\n";
-|  threads.join_all();
-|  }
-|  [/sourcecode]
+   int MAIN(int argc, const unicode_char\* argv[]) {
+     boost::thread_group threads;
+     
+     for (int i=0;i<thread_count;i++) {
+       threads.create_thread(boost::bind(&thread_proc, i, 5));
+     }
+     
+     safe_cout << "main: waiting for threads to join\\n";
+     threads.join_all();
+   }
 
 Now the observing reader will notice that we have replaced
 ***std::cout*** with ***safe_cout***. This is a rather important step
@@ -153,19 +145,19 @@ printed chunk will be thread safe but not the entire statements (this as
 we protect the call to <<). TO work around this I am using a string
 stream to first construct the string and the just print the output.
 
-[sourcecode language="cpp"]
- class logger {
- boost::recursive_mutex cout_guard;
- public:
- template <typename T>
- logger & operator << (const T & data){
- boost::lock_guard<boost::recursive_mutex> lock(cout_guard);
- std::cout << data;
- return \*this;
- }
- };
- logger safe_cout;
- [/sourcecode]
+.. code-block:: cpp
+
+   class logger {
+     boost::recursive_mutex cout_guard;
+     public:
+     template <typename T>
+     logger & operator << (const T & data){
+       boost::lock_guard<boost::recursive_mutex> lock(cout_guard);
+       std::cout << data;
+       return \*this;
+     }
+   };
+   logger safe_cout;
 
 To see the code in its entirety go to the git hub project at
 http://github.com/mickem/embed_python/tree/master/01_threads
@@ -181,25 +173,26 @@ to adapt without boost. The first step is to expose our interface to the
 python code. The interface we provide to Python is a function called
 hello_cpp() contained inside a module called TEST.
 
-[sourcecode language="cpp"]
- void hello(int id) {
- std::cout << "hello_cpp(" << id << ")\\n";
- }
+.. code-block:: cpp
 
-| BOOST_PYTHON_MODULE(TEST)
-|  {
-|  bp::def("hello_cpp", hello);
-|  }
-|  [/sourcecode]
+   void hello(int id) {
+   std::cout << "hello_cpp(" << id << ")\\n";
+   }
+   
+   BOOST_PYTHON_MODULE(TEST)
+   {
+   bp::def("hello_cpp", hello);
+   }
+   [/sourcecode]
 
 Then we also need to load and initialize Python in our main procedure
 like so. The second function is something generated for us by the
 BOOST_PYTHON_MODULE macro.
 
-[sourcecode language="cpp"]
- Py_Initialize();
- initTEST();
- [/sourcecode]
+.. code-block:: cpp
+
+   Py_Initialize();
+   initTEST();
 
 And finally we need to run some Python code I have for simplicity opted
 to include the actual Python snippet as a string in the C++ code. The
@@ -208,29 +201,28 @@ copy of the global dictionary using a copy here is strictly not
 necessary but normally I allow each script to have its own “context” and
 then it is required to create isolation.
 
-[sourcecode language="cpp"]
- try {
- bp::object main_module = bp::import("__main__");
- bp::dict globalDict =
-bp::extract<bp::dict>(main_module.attr("__dict__"));
- bp::dict localDict = globalDict.copy();
+.. code-block:: cpp
 
-| bp::object ignored = bp::exec(
-|  "from TEST import hello_cpp\\n"
-|  "\\n"
-|  "hello_cpp(1234)\\n"
-|  "\\n"
-|  , localDict, localDict);
-
-| } catch(const bp::error_already_set &e) {
-|  std::cout << "Exception in script: ";
-|  print_py_error();
-|  } catch(const std::exception &e) {
-|  std::cout << "Exception in script: " << e.what() << "\\n";
-|  } catch(...) {
-|  std::cout << "Exception in script: UNKNOWN\\n";
-|  }
-|  [/sourcecode]
+   try {
+     bp::object main_module = bp::import("__main__");
+     bp::dict globalDict = bp::extract<bp::dict>(main_module.attr("__dict__"));
+     bp::dict localDict = globalDict.copy();
+     
+     bp::object ignored = bp::exec(
+    "from TEST import hello_cpp\\n"
+    "\\n"
+    "hello_cpp(1234)\\n"
+    "\\n"
+    , localDict, localDict);
+   
+   } catch(const bp::error_already_set &e) {
+     std::cout << "Exception in script: ";
+     print_py_error();
+   } catch(const std::exception &e) {
+     std::cout << "Exception in script: " << e.what() << "\\n";
+   } catch(...) {
+     std::cout << "Exception in script: UNKNOWN\\n";
+   }
 
 A final piece of the puzzle is to simply print errors from Python. To do
 this I have implemented a catch bp::error_already_set for which in
@@ -239,21 +231,20 @@ stdout. Unfortunately the error_already_set exception does not out of
 the box provide information from the Python script so we cant (as we
 normally do) call the what() member function.
 
-[sourcecode language="cpp"]
- void print_py_error() {
- try {
- PyErr_Print();
- bp::object sys(bp::handle<>(PyImport_ImportModule("sys")));
- bp::object err = sys.attr("stderr");
- std::string err_text =
-bp::extract<std::string>(err.attr("getvalue")());
- std::cout << err_text << "\\n";
- } catch (...) {
- std::cout << "Failed to parse python error\\n";
- }
- PyErr_Clear();
- }
- [/sourcecode]
+.. code-block:: cpp
+
+   void print_py_error() {
+     try {
+       PyErr_Print();
+       bp::object sys(bp::handle<>(PyImport_ImportModule("sys")));
+       bp::object err = sys.attr("stderr");
+       std::string err_text = bp::extract<std::string>(err.attr("getvalue")());
+       std::cout << err_text << "\\n";
+     } catch (...) {
+       std::cout << "Failed to parse python error\\n";
+     }
+     PyErr_Clear();
+   }
 
 That pretty much sums up our python embedding which is very simple
 thanks to boost::python. To see the code in its entirety go to the git
@@ -270,38 +261,31 @@ simple we need two things a function exposed in our Python script.
 
 .. code-block:: python
 
-     from TEST import hello\_cpp
-    
-    .. raw:: html
-    
-       </p>
-    
-    def hello\_python(id):
-     hello\_cpp(id)
-    
-    >THE END<
+   from TEST import hello_cpp
+   
+   def hello_python(id):
+     hello_cpp(id)
 
 And then we just need to call that function.
 
-[sourcecode language="cpp"]
- void call_python(bp::dict &localDict, int id) {
- try {
- bp::object scriptFunction =
-bp::extract<bp::object>(localDict["hello_python"]);
- if(scriptFunction)
- scriptFunction(id);
- else
- std::cout << "Script did not have a hello function!\\n";
- } catch(const bp::error_already_set &e) {
- std::cout << "Exception in script: ";
- print_py_error();
- } catch(const std::exception &e) {
- std::cout << "Exception in script: " << e.what() << "\\n";
- } catch(...) {
- std::cout << "Exception in script: UNKNOWN\\n";
- }
- }
- [/sourcecode]
+.. code-block:: cpp
+
+   void call_python(bp::dict &localDict, int id) {
+     try {
+       bp::object scriptFunction = bp::extract<bp::object>(localDict["hello_python"]);
+       if(scriptFunction)
+         scriptFunction(id);
+       else
+         std::cout << "Script did not have a hello function!\\n";
+     } catch(const bp::error_already_set &e) {
+       std::cout << "Exception in script: ";
+       print_py_error();
+     } catch(const std::exception &e) {
+       std::cout << "Exception in script: " << e.what() << "\\n";
+     } catch(...) {
+       std::cout << "Exception in script: UNKNOWN\\n";
+     }
+   }
 
 Simple enough right? Again much thanks to boost python which makes
 everything simple and straight forward. I guess the most complicated
@@ -320,30 +304,31 @@ accessing Python state). To manage this we are using a fairly common
 `RAII <http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization>`__
 concept by having a class to manage our state for us.
 
-[sourcecode language="cpp"]
- struct aquire_py_GIL {
- PyGILState_STATE state;
- aquire_py_GIL() {
- state = PyGILState_Ensure();
- }
+.. code-block:: cpp
 
-| ~aquire_py_GIL() {
-|  PyGILState_Release(state);
-|  }
-|  };
-|  [/sourcecode]
+   struct aquire_py_GIL {
+     PyGILState_STATE state;
+     aquire_py_GIL() {
+       state = PyGILState_Ensure();
+     }
+     
+     ~aquire_py_GIL() {
+       PyGILState_Release(state);
+     }
+   };
 
 This function use construction/destruction to manage the state
 automatically meaning to use this all we need to do is define a variable
 of this type.
 
-[sourcecode language="cpp"]
- try {
- aquire_py_GIL lock;
- ...
- ...
- } ...
- [/sourcecode]
+.. code-block:: cpp
+
+   try {
+   aquire_py_GIL lock;
+   ...
+   ...
+   }
+   ...
 
 The other thing we need to do is to release the GIL when we no longer
 need it and I am not referring to after calling into Python (as that is
@@ -353,17 +338,17 @@ takes time) we need to hand over GIL to whomever might need it. To help
 we also have a similar function which does the reverse of the previous
 function.
 
-[sourcecode language="cpp"]
- struct release_py_GIL {
- PyThreadState \*state;
- release_py_GIL() {
- state = PyEval_SaveThread();
- }
- ~release_py_GIL() {
- PyEval_RestoreThread(state);
- }
- };
- [/sourcecode]
+.. code-block:: cpp
+
+   struct release_py_GIL {
+     PyThreadState *state;
+     release_py_GIL() {
+       state = PyEval_SaveThread();
+     }
+     ~release_py_GIL() {
+       PyEval_RestoreThread(state);
+     }
+   };
 
 Then we need to switch all std::cout to use our safe_cout which we
 introduced previously.  We also want to change our hello function to
@@ -371,16 +356,16 @@ actually pretend to do some work.
 
 The resulting code for hello_cpp looks like this:
 
-[sourcecode language="cpp"]
- void hello(int id) {
- release_py_GIL unlocker;
- std::stringstream ss;
- ss << ">>> py: sleep: " << id << "\\n";
- safe_cout << ss.str();
+.. code-block:: cpp
 
-boost::this_thread::sleep(boost::posix_time::millisec(rand()\*delay/RAND_MAX));
- }
- [/sourcecode]
+   void hello(int id) {
+     release_py_GIL unlocker;
+     std::stringstream ss;
+     ss << ">>> py: sleep: " << id << "\\n";
+     safe_cout << ss.str();
+     
+     boost::this_thread::sleep(boost::posix_time::millisec(rand()\*delay/RAND_MAX));
+   }
 
 As you can see we have now added the ***release_py_GIL unlocker;*** to
 allow other threads to call into python while we are “working”.
@@ -388,26 +373,25 @@ allow other threads to call into python while we are “working”.
 We have also done some minor but significant change in the
 ***call_python*** function.
 
-[sourcecode language="cpp"]
- void call_python(bp::dict &localDict, int id) {
- try {
- aquire_py_GIL lock;
- try {
- bp::object scriptFunction =
-bp::extract<bp::object>(localDict["hello_python"]);
- if(scriptFunction)
- scriptFunction(id);
- else
- safe_cout << "Script did not have a hello function!\\n";
- } catch(const bp::error_already_set &e) {
- safe_cout << "Exception in script: ";
- print_py_error();
- }
- } catch(const std::exception &e) {
- safe_cout << "Exception in script: " << e.what() << "\\n";
- }
- }
- [/sourcecode]
+.. code-block:: cpp
+
+   void call_python(bp::dict &localDict, int id) {
+     try {
+       aquire_py_GIL lock;
+       try {
+         bp::object scriptFunction = bp::extract<bp::object>(localDict["hello_python"]);
+         if(scriptFunction)
+           scriptFunction(id);
+         else
+           safe_cout << "Script did not have a hello function!\\n";
+       } catch(const bp::error_already_set &e) {
+         safe_cout << "Exception in script: ";
+         print_py_error();
+       }
+     } catch(const std::exception &e) {
+       safe_cout << "Exception in script: " << e.what() << "\\n";
+     }
+   }
 
 As we now have to aquire the GIL before we can access any Python related
 functions we need to re-scope our error handling. This is important as
@@ -417,44 +401,43 @@ catches.
 
 The init code looks something like this:
 
-[sourcecode language="cpp"]
- int MAIN(int argc, const unicode_char\* argv[]) {
- Py_Initialize();
- PyEval_InitThreads();
- initTEST();
+.. code-block:: cpp
 
-| try {
-|  bp::object main_module = bp::import("__main__");
-|  bp::dict globalDict =
-  bp::extract<bp::dict>(main_module.attr("__dict__"));
-|  bp::dict localDict = globalDict.copy();
-
-| try {
-|  bp::object ignored = bp::exec(
-|  "from TEST import hello_cpp\\n"
-|  "\\n"
-|  "def hello_python(id):\\n"
-|  " hello_cpp(id)\\n"
-|  "\\n"
-|  , localDict, localDict);
-|  } catch(const bp::error_already_set &e) {
-|  safe_cout << "Exception in script: ";
-|  print_py_error();
-|  }
-
-PyThreadState \*state = PyEval_SaveThread();
-
-| boost::thread_group threads;
-|  for (int i=0;i<thread_count;i++)
-|  threads.create_thread(boost::bind(&thread_proc, i, localDict));
-|  safe_cout << ":::main: waiting for threads to join\\n";
-|  threads.join_all();
-
-| } catch(const std::exception &e) {
-|  safe_cout << "Exception in script: " << e.what() << "\\n";
-|  }
-|  }
-|  [/sourcecode]
+   int MAIN(int argc, const unicode_char\* argv[]) {
+     Py_Initialize();
+     PyEval_InitThreads();
+     initTEST();
+   
+     try {
+       bp::object main_module = bp::import("__main__");
+       bp::dict globalDict = bp::extract<bp::dict>(main_module.attr("__dict__"));
+       bp::dict localDict = globalDict.copy();
+   
+       try {
+         bp::object ignored = bp::exec(
+         "from TEST import hello_cpp\\n"
+         "\\n"
+         "def hello_python(id):\\n"
+         " hello_cpp(id)\\n"
+         "\\n"
+         , localDict, localDict);
+       } catch(const bp::error_already_set &e) {
+         safe_cout << "Exception in script: ";
+         print_py_error();
+       }
+   
+       PyThreadState \*state = PyEval_SaveThread();
+   
+       boost::thread_group threads;
+       for (int i=0;i<thread_count;i++)
+       threads.create_thread(boost::bind(&thread_proc, i, localDict));
+       safe_cout << ":::main: waiting for threads to join\\n";
+       threads.join_all();
+   
+     } catch(const std::exception &e) {
+       safe_cout << "Exception in script: " << e.what() << "\\n";
+     }
+   }
 
 The main change from our previous attempt is the rescoping of the error
 handling (again to accommodate GIL) as well as a very very important

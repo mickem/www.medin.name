@@ -44,10 +44,6 @@ which is we simplify a bit has the following fields:\ |image|
 -  EventType
    The type of message is one of the following:
 
-   .. raw:: html
-
-      </p>
-
    -  Error
    -  Failure Audit
    -  Success Audit
@@ -191,8 +187,7 @@ an article about writing filters):
 
 .. code-block:: text
 
-     generated gt -2d AND severity NOT IN ('success', 'informational')
-    >THE END<
+   generated gt -2d AND severity NOT IN ('success', 'informational')
 
 Real time event log
 -------------------
@@ -201,20 +196,14 @@ Real time event log monitoring is almost simpler to set up then using
 server-side checks. The drawback though is that it requires up-front and
 client-side configuration which is obviously not for everyone.
 
-.. code-block:: text
+.. code-block:: ini
 
-     [/modules]
-     CheckEventLog=1
-    
-    .. raw:: html
-    
-       </p>
-    
-    [/settings/eventlog/real-time]
-     enabled=true
-     filter=id = 1000 and category = 0
-    
-    >THE END<
+   [/modules]
+   CheckEventLog=1
+   
+   [/settings/eventlog/real-time]
+   enabled=true
+   filter=id = 1000 and category = 0
 
 The above configuration will do two things, first enable CheckEventLog
 module and then enable real-time checking. We also configure a random
@@ -271,41 +260,34 @@ be configured in two ways:
 So if you in Nagios have two different service_checks (eventlog_1 and
 eventlog_2) you need to set this using the […/filters] section like so:
 
-.. code-block:: text
+.. code-block:: ini
 
-     [/settings/eventlog/real-time/filters]
-     eventlog\_1=id = 1000 and category = 1
-     eventlog\_1=id = 1000 and category = 0
-    >THE END<
+   [/settings/eventlog/real-time/filters]
+   eventlog\_1=id = 1000 and category = 1
+   eventlog\_1=id = 1000 and category = 0
 
 The other thing we need to configure is the NSCA client itself which for
 simple scenarios is pretty straight forward to configure as well:
 
-.. code-block:: text
+.. code-block:: ini
 
-     [/modules]
-     ; ...
-     NSCAClient = 1
-    
-    .. raw:: html
-    
-       </p>
-    
-    [/settings/NSCA/client/targets/default]
-     address=nsca://127.0.0.1:5667
-     encryption=aes256
-     password=YL04nBb14stIgCjZxcudGtMqz4E6NN3W
-    >THE END<
+   [/modules]
+   ; ...
+   NSCAClient = 1
+   
+   [/settings/NSCA/client/targets/default]
+   address=nsca://127.0.0.1:5667
+   encryption=aes256
+   password=YL04nBb14stIgCjZxcudGtMqz4E6NN3W
 
 Finally we need to tell CheckEventlog to send messages to NSCA which is
 done by specifying the destination:
 
-.. code-block:: text
+.. code-block:: ini
 
-     [/settings/eventlog/real-time]
-     ; ...
-     destination=NSCA
-    >THE END<
+   [/settings/eventlog/real-time]
+   ; ...
+   destination=NSCA
 
 Causing problems
 ----------------
@@ -316,7 +298,7 @@ something to happen?
 Well, NSClient++ provides a rather nifty (and dangerous) command which
 allow you to inject messages into the event log.
 
-.. code-block:: text
+.. code-block:: bat
 
      nscp eventlog
      CheckEventLog Command line syntax:
@@ -335,16 +317,13 @@ allow you to inject messages into the event log.
      --eventlog-arguments arg Message arguments (strings)
      --event-arguments arg Message arguments (strings)
      -i [ --id ] arg Event ID
-    >THE END<
 
 In our case since we filter on event id 1000 we can use the following
 command to insert an application error.
 
-.. code-block:: text
+.. code-block:: bat
 
-     nscp eventlog --exec insert-eventlog --source "Application Error" --id
-    1000 --level error --category 0
-    >THE END<
+   nscp eventlog --exec insert-eventlog --source "Application Error" --id 1000 --level error --category 0
 
 Which will trigger the following message to be sent to NSCA: ***“Felet
 uppstod i programmet med namn: %1, version %2, tidsstämpel 0x%3…”*** all
@@ -353,12 +332,9 @@ strings would normally end up. To add this we can add a series of
 --eventlog-argument options to insert some strings into these markers
 like so:
 
-.. code-block:: text
+.. code-block:: bat
 
-     nscp eventlog --exec insert-eventlog --source "Application Error" --id
-    1000 --level error --category 0 --eventlog-argument a
-    --eventlog-argument b ...
-    >THE END<
+   nscp eventlog --exec insert-eventlog --source "Application Error" --id 1000 --level error --category 0 --eventlog-argument a --eventlog-argument b ...
 
 Active monitoring and real time
 ===============================
@@ -385,20 +361,17 @@ can check the results cache using the check_eventlog_cache command.
 
 To enable this we need to add one more option to the configuration file.
 
-.. code-block:: text
+.. code-block:: ini
 
-    firstline="1"]
-     [/settings/pytest\_eventlog/real-time]
-     ;...
-     enable active=true
-    >THE END<
+   [/settings/pytest\_eventlog/real-time]
+   ;...
+   enable active=true
 
 And then we need to run the following command:
 
-.. code-block:: text
+.. code-block:: bat
 
-     check\_eventlog\_cache warn=gt:0 crit=gt:0
-    >THE END<
+   check\_eventlog\_cache warn=gt:0 crit=gt:0
 
 Which will give you a critical message when you have more then 0 items
 in the cache. Be advised though that when you check the cache the cache
