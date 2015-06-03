@@ -103,7 +103,9 @@ CATEGORY_SAVE_AS = 'category/{slug}/index.html'
 TAG_URL = 'tag/{slug}'
 TAG_SAVE_AS = 'tag/{slug}/index.html'
 
-STYLESHEET_FILES = ("pygment.css", "mickem-bootstrap.css",)
+STYLESHEET_FILES = ("pygment.css",)
+
+THEME_DEVELOPMENT = True
 
 #######################################################################
 #                             Extensions                              #

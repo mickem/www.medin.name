@@ -27,14 +27,15 @@
 
 		<title>{% block title %}{{ SITENAME }} - {{ SITETAG|escape }}{% endblock %}</title>
 	
-		{% if not SKIP_DEFAULT_CSS %}   
-		{% if BOOTSTRAP_STYLESHEET %} 
-			<link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ BOOTSTRAP_STYLESHEET }}" />
+		{% if THEME_DEVELOPMENT %} 
+			<link rel="stylesheet" href="{{ SITEURL }}/theme/bower_components/bootstrap/dist/css/bootstrap.css" />
+			<link rel="stylesheet" href="{{ SITEURL }}/theme/bower_components/fontawesome/css/font-awesome.css" />
 		{% else %}
 			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
-		{% endif %}
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />  
-		{% endif %}
+			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />  
+
+			{% endif %}
+		<link rel="stylesheet" href="{{ SITEURL }}/theme/css/mickem-bootstrap.css" />
 		<link href='//fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 		<link href='//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<link href='//fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
