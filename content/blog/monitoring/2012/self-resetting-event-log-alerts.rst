@@ -362,6 +362,5 @@ Next up is (besides some non NSClient++ stuff) some details on how to
 actually secure your monitoring by adding client based certificates to
 NRPE as well as NSCA and check_mk…
 
-.. |image| image:: /images/image_thumb.png
-   :target: /images/image.png
+.. |image| image:: /images/self-resetting-event-log-alerts-image.png
 .. |Ler| image:: /images/wlEmoticon-smile.png

@@ -40,6 +40,11 @@
 		<link href='//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<link href='//fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 		<link href='//fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+		
+		{% if TIPUE_SEARCH %}
+		
+			<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/bower_components/Tipue Search 5.0/tipuesearch/tipuesearch.css" media="screen">		
+		{% endif %}
 	
 		{% for url in STYLESHEET_URLS %}
 			<link rel="stylesheet" href="{{ url }}" />
@@ -178,6 +183,7 @@
 						<li class="divider"></li>
 						{% if GOOGLE_SEARCH %}
 						<div class="pull-right">
+							{{ SITEURL }}/search.html
 							<form class="navbar-search navbar-form navbar-left" action="http://www.google.com" target="_blank">
 								<div class="input-group">
 									<input type="text" class="form-control" placeholder="Search" name="q" id="srch-term">
@@ -187,6 +193,19 @@
 								</div>
 								<input type="hidden" name="cx" value="{{ GOOGLE_SEARCH }}" />
 								<input type="hidden" name="ie" value="UTF-8" />
+							</form>
+						</div>
+						{% endif %}
+						{% if TIPUE_SEARCH %}
+						<div class="pull-right">
+							
+							<form class="navbar-search navbar-form navbar-left" action="{{ SITEURL }}/search.html" onsubmit="return validateForm(this.elements['q'].value);">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input">
+									<div class="input-group-btn">
+										<button class="btn btn-default" type="submit"><i class="fa fa-search fa-fw"></i></button>
+									</div>
+								</div>
 							</form>
 						</div>
 						{% endif %}
@@ -306,8 +325,8 @@
 		<script src="{{ SITEURL }}/theme/bower_components/jquery/dist/jquery.js"></script>
 		<script src="{{ SITEURL }}/theme/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	{% else %}
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	{% endif %}
 	
 	

@@ -1,0 +1,42 @@
+﻿ {% extends 'base.html' %}
+
+{% block title %}
+Search {{ super() }}
+{% endblock title %}
+
+{% block head_description %}
+Search results for {{ SITENAME|striptags|e }} blog.
+{% endblock head_description %}
+
+{% block scripts %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/theme/bower_components/Tipue Search 5.0/tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/theme/bower_components/Tipue Search 5.0/tipuesearch/tipuesearch.min.js"></script>
+<script>
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch({
+         {% if 'tipue_search' in PLUGINS %}
+             'mode' : 'json',
+         {% else %}
+             'mode': 'live',
+         {% endif %}
+         'show': 10,
+         'newWindow': false,
+         {# I cannot place following statements in the conditionals above because then Tipue Search fails to work. Possibly a bug in Tipue Search. #}
+         {% if 'tipue_search' in PLUGINS %}
+             'contentLocation': 'tipuesearch_content.json'
+         {% else %}
+             'liveDescription': '.article-content'
+         {% endif %}
+     });
+});
+</script>
+{% endblock scripts %}
+
+{% block content_body %}
+<article>
+    <div class="span8 offset2">
+        <div id="tipue_search_content"><div id="tipue_search_loading"></div></div>
+    </div>
+</article>
+{% endblock content_body %}

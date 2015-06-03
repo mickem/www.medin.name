@@ -88,7 +88,8 @@ FAVICON = 'images/michael-medin.jpg'
 ARTICLE_PATHS = ['blog']
 PAGE_PATHS = ['pages']
 
-GOOGLE_SEARCH = "009388823403057951110:jwq9vehc3_q"
+# GOOGLE_SEARCH = "009388823403057951110:jwq9vehc3_q"
+TIPUE_SEARCH = True
 
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
@@ -110,6 +111,8 @@ THEME_DEVELOPMENT = True
 #######################################################################
 #                             Extensions                              #
 #######################################################################
+
+DIRECT_TEMPLATES = ['index', 'categories', 'authors', 'archives', 'search']
 
 MD_EXTENSIONS = ['codehilite(css_class=highlight)','extra']
 
