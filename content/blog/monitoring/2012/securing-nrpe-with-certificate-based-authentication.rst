@@ -5,8 +5,8 @@ Securing NRPE with certificate based authentication
 :category: Monitoring
 :tags: icinga, nagios, nsclient++, security, ssl
 :slug: securing-nrpe-with-certificate-based-authentication
-:image: /images/image.png
-:social_image: /images/image.png
+:image: /images/securing-nrpe-with-certificate-based-authentication-image.png
+:social_image: /images/securing-nrpe-with-certificate-based-authentication-image.png
 
 NRPE is a common easy to use option for monitoring remote
 machines from `Nagios <http://www.nagios.org/>`__ or

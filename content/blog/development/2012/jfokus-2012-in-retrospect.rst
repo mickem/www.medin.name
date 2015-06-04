@@ -136,10 +136,10 @@ introduction either.
 ***This was rated as intermediate (|Ninja|) and I am unsure how to rate
 this.***
 
-***|Rött hjärta| Nightly sessions***
-------------------------------------
+|red-heart| Nightly sessions
+----------------------------
 
-|IMAG0170|\ Since it was valentines day (***|Rött hjärta|***) I took the
+|IMAG0170|\ Since it was valentines day (***|red-heart|***) I took the
 mature decision to leave for home and family instead of staying around
 at the bar (|Brustet hjärta|) but according to the schedule they had a
 few BoFs going and what not and for all I know this was very good (or
@@ -298,11 +298,9 @@ Ratings
 .. |Flicka| image:: /images/wlEmoticon-girl.png
 .. |Ninja| image:: /images/wlEmoticon-ninja.png
 .. |Ler| image:: /images/wlEmoticon-smile1.png
-.. |IMAG0165| image:: /images/IMAG0165_thumb.jpg
-   :target: /images/IMAG0165.jpg
+.. |IMAG0165| image:: /images/IMAG0165.jpg
 .. |Tänker| image:: /images/wlEmoticon-thinkingsmile.png
-.. |Rött hjärta| image:: /images/wlEmoticon-redheart.png
-.. |IMAG0170| image:: /images/IMAG0170_thumb.jpg
-   :target: /images/IMAG0170.jpg
+.. |red-heart| image:: /images/wlEmoticon-redheart.png
+.. |IMAG0170| image:: /images/IMAG0170.jpg
 .. |Brustet hjärta| image:: /images/wlEmoticon-brokenheart.png
 .. |Arbete| image:: /images/wlEmoticon-work.png

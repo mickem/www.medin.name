@@ -5,8 +5,8 @@ Nagios World Conference vs. Open Source Monitoring Conference?
 :category: Monitoring
 :tags: conference, monitoring, nagios, NWC, OSMC
 :slug: nagios-world-conference-vs-open-source-monitoring-conference
-:image: /images/DSC02801.jpg
-:social_image: /images/DSC02801.jpg
+:image: /images/thumbnails/500x-/DSC02801.jpg
+:social_image: /images/thumbnails/500x-/DSC02801.jpg
 
 **A BIG DISCLAIMER: This is all nonsense… but…**
 
@@ -146,19 +146,19 @@ excellent speaker and nice presentations (hay, I spoke at both of them
 +-------------------------+-------------------------+-------------------------+
 | Tags                    |                         | |icinga_logo|           |
 +-------------------------+-------------------------+-------------------------+
-| Folders                 | |image12|               |                         |
+| Folders                 | |naglogo|               |                         |
 +-------------------------+-------------------------+-------------------------+
 | Lanyards                |                         | |icinga_logo|           |
 +-------------------------+-------------------------+-------------------------+
-| T-shirts                | |image14|               |                         |
+| T-shirts                | |naglogo|               |                         |
 +-------------------------+-------------------------+-------------------------+
 | Internet                |                         | |icinga_logo|           |
 +-------------------------+-------------------------+-------------------------+
-| Loot                    | |image16|               |                         |
+| Loot                    | |naglogo|               |                         |
 +-------------------------+-------------------------+-------------------------+
-| Conclusion              | |image17| |image18|   | |icinga_logo|             |
-|                         | |image19|               | |icinga_logo|           |
-|                         | |image19|               | |icinga_logo|           |
+| Conclusion              | |naglogo| |naglogo|     | |icinga_logo|           |
+|                         | |naglogo|               | |icinga_logo|           |
+|                         | |naglogo|               | |icinga_logo|           |
 +-------------------------+-------------------------+-------------------------+
 
 Final words!
@@ -171,28 +171,14 @@ winners for putting in all this effort…
 
 **A big thank you to everyone involved in arranging these conferences!**
 
-.. |DSC02801| image:: /images/DSC02801_thumb.jpg
-   :target: /images/DSC02801.jpg
-.. |OSMC-6| image:: /images/OSMC-6_thumb.png
-   :target: /images/OSMC-6.png
-.. |DSC02799| image:: /images/DSC02799_thumb.jpg
-   :target: /images/DSC02799.jpg
-.. |NWC-logo| image:: /images/NWC-logo_thumb.png
-   :target: /images/NWC-logo.png
-.. |DSC02807| image:: /images/DSC02807_thumb.jpg
-   :target: /images/DSC02807.jpg
-.. |DSC02804| image:: /images/DSC02804_thumb.jpg
-   :target: /images/DSC02804.jpg
-.. |image| image:: /images/image_thumb.png
-   :target: /images/image.png
-.. |DSC02810| image:: /images/DSC02810_thumb.jpg
-   :target: /images/DSC02810.jpg
+.. |DSC02801| image:: /images/thumbnails/500x-/DSC02801.jpg
+.. |OSMC-6| image:: /images/OSMC-6.png
+.. |DSC02799| image:: /images/thumbnails/500x-/DSC02799.jpg
+.. |NWC-logo| image:: /images/NWC-logo.png
+.. |DSC02807| image:: /images/thumbnails/500x-/DSC02807.jpg
+.. |DSC02804| image:: /images/thumbnails/500x-/DSC02804.jpg
+.. |image| image:: /images/nagios-world-conference-vs-open-source-monitoring-conference-image.png
+.. |DSC02810| image:: /images/DSC02810.jpg
 .. |Ler med tungan ute| image:: /images/wlEmoticon-smilewithtongueout.png
-.. |icinga_logo| image:: /images/icinga_logo_thumb.png
-   :target: /images/icinga_logo.png
-.. |image12| image:: http://www.famillewallon.com/wp-content/uploads/2011/08/nagios_logo_bigger_bigger.png
-.. |image14| image:: http://www.famillewallon.com/wp-content/uploads/2011/08/nagios_logo_bigger_bigger.png
-.. |image16| image:: http://www.famillewallon.com/wp-content/uploads/2011/08/nagios_logo_bigger_bigger.png
-.. |image17| image:: http://www.famillewallon.com/wp-content/uploads/2011/08/nagios_logo_bigger_bigger.png
-.. |image18| image:: http://www.famillewallon.com/wp-content/uploads/2011/08/nagios_logo_bigger_bigger.png
-.. |image19| image:: http://www.famillewallon.com/wp-content/uploads/2011/08/nagios_logo_bigger_bigger.png
+.. |icinga_logo| image:: /images/thumbnails/100x-/icinga_logo.png
+.. |naglogo| image:: /images/thumbnails/100x-/nagios-n.png

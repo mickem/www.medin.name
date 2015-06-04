@@ -4,8 +4,8 @@ What’s this blog about?
 :author: Michael Medin
 :category: Personal
 :slug: hej-varlden
-:image: /images/image.png
-:social_image: /images/image.png
+:image: /images/hej-varlden-image.png
+:social_image: /images/hej-varlden-image.png
 
 Since I am pretty new to this blogging thingy I will try to write what
 you can expect form this blog. I have in fact started to blog many times
@@ -28,19 +28,19 @@ called in the blogging world) is that I felt having **three blogs would
 mainly be to much** work but also seems rather silly as there will be
 four posts per year that way. So instead I will combine it all here.
 
-|image|\ **Monitoring**
-=======================
+Monitoring
+==========
 
-Since I am the author of NSClient++ I have for some time been wanting to
+|image1| Since I am the author of NSClient++ I have for some time been wanting to
 blog about monitoring mainly as I feel there is **far to little blogs**
 on the subject (that I have found) but mainly as I feel I have things to
 write about and **non place to write it** as the “blog” on
 `nsclient.org <http://nsclient.org>`__ is not really a blog.
 
-|image|\ **Development**
-========================
+Development
+===========
 
-Primarily I am and always will be a developer. I spend **thousands of
+|image2| Primarily I am and always will be a developer. I spend **thousands of
 hours** writing code and sometime I do things where I think now this
 would be nice to share but as I have no place to share I end up just
 ditching and forgetting it which means next time I need it I will have
@@ -51,13 +51,10 @@ of tooling is built in other languages such as **Python**, Perl,
 **Excel** etc etc. In my personal space I dabble mainly in **C/C++** and
 things revolving around that.
 
-|image|
-=======
+Personal
+========
 
-**Personal**
-============
-
-Well, I don’t really like Facebook so this will be my personal “I am
+|image3| Well, I don’t really like Facebook so this will be my personal “I am
 making coffee”, “I am drinking coffee”, “I need to pee” section.
 Hopefully someone in my family will find it useful, if not maybe I will
 stop? Regardless these posts might be in Swedish so I would recommend
@@ -69,11 +66,6 @@ lovely girl friend brought along.
 
 Well, this is pretty much it for now I guess…
 
-.. |Michael and Evelina Medin| image:: /images/image_thumb.png
-   :target: /images/image.png
-.. |image| image:: /images/image_thumb1.png
-   :target: /images/image1.png
-.. |image1| image:: /images/image_thumb4.png
-   :target: /images/image4.png
-.. |image2| image:: /images/image_thumb5.png
-   :target: /images/image5.png
+.. |image1| image:: /images/hej-varlden-image1.png
+.. |image2| image:: /images/hej-varlden-image4.png
+.. |image3| image:: /images/hej-varlden-image5.png

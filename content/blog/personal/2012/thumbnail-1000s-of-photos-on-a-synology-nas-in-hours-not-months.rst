@@ -121,6 +121,5 @@ file somewhere with 0 bytes and then put megabytes of data in a stream
 the file would still be listed as 0 bytes yet take up all the space on
 the hard disk |Ler|
 
-.. |image| image:: /images/image_thumb2.png
-   :target: /images/image2.png
+.. |image| image:: /images/image2.png
 .. |Ler| image:: /images/wlEmoticon-smile1.png

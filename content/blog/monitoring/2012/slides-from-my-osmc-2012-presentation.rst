@@ -5,8 +5,8 @@ Slides from my OSMC 2012 presentation
 :category: Monitoring
 :tags: book, conference, demo, nsclient++, OSMC, slides
 :slug: slides-from-my-osmc-2012-presentation
-:image: /images/SLIDES-NSClient-in-the-new-millenium-001_thumb.png
-:social_image: /images/SLIDES-NSClient-in-the-new-millenium-001_thumb.png
+:image: /images/SLIDES-NSClient-in-the-new-millenium-001.png
+:social_image: /images/SLIDES-NSClient-in-the-new-millenium-001.png
 
 On OSMC 2012
 I presented NSClient++ 0.4.1 not really presenting new features as such
@@ -23,7 +23,7 @@ here </images/NSClient++-in-the-new-millenium-WEBFRIENDLY.pptx>`__.
 Presentation Patterns
 ---------------------
 
-|image1|\ This year I decided to make the slides a bit mode modern as I
+|image1| This year I decided to make the slides a bit mode modern as I
 read the `Pressentation Patterns <http://presentationpatterns.com/>`__
 book by Neal Ford, Matthew McCullough, and Nate Schutta. It is truly an
 impressive book and a must read by anyone who wants to make
@@ -299,6 +299,5 @@ and hopefully you will then be ready to go with NSClient++ 0.4.1.
 Attachments:
 ------------
 
-.. |SLIDES - NSClient in the new millenium - 001| image:: /images/SLIDES-NSClient-in-the-new-millenium-001_thumb.png
-   :target: /images/SLIDES-NSClient-in-the-new-millenium-001.png
-.. |image1| image:: http://presentationpatterns.com/images/module/home/book-cover.jpg
+.. |SLIDES - NSClient in the new millenium - 001| image:: /images/SLIDES-NSClient-in-the-new-millenium-001.png
+.. |image1| image:: /images/book-cover.jpg

@@ -5,8 +5,8 @@ Family augmentations
 :category: Personal
 :tags: evelina, family, health-care, sophia
 :slug: family-augmentations
-:image: /images/DSC03366_thumb1.jpg
-:social_image: /images/DSC03366_thumb1.jpg
+:image: /images/DSC03366.jpg
+:social_image: /images/DSC03366.jpg
 
 I have been quite for a few weeks, and that is not just because I have
 been lazy. No in fact I have been extremely busy and will probably be
@@ -131,13 +131,8 @@ the chart I am inclined to agree! And hopefully, god willing, she will
 stay that way till long after I am gone!
 
 .. |Ler| image:: /images/wlEmoticon-smile.png
-.. |DSC03356| image:: /images/DSC03356_thumb.jpg
-   :target: /images/DSC03356.jpg
-.. |DSC03400| image:: /images/DSC03400_thumb1.jpg
-   :target: /images/DSC034001.jpg
-.. |DSC03377| image:: /images/DSC03377_thumb1.jpg
-   :target: /images/DSC033771.jpg
-.. |DSC03402| image:: /images/DSC03402_thumb1.jpg
-   :target: /images/DSC034021.jpg
-.. |DSC03433| image:: /images/DSC03433_thumb.jpg
-   :target: /images/DSC03433.jpg
+.. |DSC03356| image:: /images/DSC03356.jpg
+.. |DSC03400| image:: /images/DSC034001.jpg
+.. |DSC03377| image:: /images/DSC033771.jpg
+.. |DSC03402| image:: /images/DSC034021.jpg
+.. |DSC03433| image:: /images/DSC03433.jpg

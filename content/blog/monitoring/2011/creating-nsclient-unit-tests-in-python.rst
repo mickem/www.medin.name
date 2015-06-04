@@ -5,8 +5,8 @@ Unit test your monitoring: Introducing unit tests in Python for NSClient++
 :category: Monitoring
 :tags: monitoring, NSCP, python, unit test
 :slug: creating-nsclient-unit-tests-in-python
-:image: /images/image6.png
-:social_image: /images/image6.png
+:image: /images/thumbnails/400x-/image6.png
+:social_image: /images/thumbnails/400x-/image6.png
 
 One of the new features of the up-coming NSClient++ 0.4.0 will be Python
 scripting support. The main reason for me to include Python script

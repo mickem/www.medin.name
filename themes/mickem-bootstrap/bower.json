@@ -18,6 +18,7 @@
     "Lettering.js": "~0.7.0",
     "pygments": "~2.0.1",
     "magnific-popup": "~1.0.0",
-    "fontawesome": "~4.2.0"
+    "fontawesome": "~4.2.0",
+	"tipue": "http://github.com/Tipue/Tipue-Search.git"
   }
 }

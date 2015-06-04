@@ -44,7 +44,5 @@ hög min version är “nästan” A4 storlek den nya verkade vara lite lägre.
 
 |DSC03139|
 
-.. |IMAG0181| image:: /images/IMAG0181_thumb.jpg
-   :target: /images/IMAG0181.jpg
-.. |DSC03139| image:: /images/DSC03139_thumb.jpg
-   :target: /images/DSC03139.jpg
+.. |IMAG0181| image:: /images/IMAG0181.jpg
+.. |DSC03139| image:: /images/DSC03139.jpg

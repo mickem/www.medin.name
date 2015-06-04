@@ -5,8 +5,8 @@ Monitoring Conferences 2012!
 :category: Monitoring
 :tags: conference, icinga, nagios, nagios world, OSMC
 :slug: monitoring-conferences-2012
-:image: /images/DSC01593_thumb.jpg
-:social_image: /images/DSC01593_thumb.jpg
+:image: /images/DSC01593.jpg
+:social_image: /images/DSC01593.jpg
 
 Well, since I got an email from Würth Phoenix asking me to plug their
 conference Which has been renamed again this year calling itself Open
@@ -19,10 +19,10 @@ conference I figured I’d mention the other once I know about as well.
 
 .. PELICAN_END_SUMMARY
 
-|Evelina in central Bolzano!|\ Open Source System Management Conference 2012
-============================================================================
+Open Source System Management Conference 2012
+=============================================
 
-***Italy, May***
+**Italy, May**
 
 Again it is held in may (May 10:th) and since I have been visiting the
 last two years I can say it is a pretty nice Conference. It is also free
@@ -53,7 +53,7 @@ http://www.wuerth-phoenix.com/en/company/event/the-agenda/
 |IMAG0267|\ Nagios World Conference North America
 =================================================
 
-***USA, September***
+**USA, September**
 
 Not much is known about the agenda for this year as it is a long way
 off. But if the venue is the same as last year you HAVE TO GO! A truly
@@ -80,7 +80,7 @@ http://www.nagios.com/events/nagiosworldconference/northamerica/2012.
 Open Source Monitoring Conference 2012
 ======================================
 
-***Germany, October***
+**Germany, October**
 
 As always (hey, this was my first ever conference talk!) Netways is
 hosting OSMC in fall again as always. And what can I say: (not much
@@ -95,20 +95,12 @@ makes this the least family friendly conference of them all.
 This years conference schedule
 ==============================
 
-.. raw:: html
-
-   <ul>
-
 -  **2012-05-10** Bolzano, Italy
-    ***Open Source System Management Conference 2012™***
+    **Open Source System Management Conference 2012™**
 -  **2012-09-25 - 2012-09-28**, MSP, USA
-    ***Nagios World Conference North America 2012***
+    **Nagios World Conference North America 2012**
 -  **2012-10-17 - 2012-10-18**, Nuremberg, Germany
-    ***Open Source Monitoring Conference 2012***
-
-.. raw:: html
-
-   </ul>
+    **Open Source Monitoring Conference 2012**
 
 |DSC03240|\ As you can see from the photos I tend to spend my vacations
 on various conferences instead of at the beach but alas this year we are
@@ -123,13 +115,9 @@ not have any days off for going there either |Ledsen|
 
 …but we shall see…we shall see…
 
-.. |Evelina in central Bolzano!| image:: /images/DSC01593_thumb.jpg
-   :target: /images/DSC01593.jpg
+.. |Evelina in central Bolzano!| image:: /images/DSC01593.jpg
 .. |Ler| image:: /images/wlEmoticon-smile.png
-.. |DSC01580| image:: /images/DSC015801_thumb.jpg
-   :target: /images/DSC015801.jpg
-.. |IMAG0267| image:: /images/IMAG0267_thumb.jpg
-   :target: /images/IMAG0267.jpg
-.. |DSC03240| image:: /images/DSC032401_thumb.jpg
-   :target: /images/DSC032401.jpg
+.. |DSC01580| image:: /images/DSC015801.jpg
+.. |IMAG0267| image:: /images/IMAG0267.jpg
+.. |DSC03240| image:: /images/DSC032401.jpg
 .. |Ledsen| image:: /images/wlEmoticon-sadsmile.png

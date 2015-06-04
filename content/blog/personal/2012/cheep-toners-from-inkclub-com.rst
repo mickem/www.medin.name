@@ -5,8 +5,8 @@
 :category: Personal
 :tags: inkclub, tech
 :slug: cheep-toners-from-inkclub-com
-:image: http://www.inkclub.com/Web/InkClub/Images/Web/InkLogo/inkclub_glogo_752.gif
-:social_image: http://www.inkclub.com/Web/InkClub/Images/Web/InkLogo/inkclub_glogo_752.gif
+:image: /images/inkclub_logo.gif
+:social_image: /images/inkclub_logo.gif
 
 Is the cheep toner from InkClub really the same as the
 slightly more expensive toner from HP?
@@ -65,7 +65,5 @@ so I doubt age is the issue.
 
     **Hence forth I will stick to HP toners!**
 
-.. |crap-toner| image:: /images/crap-toner_thumb.png
-   :target: /images/crap-toner.png
-.. |toner-comparisson| image:: /images/toner-comparisson_thumb.png
-   :target: /images/toner-comparisson.png
+.. |crap-toner| image:: /images/crap-toner.png
+.. |toner-comparisson| image:: /images/toner-comparisson.png

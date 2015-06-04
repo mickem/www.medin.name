@@ -61,5 +61,4 @@ g\ **å**\ tt nytt år!
 
 // Michael Medin
 
-.. |IMG_7647| image:: /images/IMG_7647_thumb.jpg
-   :target: /images/IMG_7647.jpg
+.. |IMG_7647| image:: /images/IMG_7647.jpg
