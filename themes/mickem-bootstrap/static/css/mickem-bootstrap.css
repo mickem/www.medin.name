@@ -36,10 +36,6 @@ img.align-left {
 img.align-center, img.article-image {
   margin: auto;
 }
-h1 {
-  font-family: Lato, sans-serif;
-  font-weight: 400;
-}
 .not-showed {
   visibility:hidden;
   opacity:0;
@@ -143,11 +139,39 @@ a:hover {
   color: #fff;
   font-weight: normal;
 }
-h1, h1 a {
+h1, h1 a, .tipue_search_content_title {
   font-family: Lobster, cursive;
   font-weight: normal;
   color: #1e73be;
 }
+.tipue_search_content_title {
+	font-size: 26px;
+}
+.tipue_search_content_url {
+  font-family: Lato;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #000000;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+.tipue_search_content_text .h01 {
+  font-weight: bold;
+}
+#tipue_search_foot
+{
+     margin: 51px 0 21px 0;
+}
+
+#tipue_search_foot_boxes li
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+
 
 #slider1_container img {
    padding: 0px 0px 0px;
