@@ -26,7 +26,7 @@ PLUGINS = [
     "neighbors",
     #"clean_summary", 
     "related_posts",
-    #"autostatic", 
+    "autostatic", 
     "pelican-advthumbnailer",
     "tipue_search"
     ]
