@@ -195,7 +195,7 @@
 						<div class="pull-right">
 							<form class="navbar-search navbar-form navbar-left" action="{{ SITEURL }}/search.html" onsubmit="return validateForm(this.elements['q'].value);">
 								<div class="input-group">
-									<input type="text" class="form-control search typeahead" data-provide="typeahead" autocomplete="off" placeholder="Search" name="q" id="tipue_search_input">
+									<input type="text" class="form-control search typeahead searchHint" data-provide="typeahead" autocomplete="off" placeholder="Search" name="q">
 									<div class="input-group-btn">
 										<button class="btn btn-default" type="submit"><i class="fa fa-search fa-fw"></i></button>
 									</div>
@@ -218,14 +218,39 @@
       {% block container_header %}
 	  {% endblock %}
 	  {% block search %}
-		<div class="row" id="tipue_search_container">
-			<h1><i class="fa fa-search fa-fw fa-lg"></i> Search results</h1>
+<!-- Modal -->
+<div class="modal fade" id="search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h3><i class="fa fa-search fa-fw fa-lg"></i> Search results</h3>
+      </div>
+      <div class="modal-body">
+								<div class="input-group">
+									<input type="text" class="form-control search" autocomplete="off" placeholder="Search" name="q" id="tipue_search_input">
+									<div class="input-group-btn">
+										<button class="btn btn-default" type="submit"><i class="fa fa-search fa-fw"></i></button>
+									</div>
+								</div>
+	  
 			<div id="tipue_search_output" class="col-md-offset-1 col-md-10">
 				<div id="tipue_search_content">
 					<div id="tipue_search_loading"></div>
 				</div>
 				<hr/>
 			</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+	  
+	  
+		<div class="row" id="c">
 		</div>
 	  {% endblock %}
 	  
@@ -356,6 +381,12 @@
 		<script type="text/javascript" src="{{ SITEURL }}/theme/js/tipuesearch_set.js"></script>
 		<script type="text/javascript" src="{{ SITEURL }}/theme/js/tipuesearch.js"></script>
 		<script>
+			$('#search').on('shown.bs.modal', function () {
+				$('#tipue_search_input').focus();
+			})
+			$('.searchHint').focus(function(event) {
+				$('#search').modal({})
+			})
 			$('.search').focus(function(event) {
 				 $('#tipue_search_input').tipuesearch({
 						 {% if 'tipue_search' in PLUGINS %}
