@@ -193,7 +193,6 @@
 						{% endif %}
 						{% if TIPUE_SEARCH %}
 						<div class="pull-right">
-							
 							<form class="navbar-search navbar-form navbar-left" action="{{ SITEURL }}/search.html" onsubmit="return validateForm(this.elements['q'].value);">
 								<div class="input-group">
 									<input type="text" class="form-control search typeahead" data-provide="typeahead" autocomplete="off" placeholder="Search" name="q" id="tipue_search_input">
@@ -219,16 +218,18 @@
       {% block container_header %}
 	  {% endblock %}
 	  {% block search %}
-        <div id="tipue_search_output" style="border: solid red 1px;">
-			<div class="span8 offset2">
-				<div id="tipue_search_content" style="border: solid blue 1px;">
+		<div class="row" id="tipue_search_container">
+			<h1><i class="fa fa-search fa-fw fa-lg"></i> Search results</h1>
+			<div id="tipue_search_output" class="col-md-offset-1 col-md-10">
+				<div id="tipue_search_content">
 					<div id="tipue_search_loading"></div>
 				</div>
+				<hr/>
 			</div>
 		</div>
 	  {% endblock %}
 	  
-        <div class="" id="content">
+        <div id="content">
 		    {% block content_header %}
 			{% endblock %}
             {% block content_body %}
