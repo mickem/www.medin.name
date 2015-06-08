@@ -13,3 +13,6 @@
 [submodule "plugins/pelican_youtube"]
 	path = plugins/pelican_youtube
 	url = https://github.com/mickem/pelican_youtube
+[submodule "plugins/autostatic"]
+	path = plugins/autostatic
+	url = https://github.com/AlexJF/pelican-autostatic
