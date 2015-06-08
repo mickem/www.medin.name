@@ -359,6 +359,7 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	{% endif %}
+		<script src="{{ SITEURL }}/theme/js/mickem-bootstrap.js"></script>
 	
 	
 	{% for url in JAVASCRIPT_URLS %}
@@ -378,8 +379,6 @@
 {%endblock %}
 
 	{% if TIPUE_SEARCH %}
-		<script type="text/javascript" src="{{ SITEURL }}/theme/js/tipuesearch_set.js"></script>
-		<script type="text/javascript" src="{{ SITEURL }}/theme/js/tipuesearch.js"></script>
 		<script>
 			$('#search').on('shown.bs.modal', function () {
 				$('#tipue_search_input').focus();

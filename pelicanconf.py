@@ -28,7 +28,8 @@ PLUGINS = [
     "related_posts",
     "autostatic", 
     "pelican-advthumbnailer",
-    "tipue_search"
+    "tipue_search",
+    "share_post"
     ]
 
 PATH = "content"
@@ -86,6 +87,7 @@ FAVICON = 'images/michael-medin.jpg'
 #######################################################################
 
 ARTICLE_PATHS = ['blog']
+PATH_METADATA  = r".*(?:/|\\)(?P<category>[^/\\]+)(?:/|\\)(?P<date>\d{4}-\d{2}-\d{2})(?:/|\\)(?P<slug>[^/\\]+)(?:/|\\).*"
 PAGE_PATHS = ['pages']
 
 # GOOGLE_SEARCH = "009388823403057951110:jwq9vehc3_q"
@@ -103,8 +105,6 @@ CATEGORY_SAVE_AS = 'category/{slug}/index.html'
 
 TAG_URL = 'tag/{slug}'
 TAG_SAVE_AS = 'tag/{slug}/index.html'
-
-STYLESHEET_FILES = ("pygment.css",)
 
 THEME_DEVELOPMENT = True
 

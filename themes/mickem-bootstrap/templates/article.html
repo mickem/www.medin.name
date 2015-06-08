@@ -83,7 +83,30 @@
 			{% include "includes/" + CUSTOM_ARTICLE_PRECONTENT|default('article_precontent.html') ignore missing %}
 			{{ article.content }}
 		</div>
+	{% if article.share_post and article.status != 'draft' %}
 	</div>
+	<div class="row">
+		<section class="col-md-offset-1 col-md-10">
+			<p id="post-share-links">
+			Share on:
+				<a href="{{article.share_post['twitter']}}" target="_blank" title="Share on Twitter" class="btn btn-xs btn-social btn-twitter">
+					<span class="fa fa-twitter"></span> Twitter
+				</a>
+				<a href="{{article.share_post['facebook']}}" target="_blank" title="Share on Facebook" class="btn btn-xs btn-social btn-facebook">
+					<span class="fa fa-facebook"></span> Facebook
+				</a>
+				<a href="{{article.share_post['google-plus']}}" target="_blank" title="Share on Google+" class="btn btn-xs btn-social btn-google">
+					<span class="fa fa-google"></span> Google
+				</a>
+				<a href="{{article.share_post['email']}}" target="_blank" title="Share via Email" class="btn btn-xs btn-social btn-email">
+					<span class="fa fa-email"></span> Email
+				</a>
+			</p>
+		</section>
+	{% endif %}
+		<hr/>
+	</div>
+	
 	
 	{% if article.prev_article or article.next_article%}
 		<div class="row">
