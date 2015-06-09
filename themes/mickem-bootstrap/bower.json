@@ -22,16 +22,24 @@
   },
   "overrides": {
     "bootstrap": {
-      "main": []
+      "main": {
+        "production": []
+      }
     },
     "jquery": {
-      "main": []
+      "main": {
+        "production": []
+      }
     },
     "fontawesome": {
-      "main": []
+      "main": {
+        "production": []
+      }
     },
     "font-awesome": {
-      "main": []
+      "main": {
+        "production": []
+      }
     }
   }
 }

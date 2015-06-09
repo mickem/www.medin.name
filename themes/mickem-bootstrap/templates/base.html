@@ -218,39 +218,32 @@
       {% block container_header %}
 	  {% endblock %}
 	  {% block search %}
-<!-- Modal -->
-<div class="modal fade" id="search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<h3><i class="fa fa-search fa-fw fa-lg"></i> Search results</h3>
-      </div>
-      <div class="modal-body">
-								<div class="input-group">
-									<input type="text" class="form-control search" autocomplete="off" placeholder="Search" name="q" id="tipue_search_input">
-									<div class="input-group-btn">
-										<button class="btn btn-default" type="submit"><i class="fa fa-search fa-fw"></i></button>
-									</div>
-								</div>
-	  
-			<div id="tipue_search_output" class="col-md-offset-1 col-md-10">
-				<div id="tipue_search_content">
-					<div id="tipue_search_loading"></div>
+		<div class="modal fade" id="search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h3><i class="fa fa-search fa-fw fa-lg"></i> Search results</h3>
+					</div>
+					<div class="modal-body">
+						<div class="input-group">
+							<input type="text" class="form-control search" autocomplete="off" placeholder="Search" name="q" id="tipue_search_input">
+							<div class="input-group-btn">
+								<button class="btn btn-default" type="submit"><i class="fa fa-search fa-fw"></i></button>
+							</div>
+						</div>
+						<div id="tipue_search_output" class="col-md-offset-1 col-md-10">
+							<div id="tipue_search_content">
+								<div id="tipue_search_loading"></div>
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
 				</div>
-				<hr/>
 			</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-	  
-	  
-		<div class="row" id="c">
 		</div>
 	  {% endblock %}
 	  

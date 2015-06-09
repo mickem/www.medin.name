@@ -16,7 +16,11 @@ gulp.task('jshint', function() {
     .pipe(jshint.reporter('jshint-stylish'));
 });
 gulp.task('js', function() {
-  var jsFiles = ['source/javascript/*.js'];
+  var jsFiles = [
+    'source/javascript/tipuesearch_set.js',
+    'source/javascript/tipuesearch.js',
+    'source/javascript/!(tipuesearch)*.js',
+    ];
   return gulp.src(plugins.mainBowerFiles().concat(jsFiles))
     .pipe(plugins.filter('*.js'))
     .pipe(plugins.concat('mickem-bootstrap.js'))
