@@ -10,7 +10,6 @@ from shutil import rmtree
 
 def main():
     TASKS = {
-        "setup": setup,
         "html": html,
         "regenerate": regenerate,
         "publish": publish,
@@ -52,28 +51,20 @@ def main():
         TASKS[task](args)
 
 
-def setup(ctx):
-    """ Install all web dependencies """
-    shell_with_npm("npm install")
-    old = os.getcwd()
-    os.chdir("themes/mickem-bootstrap")
-    shell_with_npm("bower install")
-    os.chdir(old)
-
 def html(ctx):
     """ Generate html sources (with base configuration) """
-    shell_with_npm("{pelican} {input} -o {output} -s {baseconf} {extra}", ctx)
+    shell("{pelican} {input} -o {output} -s {baseconf} {extra}", ctx)
 
 
 def regenerate(ctx):
     """ Regenerate html sources (with base configuration) """
-    ctx["extra"] += ["-r"]
+    ctx["extra"] += "-r"
     html(ctx)
 
 
 def publish(ctx):
     """ Generate html sources (with publish configuration) """
-    shell_with_npm("{pelican} {input} -o {output} -s {publishconf} {extra}", ctx)
+    shell("{pelican} {input} -o {output} -s {publishconf} {extra}", ctx)
 
 
 def serve(ctx):
@@ -86,15 +77,9 @@ def clean(ctx):
     rmtree(ctx["output"])
     rmtree(ctx["cache"])
 
-
-def shell_with_npm(command, ctx={}):
-    env_copy = os.environ.copy()
-    env_copy["PATH"] += os.pathsep + shell("npm bin")
-    print env_copy["PATH"]
-
-    return shell(command, ctx, env_copy)
-
 def shell(command, ctx={}, env=None):
+    env = os.environ.copy()
+    print env["PATH"]
     return check_output(command.format(**ctx), shell=True, universal_newlines=True, env=env)
 
 if __name__ == "__main__":

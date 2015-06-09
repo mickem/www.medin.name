@@ -49,8 +49,10 @@
 	$(window).bind('scroll', function () {
     if ($(window).scrollTop() > jssor_slider1.$ScaleHeight()) {
         $('#nav').addClass('affix');
+	$('#brand').removeClass('not-showed');
     } else {
         $('#nav').removeClass('affix');
+	$('#brand').addClass('not-showed');
     }
 });		
 			

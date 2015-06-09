@@ -36,6 +36,6 @@ gulp.task('css', function() {
     .pipe(gulp.dest('static/css'));
  });
 gulp.task('watch', function() {
-  gulp.watch('source/js/*', ['js']);
+  gulp.watch('source/javascript/*', ['js']);
   gulp.watch('source/css/*', ['css']);
 });

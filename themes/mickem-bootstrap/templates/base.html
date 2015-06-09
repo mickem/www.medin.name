@@ -26,15 +26,8 @@
 		{% endblock %}
 
 		<title>{% block title %}{{ SITENAME }} - {{ SITETAG|escape }}{% endblock %}</title>
-	
-		{% if THEME_DEVELOPMENT %} 
-			<link rel="stylesheet" href="{{ SITEURL }}/theme/bower_components/bootstrap/dist/css/bootstrap.css" />
-			<link rel="stylesheet" href="{{ SITEURL }}/theme/bower_components/fontawesome/css/font-awesome.css" />
-		{% else %}
-			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
-			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />  
-		{% endif %}
-
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />  
 		<link rel="stylesheet" href="{{ SITEURL }}/theme/css/mickem-bootstrap.css" />
 		<link href='//fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 		<link href='//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -59,7 +52,7 @@
 
 		<link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON|default('favicon.ico') }}" />
 		{% if CUSTOM_HTML_HEAD %}
-		{% include "includes/" + CUSTOM_HTML_HEAD %}
+			{% include "includes/" + CUSTOM_HTML_HEAD %}
 		{% endif %}
 		{% if FEED_ALL_ATOM %}
 			<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
@@ -85,7 +78,7 @@
 {%endblock %}
     <div class="container">
 
-		<nav class="navbar navbar-inverse navbar-default" id="nav" role="navigation">
+		<nav class="navbar navbar-mickem navbar-default" id="nav" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar-collapse">
@@ -176,30 +169,23 @@
 							</li>
 						{% endfor %}
 						<li class="divider"></li>
-						{% if GOOGLE_SEARCH %}
+						{% if GOOGLE_SEARCH or 'tipue_search' in PLUGINS %}
 						<div class="pull-right">
-							{{ SITEURL }}/search.html
-							<form class="navbar-search navbar-form navbar-left" action="http://www.google.com" target="_blank">
+							{% if GOOGLE_SEARCH %}
+								<form class="navbar-search navbar-form navbar-left" action="http://www.google.com">
+							{% else %}
+								<form class="navbar-search navbar-form navbar-left">
+							{% endif %}
 								<div class="input-group">
-									<input type="text" class="form-control" placeholder="Search" name="q" id="srch-term">
+									<input type="text" class="form-control search searchHint" placeholder="Search" name="q">
 									<div class="input-group-btn">
 										<button class="btn btn-default" type="submit"><i class="fa fa-search fa-fw"></i></button>
 									</div>
 								</div>
-								<input type="hidden" name="cx" value="{{ GOOGLE_SEARCH }}" />
-								<input type="hidden" name="ie" value="UTF-8" />
-							</form>
-						</div>
-						{% endif %}
-						{% if TIPUE_SEARCH %}
-						<div class="pull-right">
-							<form class="navbar-search navbar-form navbar-left" action="{{ SITEURL }}/search.html" onsubmit="return validateForm(this.elements['q'].value);">
-								<div class="input-group">
-									<input type="text" class="form-control search typeahead searchHint" data-provide="typeahead" autocomplete="off" placeholder="Search" name="q">
-									<div class="input-group-btn">
-										<button class="btn btn-default" type="submit"><i class="fa fa-search fa-fw"></i></button>
-									</div>
-								</div>
+								{% if GOOGLE_SEARCH %}
+									<input type="hidden" name="cx" value="{{ GOOGLE_SEARCH }}" />
+									<input type="hidden" name="ie" value="UTF-8" />
+								{% endif %}
 							</form>
 						</div>
 						{% endif %}
@@ -219,24 +205,19 @@
 	  {% endblock %}
 	  {% block search %}
 		<div class="modal fade" id="search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
+			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<h3><i class="fa fa-search fa-fw fa-lg"></i> Search results</h3>
+							<h3><i class="fa fa-search fa-fw fa-lg"></i> Search: 
+								<div class="pull-right col-sm-8">
+									<input type="text" class="form-control search" autocomplete="off" placeholder="Search" name="q" id="tipue_search_input">
+								</div>
+							</h3>
 					</div>
 					<div class="modal-body">
-						<div class="input-group">
-							<input type="text" class="form-control search" autocomplete="off" placeholder="Search" name="q" id="tipue_search_input">
-							<div class="input-group-btn">
-								<button class="btn btn-default" type="submit"><i class="fa fa-search fa-fw"></i></button>
-							</div>
-						</div>
-						<div id="tipue_search_output" class="col-md-offset-1 col-md-10">
-							<div id="tipue_search_content">
-								<div id="tipue_search_loading"></div>
-							</div>
-							<hr/>
+						<div id="tipue_search_content">
+							<div id="tipue_search_loading"></div>
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -345,15 +326,9 @@
 	
 	<!-- javascript -->
 
-	{% if THEME_DEVELOPMENT %} 
-		<script src="{{ SITEURL }}/theme/bower_components/jquery/dist/jquery.js"></script>
-		<script src="{{ SITEURL }}/theme/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-	{% else %}
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-	{% endif %}
-		<script src="{{ SITEURL }}/theme/js/mickem-bootstrap.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="{{ SITEURL }}/theme/js/mickem-bootstrap.js"></script>
 	
 	{% for url in JAVASCRIPT_URLS %}
 	<script src="{{ url }}"></script>
@@ -371,7 +346,7 @@
 {%block slider_js %}
 {%endblock %}
 
-	{% if TIPUE_SEARCH %}
+	{% if 'tipue_search' in PLUGINS %}
 		<script>
 			$('#search').on('shown.bs.modal', function () {
 				$('#tipue_search_input').focus();
@@ -381,20 +356,12 @@
 			})
 			$('.search').focus(function(event) {
 				 $('#tipue_search_input').tipuesearch({
-						 {% if 'tipue_search' in PLUGINS %}
-							 'mode' : 'json',
-						 {% else %}
-							 'mode': 'live',
-						 {% endif %}
+						 'mode' : 'json',
 						 'show': 4,
 						 'newWindow': false,
-						 {% if 'tipue_search' in PLUGINS %}
-							 'contentLocation': '/tipuesearch_content.json'
-						 {% else %}
-							 'liveDescription': '.article-content'
-						 {% endif %}
+						 'contentLocation': '/tipuesearch_content.json'
 					 });
-            });
+			});
 			</script>
 		{% endif %}
 	</body>

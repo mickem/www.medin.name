@@ -24,7 +24,7 @@ PLUGINS = [
     "assets", 
     "summary", 
     "neighbors",
-    #"clean_summary", 
+    "clean_summary", 
     "related_posts",
     "autostatic", 
     "pelican-advthumbnailer",
@@ -90,8 +90,7 @@ ARTICLE_PATHS = ['blog']
 PATH_METADATA  = r".*(?:/|\\)(?P<category>[^/\\]+)(?:/|\\)(?P<date>\d{4}-\d{2}-\d{2})(?:/|\\)(?P<slug>[^/\\]+)(?:/|\\).*"
 PAGE_PATHS = ['pages']
 
-# GOOGLE_SEARCH = "009388823403057951110:jwq9vehc3_q"
-TIPUE_SEARCH = True
+GOOGLE_SEARCH = "009388823403057951110:jwq9vehc3_q"
 
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
@@ -112,13 +111,14 @@ THEME_DEVELOPMENT = True
 #                             Extensions                              #
 #######################################################################
 
-DIRECT_TEMPLATES = ['index', 'categories', 'authors', 'archives', 'search']
+DIRECT_TEMPLATES = ['index', 'categories', 'authors', 'archives']
 
 MD_EXTENSIONS = ['codehilite(css_class=highlight)','extra']
 
 SKIP_COLOPHON= True
 
 RELATED_POSTS_MAX = 5
+CLEAN_SUMMARY_MAXIMUM = 0
 
 SITEMAP = {
     'format': 'xml',
