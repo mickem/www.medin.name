@@ -3,7 +3,7 @@ Authors: Michael Medin
 Date: 2015-06-08
 Tags: LEGO, dreams, childhood
 Image: {static DSC00795.jpg thumb="400x_"}
-Social-Image: {static DSC00795.jpg thumb="400x_"}
+social_image: {static DSC00795.jpg thumb="400x_"}
 
 When I was a child I received an amazing Lego Technics set [http://brickset.com/sets/8860-1]("8860"). It instantly became my favourite toy above all others.
 But in the instructions booklet there was another... bigger... cooler... more awesome... which became the dream...
