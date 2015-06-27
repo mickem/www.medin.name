@@ -2,8 +2,8 @@ I will be speaking at: Open Source System Management Conference 2014
 ####################################################################
 :author: Michael Medin
 :tags: conference, monitoring, naemon, nagios
-:image: /images/thumbnails/300x-/bolzano-overview.png
-:social_image: /images/thumbnails/300x-/bolzano-overview.png
+:image: /images/thumbnails/300x-/bolzano-overview.jpg
+:social_image: /images/thumbnails/300x-/bolzano-overview.jpg
 
 I will be speaking at the Open Source System Management Conference  in
 Bolzano this year which is held at Sheraton on April 10.
