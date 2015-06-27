@@ -1,9 +1,8 @@
 Title: Lego Crane: A childhood dream come true
 Authors: Michael Medin
-Date: 2015-06-08
 Tags: LEGO, dreams, childhood
-Image: {static DSC00795.jpg thumb="400x_"}
-social_image: {static DSC00795.jpg thumb="400x_"}
+Image: {static DSC00795.jpg thumb="400x-"}
+social_image: {static DSC00795.jpg thumb="400x-"}
 
 When I was a child I received an amazing Lego Technics set [http://brickset.com/sets/8860-1]("8860"). It instantly became my favourite toy above all others.
 But in the instructions booklet there was another... bigger... cooler... more awesome... which became the dream...
@@ -12,7 +11,7 @@ But in the instructions booklet there was another... bigger... cooler... more aw
 
 ![the dream]({static|DSC00798.jpg|thumb="600x-"}){.center}
 
-![hints]({static|20150523_154119.jpg|thumb="150x_"}}){.pull-right}
+![hints]({static|20150523_154119.jpg|thumb="150x-"}}){.pull-right}
 But it was a combination model (or so I always thought) and getting my parents to buy me several sets was not going to happen so a dream it remained. But it has always remained a dream.
 So when I saw [http://shop.lego.com/en-SE/Mobile-Crane-MK-II-42009]("42009") it was not without a hint of childhood dreams rushing back at me. Now this is a massive set and it is pretty expensive so I cannot really just buy it (my girlfriend would kill me).
 
@@ -22,6 +21,7 @@ Well... actually I got half, in a stroke of genius she gave ma "half" opting for
 # Adult fan of Lego
 
 ![building it]({static|DSC00771.jpg|thumb="600x-"}}){.center}
+
 So what's it like to build a massive 2.600+ pieces Lego set?
 I would compare it to laying a puzzle in other words a pretty calming, rather long experience. So I quite enjoyed it, but the comparison to a puzzle is good in other ways as well, the build of the Lego set was some 8 hours a 1.000 pieces puzzle will last you a lot longer.
 A 1000 pieces puzzle will also cost you a whole lot less then 1.500SEK of the Lego set.
@@ -40,6 +40,7 @@ It is also a shame the placed the steering wheel behind. Quite frankly I cant un
 # 42009-B: A not so epic model
 
 ![sort legos]({static|DSC00808.jpg|thumb=400x-}){.center}
+
 Heading for the B-side I spent a good solid 2 hours tearing the model up. It was quite a job and actually gave me blisters.
 A good thing I had Sophia helping me with sorting the Legos. 
 This time I opted for not sorting studs by colour as it was a rather retarded way to sort them.
@@ -48,6 +49,7 @@ All in all the B set was pretty cool and looked like it could have been an A-set
 I really enjoyed the build as well as the resulting model.
 
 ![the b set]({static|DSC00873.jpg|thumb=400x-}){.center}
+
 But again the big let down is the linear actuators and lack of friction gear and in this case they really ruin the model.
 The apparatus which grabs the container is designed using linear actuators and once the reach the end position they crunching sets in. 
 But the other thing which also sets in is a distinctive "jumping" as the linear actuator jump a bit when they skip at the end.
@@ -55,6 +57,7 @@ In this case this means the it model grabs the container and skips a bit and the
 The words Epic fail comes to mind...
 
 ![joining lego in the 80:s]({static|joining-lego-DSC00881.jpg|thumb=200x-}){.pull-right}
+
 # Lego Technics: now and then
 
 It was really interesting to revisit Lego Technics as an adult mainly just to see the development.
@@ -68,6 +71,7 @@ But some of the changes seems odd for instance there is a lot of connecting smal
 # A dream come true?
 
 ![gear box]({static|DSC00802.jpg|thumb=500x-}){.center}
+
 Indeed it is, and it was well worth it. Just the gear box would have been worth it as it was amazingly cool.
 I could still not quite figure out how the gears all work out when I built the b-models gearbox until the end.
 And I cant help but dream of my next epic Lego model... question is: Will it be [http://shop.lego.com/en-SE/The-SHIELD-Helicarrier-76042](The-SHIELD-Helicarrier) or yet another epic Technics set?

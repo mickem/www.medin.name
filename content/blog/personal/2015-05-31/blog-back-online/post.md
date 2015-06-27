@@ -1,8 +1,6 @@
 Title: Blog back online!
 Authors: Michael Medin
-Date: 2015-05-31
-Category: personal
-Tags: web,
+Tags: web
  
 Yaay!
 The blog is finally (after presumably months of disarray) back online.
