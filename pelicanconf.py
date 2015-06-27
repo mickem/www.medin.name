@@ -23,8 +23,8 @@ PLUGINS = [
     "pelican-page-hierarchy", 
     "assets", 
     "summary", 
-    "neighbors",
     "clean_summary", 
+    "neighbors",
     "related_posts",
     "autostatic", 
     "pelican-advthumbnailer",
@@ -87,7 +87,10 @@ FAVICON = 'images/michael-medin.jpg'
 #######################################################################
 
 ARTICLE_PATHS = ['blog']
-PATH_METADATA  = r".*(?:/|\\)(?P<category>[^/\\]+)(?:/|\\)(?P<date>\d{4}-\d{2}-\d{2})(?:/|\\)(?P<slug>[^/\\]+)(?:/|\\).*"
+
+PATH_METADATA = r".*(?:/|\\)(?P<category>[^/\\]+)(?:/|\\)(?P<date>\d{4}-\d{2}-\d{2})(?:/|\\)(?P<slug>[^/\\]+)(?:/|\\).*"
+USE_FOLDER_AS_CATEGORY=False
+
 PAGE_PATHS = ['pages']
 
 GOOGLE_SEARCH = "009388823403057951110:jwq9vehc3_q"

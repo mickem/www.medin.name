@@ -59,7 +59,7 @@ def html(ctx):
 
 def develop(ctx):
     """ Run interactively to facilitate development """
-    ctx["extra"] += "-r"
+    ctx["extra"] += " -r"
     html(ctx)
 
 
@@ -79,6 +79,7 @@ def setup(ctx):
     shell("pip install markdown", ctx)
     shell("pip install pillow", ctx)
     shell("pip install webassets", ctx)
+    shell("pip install pelican-advthumbnailer", ctx)
 
 
 def clean(ctx):
