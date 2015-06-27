@@ -11,7 +11,7 @@ from shutil import rmtree
 def main():
     TASKS = {
         "html": html,
-        "regenerate": regenerate,
+        "develop": develop,
         "publish": publish,
         "serve": serve,
         "clean": clean,
@@ -57,8 +57,8 @@ def html(ctx):
     shell("{pelican} {input} -o {output} -s {baseconf} {extra}", ctx)
 
 
-def regenerate(ctx):
-    """ Regenerate html sources (with base configuration) """
+def develop(ctx):
+    """ Run interactively to facilitate development """
     ctx["extra"] += "-r"
     html(ctx)
 

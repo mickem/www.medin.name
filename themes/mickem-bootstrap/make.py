@@ -11,6 +11,8 @@ from shutil import rmtree
 def main():
     TASKS = {
         "setup": setup,
+        "develop": develop,
+        "publish": publish,
         "clean": clean,
     }
 
@@ -34,19 +36,29 @@ def setup(ctx):
     """ Install all web dependencies """
     shell_with_npm("npm install")
     shell_with_npm("bower install")
-    shell_with_npm("gulp build")
 
 def clean(ctx):
     """ Clean output directory and cache """
     rmtree(ctx["output"])
     rmtree(ctx["cache"])
 
+def develop(ctx):
+    """ Run interactively to facilitate development """
+    shell_with_npm("gulp watch")
+
+def publish(ctx):
+    """ Generate release artefacts """
+    shell_with_npm("gulp build")
+
 def shell_with_npm(command, ctx={}):
     env_copy = os.environ.copy()
-    env_copy["PATH"] += os.pathsep + shell("npm bin")
+    env_copy["PATH"] += os.pathsep + shell("npm bin").strip()
     return shell(command, ctx, env_copy)
 
-def shell(command, ctx={}, env=None):
+def shell(command, ctx={}, env=os.environ.copy()):
+    if os.path.isfile(".path"):
+        with open(".path") as f:
+            env["PATH"] = env["PATH"] + ";" + ";".join(map(lambda a:a.strip(), f.readlines()))
     return check_output(command.format(**ctx), shell=True, universal_newlines=True, env=env)
 
 if __name__ == "__main__":
