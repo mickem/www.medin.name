@@ -10,7 +10,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-PLUGINS += ["minify"]
+#PLUGINS += ["minify"]
 
 SITEURL = 'http://www.medin.name'
 RELATIVE_URLS = False

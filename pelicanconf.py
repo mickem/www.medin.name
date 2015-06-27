@@ -22,14 +22,15 @@ PLUGINS = [
     "sitemap", 
     "pelican-page-hierarchy", 
     "assets", 
+    "autostatic", 
     "summary", 
-    "clean_summary", 
+    "clean_summary",
     "neighbors",
     "related_posts",
-    "autostatic", 
     "pelican-advthumbnailer",
     "tipue_search",
-    "share_post"
+    "share_post",
+    "tag_cloud"
     ]
 
 PATH = "content"
