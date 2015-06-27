@@ -11,10 +11,11 @@ from shutil import rmtree
 def main():
     TASKS = {
         "html": html,
-        "regenerate": regenerate,
+        "develop": develop,
         "publish": publish,
         "serve": serve,
         "clean": clean,
+        "setup": setup,
     }
 
     epilog = "Tasks:\n"
@@ -56,8 +57,8 @@ def html(ctx):
     shell("{pelican} {input} -o {output} -s {baseconf} {extra}", ctx)
 
 
-def regenerate(ctx):
-    """ Regenerate html sources (with base configuration) """
+def develop(ctx):
+    """ Run interactively to facilitate development """
     ctx["extra"] += "-r"
     html(ctx)
 
@@ -71,6 +72,14 @@ def serve(ctx):
     """ Start HTML server """
     shell("cd {output} && {python} -m pelican.server {serve_port}", ctx)
 
+def setup(ctx):
+    """ Setup python and install all dependencies """
+    shell("pip install pelican", ctx)
+    shell("pip install beautifulsoup4", ctx)
+    shell("pip install markdown", ctx)
+    shell("pip install pillow", ctx)
+    shell("pip install webassets", ctx)
+
 
 def clean(ctx):
     """ Clean output directory and cache """
@@ -79,7 +88,9 @@ def clean(ctx):
 
 def shell(command, ctx={}, env=None):
     env = os.environ.copy()
-    print env["PATH"]
+    if os.path.isfile(".path"):
+        with open(".path") as f:
+            env["PATH"] = env["PATH"] + ";" + ";".join(map(lambda a:a.strip(), f.readlines()))
     return check_output(command.format(**ctx), shell=True, universal_newlines=True, env=env)
 
 if __name__ == "__main__":

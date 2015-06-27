@@ -9,3 +9,4 @@ output
 bower_components
 node_modules
 .ropeproject
+.path
