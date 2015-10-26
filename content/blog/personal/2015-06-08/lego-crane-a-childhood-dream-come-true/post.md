@@ -1,15 +1,15 @@
 Title: Lego Crane: A childhood dream come true
 Authors: Michael Medin
 Tags: LEGO, dreams, childhood
-Image: {static DSC00795.jpg thumb="400x-"}
-social_image: {static DSC00795.jpg thumb="400x-"}
+Image: {static DSC00795.JPG thumb="400x-"}
+social_image: {static DSC00795.JPG thumb="400x-"}
 
 When I was a child I received an amazing Lego Technics set [http://brickset.com/sets/8860-1]("8860"). It instantly became my favourite toy above all others.
 But in the instructions booklet there was another... bigger... cooler... more awesome... which became the dream...
 
 <!-- PELICAN_END_SUMMARY -->
 
-![the dream]({static|DSC00798.jpg|thumb="600x-"}){.center}
+![the dream]({static|DSC00798.JPG|thumb="600x-"}){.center}
 
 ![hints]({static|20150523_154119.jpg|thumb="150x-"}}){.pull-right}
 But it was a combination model (or so I always thought) and getting my parents to buy me several sets was not going to happen so a dream it remained. But it has always remained a dream.
@@ -20,14 +20,14 @@ Well... actually I got half, in a stroke of genius she gave ma "half" opting for
 
 # Adult fan of Lego
 
-![building it]({static|DSC00771.jpg|thumb="600x-"}}){.center}
+![building it]({static|DSC00771.JPG|thumb="600x-"}}){.center}
 
 So what's it like to build a massive 2.600+ pieces Lego set?
 I would compare it to laying a puzzle in other words a pretty calming, rather long experience. So I quite enjoyed it, but the comparison to a puzzle is good in other ways as well, the build of the Lego set was some 8 hours a 1.000 pieces puzzle will last you a lot longer.
 A 1000 pieces puzzle will also cost you a whole lot less then 1.500SEK of the Lego set.
 But to be honest this was waaaay more fun...
 
-![an epic mode]({static|DSC00754.jpg|thumb=200x-}){.pull-right}
+![an epic mode]({static|DSC00754.JPG|thumb=200x-}){.pull-right}
 # 42009: An epic model
 
 This took me about "a day" some of it spent having my kids build it some of it spend rebuilding what my kids built and some of it spent rebuild when I tried to fix the skipping linear actuators.
@@ -39,7 +39,7 @@ It is also a shame the placed the steering wheel behind. Quite frankly I cant un
 
 # 42009-B: A not so epic model
 
-![sort legos]({static|DSC00808.jpg|thumb=400x-}){.center}
+![sort legos]({static|DSC00808.JPG|thumb=400x-}){.center}
 
 Heading for the B-side I spent a good solid 2 hours tearing the model up. It was quite a job and actually gave me blisters.
 A good thing I had Sophia helping me with sorting the Legos. 
@@ -48,7 +48,7 @@ Instead I sorted studs by length and a lot of the pieces by size and then colour
 All in all the B set was pretty cool and looked like it could have been an A-set to be honest. 
 I really enjoyed the build as well as the resulting model.
 
-![the b set]({static|DSC00873.jpg|thumb=400x-}){.center}
+![the b set]({static|DSC00873.JPG|thumb=400x-}){.center}
 
 But again the big let down is the linear actuators and lack of friction gear and in this case they really ruin the model.
 The apparatus which grabs the container is designed using linear actuators and once the reach the end position they crunching sets in. 
@@ -56,7 +56,7 @@ But the other thing which also sets in is a distinctive "jumping" as the linear 
 In this case this means the it model grabs the container and skips a bit and then jumps back releasing the container in essence making it impossible to actually grab the container.
 The words Epic fail comes to mind...
 
-![joining lego in the 80:s]({static|joining-lego-DSC00881.jpg|thumb=200x-}){.pull-right}
+![joining lego in the 80:s]({static|joining-lego-DSC00881.JPG|thumb=200x-}){.pull-right}
 
 # Lego Technics: now and then
 
@@ -70,7 +70,7 @@ But some of the changes seems odd for instance there is a lot of connecting smal
 
 # A dream come true?
 
-![gear box]({static|DSC00802.jpg|thumb=500x-}){.center}
+![gear box]({static|DSC00802.JPG|thumb=500x-}){.center}
 
 Indeed it is, and it was well worth it. Just the gear box would have been worth it as it was amazingly cool.
 I could still not quite figure out how the gears all work out when I built the b-models gearbox until the end.
