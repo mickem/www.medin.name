@@ -31,8 +31,6 @@ This information is collected solely to improve app performance and user experie
 Some apps may integrate third-party services that collect information independently. These may include:
 
 - **Google Play Services** – subject to [Google's Privacy Policy](https://policies.google.com/privacy)
-- **Google AdMob** (if ads are shown) – subject to [Google's Privacy Policy](https://policies.google.com/privacy)
-- **Firebase Analytics / Crashlytics** (if used) – subject to [Google's Privacy Policy](https://policies.google.com/privacy)
 
 I have no control over the data collected by these third-party services. Please review their respective privacy policies for details.
 
@@ -44,7 +42,6 @@ Any data collected is used exclusively for:
 
 - Diagnosing and fixing bugs and crashes
 - Understanding general usage patterns to improve the app
-- Displaying relevant advertisements (if applicable)
 
 I do not sell, rent, trade, or share your data with any third parties beyond what is described in this policy.
 
@@ -52,7 +49,7 @@ I do not sell, rent, trade, or share your data with any third parties beyond wha
 
 ## Children's Privacy
 
-My apps are not directed at children under the age of 13. I do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided personal information through one of my apps, please contact me so I can take appropriate action.
+I do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided personal information through one of my apps, please contact me so I can take appropriate action.
 
 ---
 
@@ -84,8 +81,8 @@ I may update this privacy policy from time to time. Any changes will be reflecte
 
 If you have any questions or concerns about this privacy policy, please contact me at:
 
-**[Your Name or Developer Alias]**
-**[Your Email Address]**
+**Michael Medin**
+**michael@medin.name**
 
 ---
 
